@@ -65,7 +65,6 @@ export function HomeView({
       ) : (
         <>
           <section aria-label="Summary" className="relative overflow-hidden rounded-[1.5rem] bg-forest-900 p-6 text-cream-50 sm:p-8">
-            <div aria-hidden="true" className="absolute -right-20 -top-28 size-72 rounded-full bg-gold-400/15 blur-3xl" />
             <div className="relative flex items-start justify-between gap-4">
               <p className="text-sm text-cream-100/70">Animals under management</p>
               {isDemo && <Badge variant="dark">Sample data</Badge>}

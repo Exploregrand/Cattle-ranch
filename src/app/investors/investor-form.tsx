@@ -8,20 +8,20 @@ import { counties, investorTypes, routes, tickets } from "@/content/investors";
 import { cn } from "@/lib/utils";
 
 const field =
-  "h-13 w-full rounded-xl border border-cream-50/15 bg-cream-50/[0.06] px-4 text-base text-cream-50 outline-none transition-colors placeholder:text-cream-100/35 focus:border-gold-400 aria-invalid:border-[#e0866a]";
+  "h-12 w-full rounded-xl border border-input bg-white px-4 text-base text-ink outline-none transition-[border-color,box-shadow] placeholder:text-ink-muted/60 focus:border-clay focus:ring-4 focus:ring-gold-200/60 aria-invalid:border-destructive";
 
 function Label({ htmlFor, children, hint }: { htmlFor: string; children: React.ReactNode; hint?: string }) {
   return (
-    <label htmlFor={htmlFor} className="label-caps mb-2 block text-[0.85rem] text-cream-100/75">
+    <label htmlFor={htmlFor} className="label-caps mb-2 block text-[0.85rem] text-forest-900">
       {children}
-      {hint && <span className="ml-1.5 normal-case tracking-normal text-cream-100/40">{hint}</span>}
+      {hint && <span className="ml-1.5 normal-case tracking-normal text-ink-muted">{hint}</span>}
     </label>
   );
 }
 
 function Err({ id, msg }: { id: string; msg?: string }) {
   return msg ? (
-    <p id={id} className="mt-1.5 text-sm text-[#f0a48b]">
+    <p id={id} className="mt-1.5 text-sm text-destructive">
       {msg}
     </p>
   ) : null;
@@ -32,10 +32,10 @@ export function InvestorForm() {
 
   if (state.status === "success") {
     return (
-      <div role="status" className="rounded-[1.75rem] border border-cream-50/15 bg-cream-50/[0.05] p-8 sm:p-10">
-        <CircleCheck className="size-9 text-gold-400" aria-hidden="true" />
-        <h3 className="mt-5 font-display text-[2rem] font-medium leading-tight text-cream-50">Thank you — we&apos;ll be in touch</h3>
-        <p className="mt-3 max-w-md leading-relaxed text-cream-100/70">
+      <div role="status">
+        <CircleCheck className="size-9 text-grass" aria-hidden="true" />
+        <h3 className="mt-5 font-display text-[2rem] font-medium leading-tight text-forest-950">Thank you — we&apos;ll be in touch</h3>
+        <p className="mt-3 max-w-md leading-relaxed text-ink-soft">
           A member of the Tangama team will contact you personally. Nothing is being offered or sold, and no payment is needed.
         </p>
       </div>
@@ -62,11 +62,11 @@ export function InvestorForm() {
         <div>
           <Label htmlFor="county">County</Label>
           <select id="county" name="county" defaultValue={v.county ?? ""} className={cn(field, "appearance-none")} {...err("county")}>
-            <option value="" className="text-black">
+            <option value="">
               Choose your county
             </option>
             {counties.map((c) => (
-              <option key={c} value={c} className="text-black">
+              <option key={c} value={c}>
                 {c}
               </option>
             ))}
@@ -87,15 +87,15 @@ export function InvestorForm() {
         { name: "route", label: "What interests you", options: routes },
       ].map((group) => (
         <fieldset key={group.name}>
-          <legend className="label-caps mb-2.5 text-[0.85rem] text-cream-100/75">{group.label}</legend>
+          <legend className="label-caps mb-2.5 text-[0.85rem] text-forest-900">{group.label}</legend>
           <div className="flex flex-wrap gap-2">
             {group.options.map((o) => (
               <label key={o.value} className="cursor-pointer">
                 <input type="radio" name={group.name} value={o.value} defaultChecked={v[group.name] === o.value} className="peer sr-only" />
                 <span
                   className={cn(
-                    "inline-flex h-11 items-center rounded-full border border-cream-50/20 px-4 text-sm text-cream-100/80 transition-colors",
-                    "peer-checked:border-gold-400 peer-checked:bg-gold-400 peer-checked:font-medium peer-checked:text-forest-950 peer-focus-visible:ring-2 peer-focus-visible:ring-gold-400",
+                    "inline-flex h-11 items-center rounded-full border border-input bg-white px-4 text-sm text-ink-soft transition-colors",
+                    "peer-checked:border-forest-950 peer-checked:bg-forest-950 peer-checked:font-medium peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-clay",
                   )}
                 >
                   {o.label}
@@ -113,11 +113,11 @@ export function InvestorForm() {
             Indicative amount
           </Label>
           <select id="ticket" name="ticket" defaultValue={v.ticket ?? ""} className={cn(field, "appearance-none")}>
-            <option value="" className="text-black">
+            <option value="">
               Choose a range
             </option>
             {tickets.map((t) => (
-              <option key={t.value} value={t.value} className="text-black">
+              <option key={t.value} value={t.value}>
                 {t.label}
               </option>
             ))}
@@ -131,7 +131,7 @@ export function InvestorForm() {
         </div>
       </div>
 
-      <div className="space-y-3 rounded-2xl bg-cream-50/[0.04] p-5">
+      <div className="space-y-3 rounded-2xl bg-cream-100 p-5">
         {[
           {
             name: "acknowledgedNoOffer",
@@ -140,8 +140,8 @@ export function InvestorForm() {
           { name: "consent", text: "Tangama may contact me by phone, WhatsApp or email about this." },
         ].map((c) => (
           <div key={c.name}>
-            <label className="flex items-start gap-3 text-sm leading-relaxed text-cream-100/80">
-              <input type="checkbox" name={c.name} className="mt-0.5 size-5 shrink-0 accent-[#cc9a42]" {...err(c.name)} />
+            <label className="flex items-start gap-3 text-sm leading-relaxed text-ink-soft">
+              <input type="checkbox" name={c.name} className="mt-0.5 size-5 shrink-0 accent-[#3a2a1f]" {...err(c.name)} />
               {c.text}
             </label>
             <Err id={`${c.name}-error`} msg={e[c.name]} />
@@ -150,14 +150,14 @@ export function InvestorForm() {
       </div>
 
       {state.status === "error" && state.message && (
-        <p role="alert" className="text-sm text-[#f0a48b]">
+        <p role="alert" className="text-sm text-destructive">
           {state.message}
         </p>
       )}
       <button
         type="submit"
         disabled={pending}
-        className="label-caps inline-flex h-14 w-full items-center justify-center rounded-full bg-gold-400 px-9 text-[1.05rem] font-bold text-forest-950 transition-colors hover:bg-cream-50 disabled:opacity-60 sm:w-auto"
+        className="label-caps inline-flex h-14 w-full items-center justify-center rounded-full bg-forest-950 px-9 text-[1.05rem] font-bold text-cream-50 transition-colors hover:bg-clay disabled:opacity-60 sm:w-auto"
       >
         {pending ? "Sending…" : "Register investor interest"}
       </button>

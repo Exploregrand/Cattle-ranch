@@ -2,37 +2,37 @@
 @import "tw-animate-css";
 
 /*
- * Tangama design tokens.
- * Forest green carries the brand, warm cream is the canvas, gold is used sparingly
- * for emphasis only (never for large fills or body text).
+ * Tangama design tokens — restrained and mature.
+ * Ivory and white paper, charcoal ink, hairline rules. One dark accent (acacia bark)
+ * for primary actions and at most one dark section per page. Photography carries colour.
  */
 :root {
   --forest-950: #1e1a16;
-  --forest-900: #3a2a1f;
-  --forest-800: #2a211a;
-  --forest-700: #5a4030;
-  --forest-600: #626c37;
-  --forest-100: #e6dcc4;
-  --cream-50: #f0e6d4;
-  --cream-100: #e9dcc3;
-  --cream-200: #e2d1ae;
-  --cream-300: #d3bf95;
-  --paper: #fbf5ea;
-  --clay: #b0502c;
-  --grass: #626c37;
-  --gold-500: #b0502c;
-  --gold-400: #cc9a42;
-  --gold-200: #eed6ab;
-  --ink: #1e1a16;
-  --ink-soft: #4f4436;
-  --ink-muted: #6f6253;
+  --forest-900: #2b2622;
+  --forest-800: #221e1b;
+  --forest-700: #4a3c31;
+  --forest-600: #4f5a3c;
+  --forest-100: #ebe7e0;
+  --cream-50: #f7f5f1;
+  --cream-100: #f0ede7;
+  --cream-200: #e7e2d9;
+  --cream-300: #d6d0c4;
+  --paper: #ffffff;
+  --clay: #6b5a4a;
+  --grass: #4f5a3c;
+  --gold-500: #6b5a4a;
+  --gold-400: #b8ab96;
+  --gold-200: #ebe6dd;
+  --ink: #1c1b19;
+  --ink-soft: #4a4640;
+  --ink-muted: #75706a;
 
   --radius: 1rem;
 
   /* shadcn/ui semantic tokens mapped to the brand */
   --background: var(--cream-50);
   --foreground: var(--ink);
-  --card: #fbf5ea;
+  --card: #ffffff;
   --card-foreground: var(--ink);
   --popover: #ffffff;
   --popover-foreground: var(--ink);
@@ -45,8 +45,8 @@
   --accent: var(--gold-200);
   --accent-foreground: var(--forest-900);
   --destructive: #a23b2a;
-  --border: #dccdb0;
-  --input: #cdbb98;
+  --border: #e3dfd7;
+  --input: #d3cdc2;
   --ring: var(--gold-500);
 }
 

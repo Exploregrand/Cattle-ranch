@@ -76,10 +76,11 @@ connected" preview, and early-access registrations are written to `.data/` local
 
 ## Brand
 
-Kraal direction: livestock-grounded, not tech. Branding-iron mark (`src/components/brand/wordmark.tsx`),
-Fraunces for headlines and Barlow
-Condensed sale-yard labels, colours from lime plaster, red clay, dry grass, pasture, acacia bark and hide
-(tokens in `src/app/globals.css`).
+A mature, established livestock company — not tech, not playful. Branding-iron mark
+(`src/components/brand/wordmark.tsx`), Fraunces headlines and Barlow Condensed labels. Restrained palette:
+ivory and white paper, charcoal ink, hairline rules, and one dark acacia-bark accent for primary actions
+(tokens in `src/app/globals.css`). Photography carries the colour; the only other colours are the fodder
+crop codes on the Farm Ops bed map, which are data.
 
 Photography lives in `public/images` and is registered in `src/content/photos.ts`. These are breed and
 category images; they are never presented as specific Tangama animals or available stock. Real animals

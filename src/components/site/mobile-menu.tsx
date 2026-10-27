@@ -79,7 +79,7 @@ export function MobileMenu() {
             ))}
           </nav>
           <div className="mt-auto">
-            <Button asChild size="lg" className="label-caps h-14 w-full bg-clay text-[1.05rem] text-cream-50 hover:bg-gold-400 hover:text-forest-950">
+            <Button asChild size="lg" className="label-caps h-14 w-full bg-cream-50 text-[1.05rem] text-forest-950 hover:bg-white">
               <Link href="/early-access" onClick={() => setOpen(false)}>
                 Register interest
               </Link>

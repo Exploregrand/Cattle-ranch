@@ -10,14 +10,14 @@ import { farm } from "@/content/site";
 
 /* Palette — lime plaster, red clay, dry grass, pasture, acacia bark, hide */
 const C = {
-  plaster: "#F0E6D4",
-  straw: "#E2D1AE",
-  clay: "#B0502C",
-  bark: "#3A2A1F",
-  hide: "#1E1A16",
-  grass: "#626C37",
-  gold: "#CC9A42",
-  mute: "#6F6253",
+  plaster: "#F7F5F1", // ivory canvas
+  straw: "#FFFFFF", // white paper panels
+  clay: "#75706A", // quiet grey for labels
+  bark: "#2B2622", // the one dark accent
+  hide: "#1C1B19", // ink
+  grass: "#F7F5F1",
+  gold: "#C9C1B3", // soft stone on dark / over photos
+  mute: "#6B6660",
 };
 
 const L = "label-caps";
@@ -198,8 +198,8 @@ export function HomePage() {
         </div>
 
         <div className="relative mx-auto w-full max-w-lg">
-          <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[10px]" style={{ background: C.clay }} />
-          <article className="relative rounded-[10px] p-7 sm:p-9" style={{ background: "#FBF5EA", boxShadow: "0 1px 0 rgba(0,0,0,0.05)" }}>
+          
+          <article className="relative rounded-[10px] p-7 sm:p-9" style={{ background: "#FFFFFF", border: "1px solid #E3DFD7", boxShadow: "0 24px 48px -32px rgba(28,27,25,0.25)" }}>
             <div className="flex items-start justify-between">
               <div>
                 <p className={`${L} text-[0.8rem] font-bold`} style={{ color: C.mute }}>
@@ -212,7 +212,7 @@ export function HomePage() {
               </span>
             </div>
             <div className="mt-6 flex items-center gap-4">
-              <span className="flex h-16 w-14 flex-col items-center rounded-[45%_45%_20%_20%] pt-2" style={{ background: "#F2B935" }}>
+              <span className="flex h-16 w-14 flex-col items-center rounded-[45%_45%_20%_20%] pt-2" style={{ background: "#ECE8E1" }}>
                 <span className="size-2.5 rounded-full" style={{ background: "#FBF5EA" }} />
                 <span className="mt-1.5 font-mono text-[0.55rem] font-semibold text-black/60">TGM-SH</span>
                 <span className="font-mono text-sm font-bold text-black/80">0012</span>
@@ -263,21 +263,16 @@ export function HomePage() {
       </section>
 
       {/* Feed first */}
-      <section id="farm" className="relative scroll-mt-24 overflow-hidden" style={{ background: C.grass, color: C.plaster }}>
-        <svg viewBox="0 0 1200 400" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 h-[30%] w-full opacity-[0.16]" aria-hidden="true">
-          {Array.from({ length: 18 }).map((_, i) => (
-            <path key={i} d={`M${600 + (i - 9) * 8} 0 L${-400 + i * 118} 400 L${-350 + i * 118} 400 Z`} fill={C.plaster} />
-          ))}
-        </svg>
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-36 pt-24 sm:pb-44 sm:pt-28 lg:grid-cols-[1.1fr_1fr] lg:items-end">
+      <section id="farm" className="relative scroll-mt-24 overflow-hidden border-y" style={{ background: C.grass, color: C.hide, borderColor: "#E3DFD7" }}>
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 sm:py-28 lg:grid-cols-[1.1fr_1fr] lg:items-end">
           <div>
-            <p className={`${L} text-[0.95rem] font-semibold`} style={{ color: C.gold }}>
+            <p className={`${L} text-[0.95rem] font-semibold`} style={{ color: C.clay }}>
               Where we are today
             </p>
             <h2 className={`${D} mt-5 text-[2.6rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[3.8rem]`}>
               Feed first. Then the herd.
             </h2>
-            <p className="mt-6 max-w-md text-[1.05rem] leading-relaxed opacity-85">
+            <p className="mt-6 max-w-md text-[1.05rem] leading-relaxed ">
               Before any animal arrives, we&apos;re growing the feed that will raise it: Sugargraze, Super Napier, alfalfa
               and desmodium on our farm in Isinya.
             </p>
@@ -290,7 +285,7 @@ export function HomePage() {
             ].map(([v, k]) => (
               <div key={k}>
                 <dd className={`${L} text-[3.6rem] font-bold leading-none tracking-[0] sm:text-[5rem]`}>{v}</dd>
-                <dt className={`${L} mt-2 text-[0.9rem] font-semibold opacity-75`}>{k}</dt>
+                <dt className={`${L} mt-2 text-[0.9rem] font-semibold `}>{k}</dt>
               </div>
             ))}
           </dl>
@@ -299,7 +294,7 @@ export function HomePage() {
 
       {/* Qurbani */}
       <section id="qurbani" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
-        <div className="grid overflow-hidden rounded-[2.5rem] lg:grid-cols-2" style={{ background: C.straw }}>
+        <div className="grid overflow-hidden rounded-[2rem] border lg:grid-cols-2" style={{ background: C.straw, borderColor: "#E3DFD7" }}>
           <div className="relative min-h-[320px] lg:min-h-[520px]">
             <Image
               src={photos.goat.src}
@@ -327,30 +322,31 @@ export function HomePage() {
 
       {/* Investors */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
-        <div className="relative isolate overflow-hidden rounded-[2.5rem] px-8 py-14 sm:px-14 sm:py-16" style={{ background: "#17130f", color: C.plaster }}>
-          <Image src={photos.cattle.src} alt="" fill sizes="100vw" className="-z-10 object-cover object-[50%_70%] opacity-30" />
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-            <div>
-              <p className={`${L} text-[0.95rem]`} style={{ color: C.gold }}>
-                For Kenyan investors and chamas
-              </p>
-              <h2 className={`${D} mt-4 max-w-2xl text-[2.6rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[3.6rem]`}>
-                Build Tangama with us.
-              </h2>
-              <p className="mt-5 max-w-lg leading-relaxed opacity-80">
-                Read our investor brief: the opportunity, the model, exactly where we are today, and how capital will be
-                governed.
-              </p>
-            </div>
-            <Link href="/investors" className={`${L} inline-flex h-14 items-center justify-center self-start rounded-full px-8 text-[1.05rem] font-bold lg:justify-self-end`} style={{ background: C.gold, color: C.hide }}>
-              Read the investor brief
-            </Link>
+        <div className="grid items-center gap-10 border-y py-14 lg:grid-cols-[1.3fr_1fr]" style={{ borderColor: C.hide }}>
+          <div>
+            <p className={`${L} text-[0.95rem]`} style={{ color: C.clay }}>
+              For Kenyan investors and chamas
+            </p>
+            <h2 className={`${D} mt-4 max-w-2xl text-[2.6rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[3.4rem]`}>
+              Build Tangama with us.
+            </h2>
+            <p className="mt-5 max-w-lg leading-relaxed" style={{ color: C.mute }}>
+              Our investor brief sets out the opportunity, the model, exactly where we are today, and how capital will be
+              governed.
+            </p>
           </div>
+          <Link
+            href="/investors"
+            className={`${L} inline-flex h-14 items-center justify-center self-start rounded-full px-8 text-[1.05rem] font-bold lg:justify-self-end`}
+            style={{ background: C.hide, color: C.plaster }}
+          >
+            Read the investor brief
+          </Link>
         </div>
       </section>
 
       {/* Closing */}
-      <section style={{ background: C.clay, color: C.plaster }}>
+      <section className="border-t" style={{ background: C.plaster, color: C.hide, borderColor: "#E3DFD7" }}>
         <div className="mx-auto max-w-7xl px-6 py-24 text-center">
           <div className="flex justify-center">
             <BrandMark size={56} />
@@ -359,7 +355,7 @@ export function HomePage() {
             Be first in line when the herd arrives.
           </h2>
           <p className="mx-auto mt-5 max-w-md opacity-85">No payment, no commitment. We&apos;ll call you when programmes open.</p>
-          <Link href="/early-access" className={`${L} mt-10 inline-flex h-14 items-center rounded-full px-9 text-[1.05rem] font-bold`} style={{ background: C.plaster, color: C.hide }}>
+          <Link href="/early-access" className={`${L} mt-10 inline-flex h-14 items-center rounded-full px-9 text-[1.05rem] font-bold`} style={{ background: C.bark, color: C.plaster }}>
             Register interest
           </Link>
         </div>
