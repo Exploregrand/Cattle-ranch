@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import { Woodcut } from "@/components/brand/woodcut";
 import { BrandMark } from "@/components/brand/wordmark";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { photos } from "@/content/photos";
 import { farm } from "@/content/site";
 
 
@@ -22,18 +23,6 @@ const C = {
 const L = "label-caps";
 const D = "font-display";
 
-/** Kraal rails — a fence-line divider. */
-function Rails({ color = C.bark }: { color?: string }) {
-  return (
-    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="h-8 w-full" aria-hidden="true">
-      <path d="M0 12 H1200 M0 28 H1200" stroke={color} strokeWidth="3" opacity="0.8" />
-      {Array.from({ length: 25 }).map((_, i) => (
-        <rect key={i} x={i * 50 + 22} y="2" width="6" height="36" rx="2" fill={color} />
-      ))}
-    </svg>
-  );
-}
-
 const day = [
   { time: "Dawn", title: "Water and a once-over", body: "Every animal counted, watered and looked over before the day begins." },
   { time: "Morning", title: "Fresh-cut fodder", body: "Sugargraze, Napier and legumes cut from our own beds and fed the same day." },
@@ -43,9 +32,9 @@ const day = [
 ];
 
 const species = [
-  { id: "sheep", art: "sheep" as const, name: "Sheep", sw: "Kondoo", breeds: "Dorper · Red Maasai", bg: C.straw, ink: C.hide, paper: C.straw },
-  { id: "goats", art: "goat" as const, name: "Goats", sw: "Mbuzi", breeds: "Galla · Boer", bg: C.grass, ink: C.plaster, paper: C.grass },
-  { id: "cattle", art: "cattle" as const, name: "Cattle", sw: "Ng'ombe", breeds: "Boran · Sahiwal", bg: C.bark, ink: C.gold, paper: C.bark },
+  { id: "sheep", photo: "sheep" as const, name: "Sheep", sw: "Kondoo", breeds: "Dorper · Red Maasai" },
+  { id: "goats", photo: "goat" as const, name: "Goats", sw: "Mbuzi", breeds: "Galla · Boer" },
+  { id: "cattle", photo: "cattle" as const, name: "Cattle", sw: "Ng'ombe", breeds: "Boran · Sahiwal" },
 ];
 
 export function HomePage() {
@@ -56,55 +45,61 @@ export function HomePage() {
     >
       <SiteHeader />
 
-      {/* Hero */}
-      <section className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 pt-6 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:pb-24">
-        <div>
-          <p className={`${L} text-[0.95rem] font-semibold`} style={{ color: C.clay }}>
-            Isinya · Kajiado County · Kenya
-          </p>
-          <h1 className={`${D} mt-6 text-[3.3rem] font-medium leading-[0.98] tracking-[-0.03em] [font-variation-settings:'SOFT'_100] sm:text-[4.8rem] lg:text-[5.6rem]`}>
-            Own livestock,
-            <br />
-            raised on{" "}
-            <em className="font-normal" style={{ color: C.clay }}>
-              our land.
-            </em>
-          </h1>
-          <p className="mt-7 max-w-lg text-[1.1rem] leading-relaxed" style={{ color: C.mute }}>
-            Sheep, goats and cattle fed on fodder we grow ourselves, cared for by our own team — and every weigh-in,
-            treatment and shilling written down for you to see.
-          </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Link href="/early-access" className={`${L} inline-flex h-14 items-center justify-center rounded-full px-8 text-[1.05rem] font-bold`} style={{ background: C.clay, color: C.plaster }}>
-              Register interest
-            </Link>
-            <a href="#care" className={`${L} inline-flex h-14 items-center justify-center rounded-full border-2 px-8 text-[1.05rem] font-bold`} style={{ borderColor: C.hide }}>
-              How we care for them
-            </a>
+      {/* Hero — photograph-led */}
+      <section className="px-3 pt-3 sm:px-5 sm:pt-5">
+        <div className="relative isolate flex min-h-[640px] items-end overflow-hidden rounded-[2rem] sm:min-h-[720px] sm:rounded-[2.5rem] lg:min-h-[calc(100svh-7rem)]">
+          <Image
+            src={photos.cattle.src}
+            alt={photos.cattle.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="-z-10 object-cover object-[50%_45%] lg:object-[50%_70%]"
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1e1a16]/90 via-[#1e1a16]/35 to-transparent" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1e1a16]/70 via-[#1e1a16]/20 to-transparent" />
+
+          <div className="w-full px-6 pb-10 pt-40 sm:px-12 sm:pb-14 lg:px-16 lg:pb-16" style={{ color: C.plaster }}>
+            <p className={`${L} text-[0.95rem]`} style={{ color: C.gold }}>
+              Isinya · Kajiado County · Kenya
+            </p>
+            <h1 className={`${D} mt-5 max-w-3xl text-[3.2rem] font-medium leading-[0.98] tracking-[-0.03em] sm:text-[4.8rem] lg:text-[6rem]`}>
+              Own livestock,
+              <br />
+              raised on <em className="font-normal" style={{ color: C.gold }}>our land.</em>
+            </h1>
+            <div className="mt-8 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+              <p className="max-w-lg text-[1.1rem] leading-relaxed opacity-90">
+                Sheep, goats and cattle fed on fodder we grow ourselves and cared for by our own team — with every
+                weigh-in, treatment and shilling recorded for you to see.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/early-access" className={`${L} inline-flex h-14 items-center justify-center rounded-full px-8 text-[1.05rem] font-bold`} style={{ background: C.plaster, color: C.hide }}>
+                  Register interest
+                </Link>
+                <a href="#animals" className={`${L} inline-flex h-14 items-center justify-center rounded-full border-2 px-8 text-[1.05rem] font-bold`} style={{ borderColor: `${C.plaster}80` }}>
+                  See the animals
+                </a>
+              </div>
+            </div>
+            <dl className={`${L} mt-12 grid max-w-xl grid-cols-3 gap-6 border-t pt-6 text-[0.85rem]`} style={{ borderColor: `${C.plaster}33` }}>
+              {[
+                [`${farm.acres}`, "Acres in Isinya"],
+                [`${farm.beds}`, "Fodder beds"],
+                ["4", "Feed crops"],
+              ].map(([v, k]) => (
+                <div key={k}>
+                  <dd className="text-[2rem] font-bold leading-none tracking-normal">{v}</dd>
+                  <dt className="mt-1.5 opacity-75">{k}</dt>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
-
-        <figure className="relative">
-          <div className="relative aspect-square overflow-hidden rounded-[2.5rem]" style={{ background: C.clay }}>
-            <div className="absolute left-1/2 top-[14%] size-[62%] -translate-x-1/2 rounded-full" style={{ background: C.gold, opacity: 0.9 }} />
-            <Woodcut species="cattle" ink={C.hide} paper={C.clay} className="absolute inset-x-[10%] bottom-[8%] top-[12%] m-auto" title="Linocut of a zebu bull" />
-            <div className="absolute inset-x-0 bottom-0 h-1/4" style={{ background: `linear-gradient(to top, ${C.bark}aa, transparent)` }} />
-            <p className={`${L} absolute bottom-6 left-7 text-[0.9rem] font-semibold`} style={{ color: C.plaster }}>
-              Ng&apos;ombe · Zebu
-            </p>
-            <span className={`${L} absolute right-6 top-6 rounded-full px-3 py-1 text-[0.8rem] font-bold`} style={{ background: C.plaster, color: C.clay }}>
-              Opening after launch
-            </span>
-          </div>
-        </figure>
       </section>
 
-      <div className="px-6">
-        <Rails />
-      </div>
-
       {/* Animals */}
-      <section id="animals" className="mx-auto max-w-7xl px-6 py-24">
+      <section id="animals" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 sm:py-28">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <h2 className={`${D} max-w-2xl text-[2.6rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[3.8rem]`}>
             Three animals. One standard of care.
@@ -114,27 +109,47 @@ export function HomePage() {
           </p>
         </div>
         <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {species.map((s) => (
-            <Link key={s.id} href={`/early-access?interest=${s.id}`} className="group flex flex-col overflow-hidden rounded-[2rem]" style={{ background: s.bg }}>
-              <div className="flex h-80 items-center justify-center px-10 pt-10">
-                <Woodcut species={s.art} ink={s.ink} paper={s.paper} className="h-full max-w-full transition-transform duration-500 group-hover:-translate-y-1.5" />
-              </div>
-              <div className="flex items-end justify-between gap-4 px-7 pb-7 pt-2" style={{ color: s.id === "sheep" ? C.hide : C.plaster }}>
-                <div>
-                  <p className={`${D} text-[2.2rem] font-medium leading-none`}>{s.name}</p>
-                  <p className={`${L} mt-2 text-[0.9rem] font-semibold opacity-80`}>
-                    {s.sw} · {s.breeds}
-                  </p>
+          {species.map((s) => {
+            const photo = photos[s.photo];
+            return (
+              <Link
+                key={s.id}
+                href={`/early-access?interest=${s.id}`}
+                className="group relative isolate flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[2rem] p-6 sm:p-7"
+                style={{ color: C.plaster }}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="-z-10 object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  style={{ objectPosition: photo.position }}
+                />
+                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1e1a16]/85 via-[#1e1a16]/10 to-transparent" />
+                <span className={`${L} self-start rounded-full px-3 py-1.5 text-[0.8rem] font-bold`} style={{ background: C.plaster, color: C.hide }}>
+                  Opening after launch
+                </span>
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className={`${D} text-[2.6rem] font-medium leading-none`}>{s.name}</p>
+                    <p className={`${L} mt-2 text-[0.9rem] opacity-85`}>
+                      {s.sw} · {s.breeds}
+                    </p>
+                  </div>
+                  <span className={`${L} shrink-0 text-[0.9rem] font-bold underline underline-offset-4`}>Register →</span>
                 </div>
-                <span className={`${L} shrink-0 text-[0.85rem] font-bold underline underline-offset-4`}>Register →</span>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
+        <p className="mt-4 text-xs" style={{ color: C.mute }}>
+          Breed photography for illustration. Animals are not yet available.
+        </p>
       </section>
 
       {/* A day at Tangama */}
-      <section id="care" style={{ background: C.bark, color: C.plaster }}>
+      <section id="care" className="scroll-mt-24" style={{ background: C.bark, color: C.plaster }}>
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-28">
           <p className={`${L} text-[0.95rem] font-semibold`} style={{ color: C.gold }}>
             How every animal will be cared for
@@ -248,7 +263,7 @@ export function HomePage() {
       </section>
 
       {/* Feed first */}
-      <section id="farm" className="relative overflow-hidden" style={{ background: C.grass, color: C.plaster }}>
+      <section id="farm" className="relative scroll-mt-24 overflow-hidden" style={{ background: C.grass, color: C.plaster }}>
         <svg viewBox="0 0 1200 400" preserveAspectRatio="none" className="absolute inset-x-0 bottom-0 h-[30%] w-full opacity-[0.16]" aria-hidden="true">
           {Array.from({ length: 18 }).map((_, i) => (
             <path key={i} d={`M${600 + (i - 9) * 8} 0 L${-400 + i * 118} 400 L${-350 + i * 118} 400 Z`} fill={C.plaster} />
@@ -283,23 +298,29 @@ export function HomePage() {
       </section>
 
       {/* Qurbani */}
-      <section id="qurbani" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="grid items-center gap-10 overflow-hidden rounded-[2.5rem] px-8 py-12 sm:px-14 lg:grid-cols-[1.2fr_1fr]" style={{ background: C.straw }}>
-          <div>
-            <p className={`${L} text-[0.95rem] font-semibold`} style={{ color: C.clay }}>
+      <section id="qurbani" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24">
+        <div className="grid overflow-hidden rounded-[2.5rem] lg:grid-cols-2" style={{ background: C.straw }}>
+          <div className="relative min-h-[320px] lg:min-h-[520px]">
+            <Image
+              src={photos.goat.src}
+              alt={photos.goat.alt}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+              style={{ objectPosition: photos.goat.position }}
+            />
+          </div>
+          <div className="flex flex-col justify-center px-8 py-12 sm:px-14">
+            <p className={`${L} text-[0.95rem]`} style={{ color: C.clay }}>
               Seasonal · planned
             </p>
             <h2 className={`${D} mt-4 text-[2.6rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[3.6rem]`}>Qurbani, from a farm you know.</h2>
             <p className="mt-5 max-w-md leading-relaxed" style={{ color: C.mute }}>
               Healthy, well-fed goats and sheep reserved ahead of Eid al-Adha, prepared and delivered by our team.
             </p>
-            <Link href="/early-access?interest=qurbani" className={`${L} mt-8 inline-flex h-14 items-center rounded-full px-8 text-[1.05rem] font-bold`} style={{ background: C.hide, color: C.plaster }}>
+            <Link href="/early-access?interest=qurbani" className={`${L} mt-8 inline-flex h-14 items-center self-start rounded-full px-8 text-[1.05rem] font-bold`} style={{ background: C.hide, color: C.plaster }}>
               Notify me for Qurbani
             </Link>
-          </div>
-          <div className="flex justify-center gap-2">
-            <Woodcut species="goat" ink={C.bark} paper={C.straw} className="h-56 w-auto sm:h-72" />
-            <Woodcut species="sheep" ink={C.hide} paper={C.straw} className="h-40 w-auto self-end sm:h-52" />
           </div>
         </div>
       </section>

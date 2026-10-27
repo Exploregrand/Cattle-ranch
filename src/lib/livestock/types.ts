@@ -46,6 +46,8 @@ export interface Animal {
   feeding: FeedingRecord[];
   costs: CostRecord[];
   photos: { date: string; caption: string }[];
+  /** Cover photo URL. Real animals only ever show their own photos. */
+  coverPhoto?: string;
 }
 
 export interface FarmUpdate {

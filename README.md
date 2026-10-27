@@ -76,10 +76,13 @@ connected" preview, and early-access registrations are written to `.data/` local
 ## Brand
 
 Kraal direction: livestock-grounded, not tech. Branding-iron mark (`src/components/brand/wordmark.tsx`),
-linocut animal portraits (`src/components/brand/woodcut.tsx`), Fraunces for headlines and Barlow
+Fraunces for headlines and Barlow
 Condensed sale-yard labels, colours from lime plaster, red clay, dry grass, pasture, acacia bark and hide
-(tokens in `src/app/globals.css`). Real farm and animal photography should be added as it becomes
-available; stock photos are never used because they could be mistaken for our animals.
+(tokens in `src/app/globals.css`).
+
+Photography lives in `public/images` and is registered in `src/content/photos.ts`. These are breed and
+category images; they are never presented as specific Tangama animals or available stock. Real animals
+only show their own photos (`coverPhoto`). The app is installable (web manifest + icons).
 
 ## Payments
 

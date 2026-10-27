@@ -1,16 +1,19 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { Woodcut } from "@/components/brand/woodcut";
 import { Button } from "@/components/ui/button";
+import { photos } from "@/content/photos";
 
 export function EmptyHerd({ base }: { base: string }) {
   return (
     <div className="overflow-hidden rounded-[2rem] bg-cream-200">
-      <div className="flex items-end justify-center gap-4 px-6 pt-10">
-        <Woodcut species="goat" ink="#3a2a1f" paper="#e2d1ae" className="h-28 w-auto sm:h-36" />
-        <Woodcut species="cattle" ink="#1e1a16" paper="#e2d1ae" className="h-36 w-auto sm:h-44" />
-        <Woodcut species="sheep" ink="#1e1a16" paper="#e2d1ae" className="h-24 w-auto sm:h-28" />
+      <div className="grid h-44 grid-cols-3 gap-1 sm:h-56">
+        {(["sheep", "goat", "cattle"] as const).map((k) => (
+          <div key={k} className="relative">
+            <Image src={photos[k].src} alt="" fill sizes="(min-width: 640px) 33vw, 50vw" className="object-cover" style={{ objectPosition: photos[k].position }} />
+          </div>
+        ))}
       </div>
       <div className="px-6 pb-9 pt-8 sm:px-10 sm:pb-11">
         <h2 className="font-display text-[1.9rem] font-medium leading-tight tracking-[-0.02em] text-forest-950 sm:text-[2.4rem]">

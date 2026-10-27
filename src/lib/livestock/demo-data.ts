@@ -19,6 +19,7 @@ const sheep: Animal = {
   location: DEMO_LOCATION,
   status: "active",
   programme: "Managed ownership",
+  coverPhoto: "/images/sheep.jpg",
   ownership: { holder: "Amina W.", since: "2026-06-22", agreement: "MA-2026-014" },
   weights: [
     { date: "2026-06-22", kg: 28.4 },
@@ -68,6 +69,7 @@ const goat: Animal = {
   location: DEMO_LOCATION,
   status: "active",
   programme: "Managed ownership",
+  coverPhoto: "/images/goat.jpg",
   ownership: { holder: "Amina W.", since: "2026-07-06", agreement: "MA-2026-014" },
   weights: [
     { date: "2026-07-06", kg: 21.6 },
@@ -113,6 +115,7 @@ const steer: Animal = {
   location: "Tangama Farm, Isinya · Paddock 1",
   status: "active",
   programme: "Fattening programme",
+  coverPhoto: "/images/cattle.jpg",
   ownership: { holder: "Amina W.", since: "2026-06-15", agreement: "FP-2026-003" },
   weights: [
     { date: "2026-06-15", kg: 212 },

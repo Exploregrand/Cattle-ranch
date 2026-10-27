@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ImageIcon } from "lucide-react";
 
-import { Woodcut } from "@/components/brand/woodcut";
 import { GrowthChart } from "@/components/dashboard/growth-chart";
 import { SectionTitle } from "@/components/dashboard/page-header";
 import { Badge } from "@/components/ui/badge";
@@ -89,8 +89,12 @@ export function AnimalProfile({
           </Link>
         )}
         <div className="flex items-center gap-5 sm:gap-7">
-          <div className="flex size-24 shrink-0 items-center justify-center rounded-[1.75rem] bg-clay p-3 sm:size-32">
-            <Woodcut species={animal.species === "goats" ? "goat" : animal.species} ink="#1e1a16" paper="#b0502c" className="h-full w-auto" />
+          <div className="relative size-24 shrink-0 overflow-hidden rounded-[1.75rem] bg-cream-200 sm:size-32">
+            {animal.coverPhoto ? (
+              <Image src={animal.coverPhoto} alt={`${animal.breed} ${speciesLabel[animal.species].toLowerCase()}`} fill sizes="128px" className="object-cover" />
+            ) : (
+              <span className="label-caps flex h-full items-center justify-center px-2 text-center text-xs text-ink-muted">No photo yet</span>
+            )}
           </div>
           <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
