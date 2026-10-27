@@ -23,6 +23,21 @@ export async function setRegistrationStatus(_: ActionResult, formData: FormData)
   }
 }
 
+export async function setInvestorStatus(_: ActionResult, formData: FormData): Promise<ActionResult> {
+  try {
+    await assertStaff(true);
+    const input = z
+      .object({ id: z.string().uuid(), status: z.enum(["new", "contacted", "closed"]) })
+      .parse(fields(formData));
+    const sql = requireSql();
+    await sql`update investor_interest set status = ${input.status} where id = ${input.id}`;
+    refresh();
+    return done("Updated.");
+  } catch (e) {
+    return fail(e);
+  }
+}
+
 export async function addTransaction(_: ActionResult, formData: FormData): Promise<ActionResult> {
   try {
     const staff = await assertStaff(true);

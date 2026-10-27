@@ -325,6 +325,30 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Investors */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="relative isolate overflow-hidden rounded-[2.5rem] px-8 py-14 sm:px-14 sm:py-16" style={{ background: "#17130f", color: C.plaster }}>
+          <Image src={photos.cattle.src} alt="" fill sizes="100vw" className="-z-10 object-cover object-[50%_70%] opacity-30" />
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+            <div>
+              <p className={`${L} text-[0.95rem]`} style={{ color: C.gold }}>
+                For Kenyan investors and chamas
+              </p>
+              <h2 className={`${D} mt-4 max-w-2xl text-[2.6rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[3.6rem]`}>
+                Build Tangama with us.
+              </h2>
+              <p className="mt-5 max-w-lg leading-relaxed opacity-80">
+                Read our investor brief: the opportunity, the model, exactly where we are today, and how capital will be
+                governed.
+              </p>
+            </div>
+            <Link href="/investors" className={`${L} inline-flex h-14 items-center justify-center self-start rounded-full px-8 text-[1.05rem] font-bold lg:justify-self-end`} style={{ background: C.gold, color: C.hide }}>
+              Read the investor brief
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Closing */}
       <section style={{ background: C.clay, color: C.plaster }}>
         <div className="mx-auto max-w-7xl px-6 py-24 text-center">

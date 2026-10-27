@@ -48,3 +48,35 @@ export async function registrationCounts() {
   `;
   return rows[0] as Record<"total" | "new" | "sheep" | "goats" | "cattle" | "managed" | "qurbani", number>;
 }
+
+export interface InvestorLead {
+  id: string;
+  fullName: string;
+  phone: string;
+  email: string | null;
+  county: string;
+  investorType: string;
+  route: string;
+  ticket: string | null;
+  message: string | null;
+  status: "new" | "contacted" | "closed";
+  createdAt: Date;
+}
+
+export async function listInvestorInterest(): Promise<InvestorLead[]> {
+  const sql = requireSql();
+  const rows = await sql`select * from investor_interest order by created_at desc limit 500`;
+  return rows.map((r) => ({
+    id: r.id,
+    fullName: r.full_name,
+    phone: r.phone,
+    email: r.email,
+    county: r.county,
+    investorType: r.investor_type,
+    route: r.route,
+    ticket: r.ticket,
+    message: r.message,
+    status: r.status,
+    createdAt: r.created_at,
+  }));
+}

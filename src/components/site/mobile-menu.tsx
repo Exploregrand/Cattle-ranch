@@ -12,6 +12,7 @@ const links = [
   { href: "/#care", label: "Care" },
   { href: "/#farm", label: "The farm" },
   { href: "/#qurbani", label: "Qurbani" },
+  { href: "/investors", label: "Investors" },
   { href: "/sign-in", label: "Sign in" },
 ];
 

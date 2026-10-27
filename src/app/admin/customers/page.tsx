@@ -8,7 +8,8 @@ import { LeadStatusForm } from "@/components/admin/status-form";
 import { Badge } from "@/components/ui/badge";
 import { interestOptions } from "@/content/site";
 import { pageStaff } from "@/lib/admin/auth";
-import { listRegistrations, registrationCounts } from "@/lib/admin/crm";
+import { listInvestorInterest, listRegistrations, registrationCounts } from "@/lib/admin/crm";
+import { investorTypes, routes, tickets } from "@/content/investors";
 import { listCustomers } from "@/lib/admin/livestock";
 import { formatDate, TIME_ZONE } from "@/lib/format";
 import { cn } from "@/lib/utils";
@@ -26,7 +27,8 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
   if (!(await pageStaff("/admin/customers", true))) return null;
   const sp = await searchParams;
   const status = typeof sp.status === "string" && ["new", "contacted", "closed"].includes(sp.status) ? sp.status : undefined;
-  const [leads, counts, customers] = await Promise.all([listRegistrations(status), registrationCounts(), listCustomers()]);
+  const [leads, counts, customers, investors] = await Promise.all([listRegistrations(status), registrationCounts(), listCustomers(), listInvestorInterest()]);
+  const label = (list: readonly { value: string; label: string }[], v: string | null) => list.find((o) => o.value === v)?.label ?? "—";
 
   return (
     <>
@@ -115,6 +117,47 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
                 </li>
               );
             })}
+          </ul>
+        )}
+      </Panel>
+
+      <Panel title="Investor interest" className="mt-6" description="Kenyan investors and chamas who asked to be contacted. Expressions of interest only.">
+        {investors.length === 0 ? (
+          <p className="text-sm text-ink-muted">No investor interest yet. It arrives here from the investor brief at /investors.</p>
+        ) : (
+          <ul className="-my-5 divide-y divide-border">
+            {investors.map((inv) => (
+              <li key={inv.id} className="flex flex-col gap-4 py-5 lg:flex-row lg:items-start lg:justify-between">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="font-medium text-forest-950">{inv.fullName}</p>
+                    <Badge variant={inv.status === "new" ? "gold" : "soon"} className="capitalize">
+                      {inv.status}
+                    </Badge>
+                    <span className="text-xs text-ink-muted">{formatDate(isoDate(inv.createdAt))}</span>
+                  </div>
+                  <p className="mt-1 text-sm text-ink-soft">
+                    {inv.phone}
+                    {inv.email && ` · ${inv.email}`} · {inv.county}
+                  </p>
+                  <ul className="mt-2 flex flex-wrap gap-1.5 text-xs text-forest-900">
+                    <li className="rounded-full bg-cream-100 px-2.5 py-1">{label(investorTypes, inv.investorType)}</li>
+                    <li className="rounded-full bg-cream-100 px-2.5 py-1">{label(routes, inv.route)}</li>
+                    {inv.ticket && <li className="rounded-full bg-cream-100 px-2.5 py-1">{label(tickets, inv.ticket)}</li>}
+                  </ul>
+                  {inv.message && <p className="mt-2 max-w-2xl text-sm italic text-ink-soft">“{inv.message}”</p>}
+                </div>
+                <div className="flex flex-wrap items-end gap-2">
+                  <a href={`tel:${inv.phone}`} className="inline-flex h-11 items-center gap-2 rounded-full border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
+                    <Phone className="size-4" aria-hidden="true" /> Call
+                  </a>
+                  <a href={`https://wa.me/${inv.phone.replace("+", "")}`} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-full border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
+                    <MessageCircle className="size-4" aria-hidden="true" /> WhatsApp
+                  </a>
+                  <LeadStatusForm id={inv.id} status={inv.status} kind="investor" />
+                </div>
+              </li>
+            ))}
           </ul>
         )}
       </Panel>

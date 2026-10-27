@@ -8,6 +8,7 @@ export const siteNav = [
   { href: "/#care", label: "Care" },
   { href: "/#farm", label: "The farm" },
   { href: "/#qurbani", label: "Qurbani" },
+  { href: "/investors", label: "Investors" },
 ];
 
 export function SiteHeader() {

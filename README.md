@@ -17,10 +17,11 @@ offered. The product is built so that nothing implies otherwise.
 | `/sign-in` | Invite-only email magic-link sign-in (accounts are created by the team, never self sign-up) |
 | `/dashboard/*` | Customer dashboard: Home, My Livestock, animal profile, Explore, Account. Shows real records only |
 | `/demo/*` | The same dashboard with clearly labelled sample data, for design review |
+| `/investors` | Investor brief for Kenyan investors and chamas: sourced market facts, model, honest status, roadmap, proposed governance, and an expression-of-interest form (no offer, no payments) |
 | `/admin` | **Farm Ops** (staff only): overview, quick-record actions |
 | `/admin/fodder` | Live map of the 120 beds, bulk planting and activity by bed range, per-bed history, stock ledger |
 | `/admin/livestock` | Register animals (auto IDs `TGM-SH-0001`), weights, health, feeding, costs, sale/death/transfer, ownership |
-| `/admin/customers` | Early-access leads (call, WhatsApp, follow-up status) and customer accounts — admin only |
+| `/admin/customers` | Early-access leads, investor interest (call, WhatsApp, follow-up status) and customer accounts — admin only |
 | `/admin/finance` | KES ledger, period totals, realised per-animal margins — admin only |
 
 Farm Ops is fully separate from the customer platform: its own layout, navigation and role checks.
@@ -44,7 +45,7 @@ npx tsc --noEmit
 npm run build
 ```
 
-Farm Ops needs `DATABASE_URL` (Postgres with both migrations applied). In development without
+Farm Ops needs `DATABASE_URL` (Postgres with all migrations applied). In development without
 Supabase it signs you in automatically as a local owner; production always requires a real staff
 account (Supabase sign-in plus an `admin` or `farm_manager` role).
 
@@ -53,7 +54,7 @@ connected" preview, and early-access registrations are written to `.data/` local
 
 ### Connecting Supabase
 
-1. Create a Supabase project and run both files in `supabase/migrations/` in order.
+1. Create a Supabase project and run every file in `supabase/migrations/` in order.
 2. Copy `.env.example` to `.env.local` and fill in:
    ```
    NEXT_PUBLIC_SUPABASE_URL=...
@@ -88,3 +89,10 @@ only show their own photos (`coverPhoto`). The app is installable (web manifest 
 
 M-Pesa is planned but deliberately not integrated. No payment collection will be enabled without
 credentials, authorisation and testing.
+
+## Investors
+
+The investor brief collects **expressions of interest only**. No shares, securities or investment
+products are offered and no money is taken through the platform. Any raise or ownership programme must
+go through Kenyan legal and regulatory review (including Capital Markets Authority rules) and formal
+documentation first. The governance safeguards on the page are proposals to confirm with legal advisers.
