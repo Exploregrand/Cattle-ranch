@@ -1,6 +1,6 @@
-# Cattle Buy
+# Tangama Livestock
 
-Kenya's digital livestock platform, operated from Tangama Farm in Isinya, Kajiado County.
+Livestock ownership and management platform from Tangama Farm in Isinya, Kajiado County.
 Customers will be able to own professionally managed sheep, goats and cattle and follow each
 animal's weights, health, feeding, photos and itemised costs from their phone.
 
@@ -73,11 +73,13 @@ connected" preview, and early-access registrations are written to `.data/` local
 - A programme cannot be opened to the public until legal approval is recorded
   (`programme_requires_legal_approval` constraint).
 
-## Photography
+## Brand
 
-`src/content/media.ts` holds the photo slots (hero, farm, fodder). Until real Tangama photos are
-added under `public/images`, illustrated scenes are shown. Stock photos are never used, because
-they could be mistaken for our farm or animals.
+Kraal direction: livestock-grounded, not tech. Branding-iron mark (`src/components/brand/wordmark.tsx`),
+linocut animal portraits (`src/components/brand/woodcut.tsx`), Fraunces for headlines and Barlow
+Condensed sale-yard labels, colours from lime plaster, red clay, dry grass, pasture, acacia bark and hide
+(tokens in `src/app/globals.css`). Real farm and animal photography should be added as it becomes
+available; stock photos are never used because they could be mistaken for our animals.
 
 ## Payments
 

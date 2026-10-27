@@ -39,7 +39,7 @@ export function ExploreView() {
       <p className="mt-6 flex items-start gap-3 rounded-xl bg-cream-100 px-4 py-3.5 text-sm leading-relaxed text-ink-soft">
         <Info className="mt-0.5 size-4 shrink-0 text-gold-500" aria-hidden="true" />
         <span>
-          Programmes open only after commercial and legal review. Cattle Buy does not offer
+          Programmes open only after commercial and legal review. Tangama does not offer
           investments or guaranteed returns.
         </span>
       </p>

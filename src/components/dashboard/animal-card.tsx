@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
+import { Woodcut } from "@/components/brand/woodcut";
 import { Sparkline } from "@/components/dashboard/sparkline";
 import { formatKg, formatShortDate, formatSignedKg } from "@/lib/format";
 import { speciesLabel, weightSummary } from "@/lib/livestock/metrics";
@@ -13,8 +14,8 @@ export function AnimalCard({ animal, base }: { animal: Animal; base: string }) {
       href={`${base}/livestock/${animal.id}`}
       className="group flex items-center gap-4 rounded-2xl border border-border bg-white p-4 transition-[border-color,box-shadow] hover:border-forest-600/30 hover:shadow-[0_12px_32px_-24px_rgba(20,42,29,0.45)] sm:p-5"
     >
-      <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-forest-100 font-display text-lg font-medium text-forest-800">
-        {speciesLabel[animal.species][0]}
+      <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-cream-200 p-2">
+        <Woodcut species={animal.species === "goats" ? "goat" : animal.species} ink="#1e1a16" paper="#e2d1ae" className="h-full w-auto" />
       </div>
       <div className="min-w-0 flex-1">
         <p className="font-mono text-xs tracking-wide text-ink-muted">{animal.tag}</p>

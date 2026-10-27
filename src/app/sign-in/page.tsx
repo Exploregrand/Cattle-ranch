@@ -16,7 +16,7 @@ export default function SignInPage() {
       title="Customer sign in"
       body={
         configured
-          ? "For customers with livestock under Cattle Buy management. We'll email you a secure sign-in link."
+          ? "For customers with livestock under Tangama management. We'll email you a secure sign-in link."
           : "Customer accounts open when livestock programmes launch. Until then, you can explore the dashboard with sample data."
       }
     >

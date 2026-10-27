@@ -95,7 +95,7 @@ export async function getAnimal(id: string): Promise<AdminAnimal | null> {
     programmeId: a.programme_id,
     ownerId: owner?.customer_id ?? null,
     ownership: {
-      holder: owner ? owner.full_name ?? "Customer" : "Cattle Buy (farm-owned)",
+      holder: owner ? owner.full_name ?? "Customer" : "Tangama (farm-owned)",
       since: owner?.starts_on ?? a.intake_date,
       agreement: owner?.agreement_ref ?? undefined,
     },

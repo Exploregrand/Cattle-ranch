@@ -199,7 +199,7 @@ export function OwnerForm({
       <Hidden id={animalId} />
       <Field label="Owner">
         <Select name="customerId" defaultValue={currentOwnerId ?? ""}>
-          <option value="">Cattle Buy (farm-owned)</option>
+          <option value="">Tangama (farm-owned)</option>
           {customers.map((c) => (
             <option key={c.id} value={c.id}>
               {c.full_name ?? "Unnamed customer"}

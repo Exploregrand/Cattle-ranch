@@ -6,7 +6,7 @@ import { AuthFrame } from "@/components/site/auth-frame";
 
 export const metadata: Metadata = {
   title: "Early access",
-  description: "Register your interest in Cattle Buy's future sheep, goat, cattle and Qurbani programmes.",
+  description: "Register your interest in Tangama's future sheep, goat, cattle and Qurbani programmes.",
 };
 
 export default function EarlyAccessPage() {

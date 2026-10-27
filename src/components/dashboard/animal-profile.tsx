@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronLeft, ImageIcon } from "lucide-react";
 
+import { Woodcut } from "@/components/brand/woodcut";
 import { GrowthChart } from "@/components/dashboard/growth-chart";
 import { SectionTitle } from "@/components/dashboard/page-header";
 import { Badge } from "@/components/ui/badge";
@@ -87,18 +88,25 @@ export function AnimalProfile({
             {backLabel}
           </Link>
         )}
+        <div className="flex items-center gap-5 sm:gap-7">
+          <div className="flex size-24 shrink-0 items-center justify-center rounded-[1.75rem] bg-clay p-3 sm:size-32">
+            <Woodcut species={animal.species === "goats" ? "goat" : animal.species} ink="#1e1a16" paper="#b0502c" className="h-full w-auto" />
+          </div>
+          <div className="min-w-0">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="font-mono text-sm tracking-wide text-ink-muted">{animal.tag}</span>
-          <Badge variant={animal.status === "active" ? "default" : "soon"}>{statusLabel[animal.status]}</Badge>
-          {isDemo && <Badge variant="gold">Sample record</Badge>}
+              <span className="font-mono text-sm tracking-wide text-ink-muted">{animal.tag}</span>
+              <Badge variant={animal.status === "active" ? "default" : "soon"}>{statusLabel[animal.status]}</Badge>
+              {isDemo && <Badge variant="gold">Sample record</Badge>}
+            </div>
+            <h1 className="mt-2 font-display text-[2rem] font-medium leading-tight tracking-[-0.025em] text-forest-950 sm:text-4xl">
+              {animal.breed} {speciesLabel[animal.species].toLowerCase()}
+            </h1>
+            <p className="mt-1 text-ink-soft">
+              {animal.programme}
+              {age !== null && ` · ${formatAge(age)} old`}
+            </p>
+              </div>
         </div>
-        <h1 className="mt-2 font-display text-[2rem] font-medium leading-tight tracking-[-0.025em] text-forest-950 sm:text-4xl">
-          {animal.breed} {speciesLabel[animal.species].toLowerCase()}
-        </h1>
-        <p className="mt-1 text-ink-soft">
-          {animal.programme}
-          {age !== null && ` · ${formatAge(age)} old`}
-        </p>
       </div>
 
       {summary && (

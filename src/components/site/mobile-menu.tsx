@@ -6,16 +6,16 @@ import { Menu, X } from "lucide-react";
 
 import { Wordmark } from "@/components/brand/wordmark";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "/#livestock", label: "Livestock" },
-  { href: "/#how-it-works", label: "How it works" },
-  { href: "/#farm", label: "Our farm" },
+  { href: "/#animals", label: "Animals" },
+  { href: "/#care", label: "Care" },
+  { href: "/#farm", label: "The farm" },
+  { href: "/#qurbani", label: "Qurbani" },
   { href: "/sign-in", label: "Sign in" },
 ];
 
-export function MobileMenu({ tone }: { tone: "light" | "dark" }) {
+export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -40,10 +40,7 @@ export function MobileMenu({ tone }: { tone: "light" | "dark" }) {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen(true)}
-        className={cn(
-          "inline-flex size-11 items-center justify-center rounded-full",
-          tone === "light" ? "text-cream-50 hover:bg-cream-50/10" : "text-forest-900 hover:bg-cream-100",
-        )}
+        className="inline-flex size-11 items-center justify-center rounded-full text-forest-950 hover:bg-cream-100"
       >
         <Menu className="size-5" />
       </button>
@@ -54,7 +51,7 @@ export function MobileMenu({ tone }: { tone: "light" | "dark" }) {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="fixed inset-0 z-50 flex flex-col bg-forest-950 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4 text-cream-50 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex flex-col bg-forest-900 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4 text-cream-50 animate-in fade-in duration-200"
         >
           <div className="flex h-14 items-center justify-between">
             <Wordmark tone="light" />
@@ -81,9 +78,9 @@ export function MobileMenu({ tone }: { tone: "light" | "dark" }) {
             ))}
           </nav>
           <div className="mt-auto">
-            <Button asChild variant="gold" size="lg" className="w-full">
+            <Button asChild size="lg" className="label-caps h-14 w-full bg-clay text-[1.05rem] text-cream-50 hover:bg-gold-400 hover:text-forest-950">
               <Link href="/early-access" onClick={() => setOpen(false)}>
-                Register for early access
+                Register interest
               </Link>
             </Button>
           </div>

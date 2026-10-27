@@ -152,7 +152,7 @@ export function EarlyAccessForm() {
             aria-describedby={errors.consent ? "consent-error" : undefined}
           />
           <span>
-            Cattle Buy may contact me by phone, SMS or email about the programmes I selected. I
+            Tangama may contact me by phone, SMS or email about the programmes I selected. I
             understand nothing is being sold or reserved by registering.
           </span>
         </label>

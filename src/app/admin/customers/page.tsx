@@ -119,7 +119,7 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
         )}
       </Panel>
 
-      <Panel title="Customer accounts" className="mt-6" description="People with a Cattle Buy account and their allocated animals.">
+      <Panel title="Customer accounts" className="mt-6" description="People with a Tangama account and their allocated animals.">
         {customers.length === 0 ? (
           <p className="text-sm text-ink-muted">
             No customer accounts yet. Accounts are created when a customer is onboarded to a programme; their animals are then assigned from

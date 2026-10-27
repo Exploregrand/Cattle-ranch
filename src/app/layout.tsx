@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
+import { Barlow_Condensed, Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +13,12 @@ const fraunces = Fraunces({
   axes: ["opsz", "SOFT"],
 });
 
+const barlow = Barlow_Condensed({
+  variable: "--font-barlow",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
@@ -21,15 +27,15 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cattle Buy — Livestock with transparent records",
-    template: "%s · Cattle Buy",
+    default: "Tangama Livestock — Isinya, Kajiado",
+    template: "%s · Tangama Livestock",
   },
   description:
-    "Cattle Buy is a Kenyan livestock platform with transparent, digitally recorded animals, operated from Tangama Farm in Isinya, Kajiado County. Register for early access.",
+    "Own sheep, goats and cattle raised on our own fodder in Isinya, Kajiado County — with every weigh-in, treatment and cost recorded for you. Register for early access.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#142a1d",
+  themeColor: "#3a2a1f",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -39,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-KE"
-      className={`${inter.variable} ${fraunces.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${fraunces.variable} ${plexMono.variable} ${barlow.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

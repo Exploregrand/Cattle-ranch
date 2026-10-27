@@ -1,24 +1,24 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { Landscape } from "@/components/brand/landscape";
+import { Woodcut } from "@/components/brand/woodcut";
 import { Button } from "@/components/ui/button";
 
 export function EmptyHerd({ base }: { base: string }) {
   return (
-    <div className="overflow-hidden rounded-[1.5rem] border border-border bg-white">
-      <div className="relative h-36 sm:h-44">
-        <Landscape scene="day" id="empty-herd" className="absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
+    <div className="overflow-hidden rounded-[2rem] bg-cream-200">
+      <div className="flex items-end justify-center gap-4 px-6 pt-10">
+        <Woodcut species="goat" ink="#3a2a1f" paper="#e2d1ae" className="h-28 w-auto sm:h-36" />
+        <Woodcut species="cattle" ink="#1e1a16" paper="#e2d1ae" className="h-36 w-auto sm:h-44" />
+        <Woodcut species="sheep" ink="#1e1a16" paper="#e2d1ae" className="h-24 w-auto sm:h-28" />
       </div>
-      <div className="px-6 pb-8 pt-2 sm:px-10 sm:pb-10">
-        <h2 className="font-display text-2xl font-medium tracking-[-0.02em] text-forest-950 sm:text-3xl">
-          Your livestock will appear here
+      <div className="px-6 pb-9 pt-8 sm:px-10 sm:pb-11">
+        <h2 className="font-display text-[1.9rem] font-medium leading-tight tracking-[-0.02em] text-forest-950 sm:text-[2.4rem]">
+          Your herd starts here
         </h2>
         <p className="mt-3 max-w-xl leading-relaxed text-ink-soft">
-          You don&apos;t have any animals yet. Once livestock programmes open, each animal you
-          own or have under Cattle Buy management will be listed here with its weights, health
-          records, feeding and photos.
+          You don&apos;t have any animals yet. When programmes open, every animal you own will appear here with its ear-tag ID,
+          weigh-ins, health records, feeding and photos.
         </p>
         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
           <Button asChild>
@@ -28,7 +28,7 @@ export function EmptyHerd({ base }: { base: string }) {
             </Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/demo">Preview with sample data</Link>
+            <Link href="/demo">Preview with sample animals</Link>
           </Button>
         </div>
       </div>
