@@ -52,12 +52,12 @@ export function Hero() {
     <section>
       <div className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:min-h-[680px] lg:min-h-[calc(100svh-4.5rem)]">
         <Image
-          src={farmPhotos.herdCurious.src}
-          alt={farmPhotos.herdCurious.alt}
+          src={farmPhotos.herdGrazing.src}
+          alt={farmPhotos.herdGrazing.alt}
           fill
           priority
           sizes="100vw"
-          className="-z-10 object-cover object-[60%_35%] lg:object-[50%_40%]"
+          className="-z-10 object-cover object-[60%_50%] lg:object-[50%_55%]"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1c1b19]/90 via-[#1c1b19]/30 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1c1b19]/65 via-[#1c1b19]/15 to-transparent" />

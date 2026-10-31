@@ -19,7 +19,7 @@ export default function LivestockPage() {
           eyebrow="Livestock"
           title="The animals we'll raise."
           lead="Breeds that thrive in Kajiado, fed on fodder from our own farms. Choose an animal to see its breeds, feeding, care and how to own one."
-          photo={{ ...farmPhotos.herdGrazing, position: "50% 55%" }}
+          photo={{ ...farmPhotos.herdCurious, position: "50% 35%" }}
         />
         <AnimalsSection />
         <Closing />
