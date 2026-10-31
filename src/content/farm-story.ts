@@ -41,6 +41,6 @@ export const plantingStory = [
   { step: "Prepare", title: "Composted beds and drip lines", photo: "prepWorker" as const },
   { step: "Plant", title: "Seed into moist, fed soil", photo: "bedsCattle" as const },
   { step: "Tend", title: "Rows checked and cared for by hand", photo: "tending" as const },
-  { step: "Grow", title: "Green fodder, weeks later", photo: "rowsGreen" as const },
+  { step: "Grow", title: "Green fodder, weeks later", photo: "rowsTrees" as const },
   { step: "Harvest", title: "Cut fresh and fed the same day", photo: "napierCut" as const },
 ];

@@ -6,7 +6,7 @@
 export const pathways = [
   {
     id: "own",
-    photo: "sheep" as const,
+    photo: "herdCurious" as const,
     title: "Own managed livestock",
     body: "Own a specific, ear-tagged animal. We house, feed and care for it on our farm; you follow every record from your phone.",
     cta: "Register interest",
@@ -22,7 +22,7 @@ export const pathways = [
   },
   {
     id: "invest",
-    photo: "cattle" as const,
+    photo: "cowResting" as const,
     title: "Invest in livestock",
     body: "For Kenyan investors and chamas who want to own a number of animals, raised and managed for them on our farms.",
     cta: "Read the investor brief",
@@ -53,7 +53,7 @@ export const buyerFaqs = [
   },
   {
     q: "Who is behind Herd & Field?",
-    a: "Herd & Field is a Tangama Farm company: two working fodder farms of 2.17 and 2.5 acres, based in Isinya, Kajiado County, with a further 5 acres planned for early 2027. Our team lives on the farm, with housing for staff and animals — the same people who grow the feed will care for your animal.",
+    a: "Herd & Field is a Tangama Farm company: farming 4.67 acres in Isinya, Kajiado County, with 5 more acres from January 2027. Our team lives on the farm, with housing for staff and animals — the same people who grow the feed will care for your animal.",
   },
   {
     q: "What happens if my animal falls ill or dies?",

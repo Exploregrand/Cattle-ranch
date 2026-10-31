@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Instrument_Sans, Newsreader } from "next/font/google";
+import { Suspense } from "react";
+
+import { ScrollToTop } from "@/components/site/scroll-to-top";
 import "./globals.css";
 
 /** Headings: Newsreader — an editorial serif with optical sizing; calm and established. */
@@ -43,9 +46,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-KE"
+      data-scroll-behavior="smooth"
       className={`${serif.variable} ${sans.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Suspense fallback={null}>
+          <ScrollToTop />
+        </Suspense>
+        {children}
+      </body>
     </html>
   );
 }

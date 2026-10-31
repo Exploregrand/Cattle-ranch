@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { LiveProgress } from "@/components/home/live-progress";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/content/contact";
-import { FarmCatCard, OrganicPractices, PlantingStory } from "@/components/sections/farm-story";
+import { FarmGallery, OrganicPractices, PlantingStory } from "@/components/sections/farm-story";
 import { farmPhotos } from "@/content/farm-story";
 import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The farm",
-  description: "Herd & Field's two farms — 2.17 and 2.5 acres, based in Isinya, Kajiado County — with a further 5 acres planned for early 2027, and live progress from our farm records.",
+  description: "Herd & Field farms 4.67 acres in Isinya, Kajiado County, with 5 more acres from January 2027 — organic practices, our own fodder and room for the herd.",
 };
 
 const wrap = "mx-auto w-full max-w-7xl px-6 sm:px-8";
@@ -29,26 +27,12 @@ export default function FarmPage() {
             <p className="eyebrow">Our farms · Kajiado County</p>
             <h1 className="t-display mt-5 max-w-[12ch]">Where every animal will be raised.</h1>
             <p className="t-lead mt-6 max-w-xl text-ink-soft">
-              Two farms of {farm.farms.map((f) => f.acres).join(" and ")} acres, based in Isinya, south of Nairobi in Kajiado County —
-              about {farm.acres} acres under cultivation today and a further {farm.expansion.acres} acres planned for{" "}
-              {farm.expansion.timing}. We&apos;re building in the right order: feed first, then the herd — and recording all of it.
+              {farm.acres} acres in Isinya, south of Nairobi in Kajiado County, with {farm.expansion.acres} more acres coming into
+              cultivation in {farm.expansion.timing}. We&apos;re building in the right order: feed first, then the herd.
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image src={farmPhotos.rowsGreen.src} alt={farmPhotos.rowsGreen.alt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover object-[50%_60%]" />
-          </div>
-        </section>
-
-        <section className={`${wrap} section-y`}>
-          <p className="eyebrow">Live from the farm</p>
-          <h2 className="t-h1 mt-4 max-w-[20ch]">What&apos;s happening, as recorded.</h2>
-          <p className="t-body mt-5 max-w-xl text-ink-soft">
-            These figures update from the same records our farm team keeps every day — plantings, irrigation, harvests and stock.
-          </p>
-          <div className="mt-10">
-            <Suspense fallback={<div className="h-32 border-t border-ink/15" />}>
-              <LiveProgress />
-            </Suspense>
           </div>
         </section>
 
@@ -82,19 +66,9 @@ export default function FarmPage() {
               </div>
             ))}
           </dl>
-          <dl className="mt-12 grid gap-4 sm:grid-cols-2">
-            {farm.farms.map((f) => (
-              <div key={f.name} className="rounded-xl border border-border bg-white p-6">
-                <dt className="eyebrow">{f.location ?? "Second farm"}</dt>
-                <dd className="t-figure mt-3 text-[2.5rem]">
-                  {f.acres} <span className="text-[1.25rem] text-ink-muted">acres</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
         </section>
 
-        <FarmCatCard />
+        <FarmGallery />
 
         <section className={`${wrap} section-y border-t border-border grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end`}>
           <div>

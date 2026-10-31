@@ -7,6 +7,7 @@ import { BrandMark } from "@/components/brand/wordmark";
 import { Button } from "@/components/ui/button";
 import { FaqList } from "@/components/home/faq-list";
 import { LiveProgress } from "@/components/home/live-progress";
+import { getFarmProgress } from "@/lib/public-stats";
 import { agreementCovers, buyerFaqs, howItWorks, pathways } from "@/content/buyer";
 import { contact, hasContact } from "@/content/contact";
 import { farmPhotos } from "@/content/farm-story";
@@ -35,9 +36,9 @@ const record = [
 ];
 
 const farmFigures = [
-  [`${farm.farms.length}`, "Farms"],
-  [`${farm.totalAcres}`, "Acres"],
+  [`${farm.acres}`, "Acres in Isinya"],
   [`${farm.fodder.length}`, "Fodder crops"],
+  [`+${farm.expansion.acres}`, `Acres from ${farm.expansion.timing.split(" ")[0]}`],
 ];
 
 
@@ -111,7 +112,7 @@ export function Pathways() {
       <h2 className="t-h1 mt-4 max-w-[18ch]">Find the right place to start.</h2>
       <div className="mt-12 grid gap-4 md:grid-cols-3 lg:gap-5">
         {pathways.map((p) => {
-          const photo = photos[p.photo];
+          const photo = p.photo in farmPhotos ? { position: "50% 40%", ...farmPhotos[p.photo as keyof typeof farmPhotos] } : photos[p.photo as keyof typeof photos];
           return (
             <Link key={p.id} href={p.href} className="group flex flex-col overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-ink/40">
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -202,7 +203,7 @@ export function AnimalsSection() {
 
       <div className="mt-12 grid gap-4 md:grid-cols-3 lg:gap-5">
         {species.map((s) => {
-          const photo = photos[s.photo];
+          const photo = s.id === "cattle" ? { ...farmPhotos.cowPortrait, position: "50% 30%" } : photos[s.photo];
           return (
             <Link
               key={s.id}
@@ -341,37 +342,68 @@ export function RecordSection() {
 }
 
 
-export function FarmLive() {
+/** Home only. Renders nothing until real work has been recorded in Farm Ops. */
+async function FarmLiveContent() {
+  const progress = await getFarmProgress();
+  if (!progress) return null;
   return (
-    <>
-    {/* The farm, live */}
     <section id="farm" className="scroll-mt-20 border-y border-border bg-white">
       <div className={`${wrap} section-y`}>
         <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div>
-            <p className="eyebrow">The farm, live</p>
-            <h2 className="t-h1 mt-4">Feed first. Then the herd.</h2>
+            <p className="eyebrow">Live from the farm</p>
+            <h2 className="t-h1 mt-4">What our records show this month.</h2>
           </div>
-          <p className="t-lead text-ink-soft">
-            We&apos;re growing the feed that will raise every animal — Sugargraze, Super Napier, alfalfa and desmodium across our two
-            farms, with {farm.expansion.acres} more acres planned for {farm.expansion.timing}. These figures come straight from our
-            farm records.
-          </p>
+          <p className="t-lead text-ink-soft">Straight from the field records our team keeps every day — not marketing figures.</p>
         </div>
         <div className="mt-12">
-          <Suspense fallback={<div className="h-32 border-t border-ink/15" />}>
-            <LiveProgress />
-          </Suspense>
+          <LiveProgress />
         </div>
-        <Link href="/farm" className="label-caps mt-8 inline-flex items-center gap-2 text-[0.8125rem] text-ink underline-offset-4 hover:underline">
-          More about the farm <ArrowRight className="size-4" aria-hidden="true" />
-        </Link>
       </div>
     </section>
-    </>
   );
 }
 
+export function FarmLive() {
+  return (
+    <Suspense fallback={null}>
+      <FarmLiveContent />
+    </Suspense>
+  );
+}
+
+/** Home only: why buyers can trust us, in one place. */
+export function WhyUs() {
+  const points = [
+    { title: "We grow the feed", body: "Every animal is raised on fodder from our own land, so we control quality and cost.", href: "/farm", cta: "Our farm" },
+    { title: "You see every record", body: "Weigh-ins, treatments and costs logged as they happen, on your phone.", href: "/how-it-works", cta: "How it works" },
+    { title: "Terms before money", body: "A signed agreement sets out price, care and outcome before you pay anything.", href: "/how-it-works", cta: "What it covers" },
+  ];
+  return (
+    <section className={`${wrap} section-y grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20`}>
+      <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
+        <Image src={farmPhotos.napierStand.src} alt={farmPhotos.napierStand.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
+      </div>
+      <div>
+        <p className="eyebrow">Why Herd &amp; Field</p>
+        <h2 className="t-h1 mt-4 max-w-[16ch]">A working farm that writes everything down.</h2>
+        <ul className="mt-10 border-t border-ink/15">
+          {points.map((pt) => (
+            <li key={pt.title} className="grid gap-2 border-b border-ink/10 py-6 sm:grid-cols-[1fr_auto] sm:items-end sm:gap-8">
+              <div>
+                <p className="t-h3">{pt.title}</p>
+                <p className="t-body mt-1.5 text-ink-soft">{pt.body}</p>
+              </div>
+              <Link href={pt.href} className="label-caps inline-flex items-center gap-1.5 text-[0.75rem] text-ink hover:underline">
+                {pt.cta} <ArrowRight className="size-3.5" aria-hidden="true" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
 export function Questions() {
   return (
@@ -392,7 +424,12 @@ export function Questions() {
 }
 
 
-export function Closing() {
+export function Closing({
+  title = "Be first in line when the herd arrives.",
+  body = "No payment, no commitment. We'll call you when programmes open.",
+  cta = "Register interest",
+  href = "/early-access",
+}: { title?: string; body?: string; cta?: string; href?: string } = {}) {
   return (
     <>
     {/* Closing */}
@@ -401,12 +438,10 @@ export function Closing() {
         <div className="flex justify-center text-ink">
           <BrandMark size={44} />
         </div>
-        <h2 className="t-h1 mx-auto mt-7 max-w-[18ch]">Be first in line when the herd arrives.</h2>
-        <p className="t-body mx-auto mt-5 max-w-md text-ink-soft">
-          No payment, no commitment. We&apos;ll call you when programmes open.
-        </p>
+        <h2 className="t-h1 mx-auto mt-7 max-w-[18ch]">{title}</h2>
+        <p className="t-body mx-auto mt-5 max-w-md text-ink-soft">{body}</p>
         <Button asChild size="lg" className="mt-9">
-          <Link href="/early-access">Register interest</Link>
+          <Link href={href}>{cta}</Link>
         </Button>
         {hasContact && (
           <p className="mt-8 text-[0.9375rem] text-ink-soft">

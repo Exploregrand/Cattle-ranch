@@ -8,7 +8,6 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { marketFacts, sources } from "@/content/investors";
 import { farmPhotos } from "@/content/farm-story";
-import { photos } from "@/content/photos";
 import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -27,8 +26,8 @@ const chapters = [
 ];
 
 const today = [
-  { status: "In place", title: `Two farms, ${farm.totalAcres} acres`, body: `${farm.farms.map((f) => `${f.acres} acres`).join(" and ")}, with about ${farm.acres} acres under cultivation for fodder.` },
-  { status: "Planned", title: `Expansion by ${farm.expansion.acres} acres`, body: `A further ${farm.expansion.acres} acres planned for ${farm.expansion.timing}, more than doubling the land under cultivation.` },
+  { status: "In place", title: `${farm.acres} acres in Isinya`, body: "Land under cultivation for fodder today, with room for the herd." },
+  { status: "Planned", title: `${farm.expansion.acres} more acres in ${farm.expansion.timing}`, body: "More than doubling the land under cultivation." },
   { status: "In place", title: "Staff housing, animal housing and amenities", body: "Facilities on the farm for the team who live there and the animals they will care for." },
     { status: "In progress", title: "Four fodder crops being established", body: "Sugargraze, Super Napier, alfalfa and desmodium — our own feed base." },
   { status: "In place", title: "Operating platform built", body: "Fodder records, animal registers, health, weights, costs and owner dashboards." },
@@ -37,7 +36,7 @@ const today = [
 ];
 
 const roadmap = [
-  { phase: "Phase 1", title: "Feed", body: "Fodder on 4 acres today, expanding by 5 more in early 2027, with the operating system in place.", now: true },
+  { phase: "Phase 1", title: "Feed", body: "Fodder established on our own land, with the operating system in place.", now: true },
   { phase: "Phase 2", title: "Farm herd", body: "Bring in a first farm-owned herd and run the full record cycle on it." },
   { phase: "Phase 3", title: "Managed ownership", body: "Open ownership programmes to Kenyan customers, after legal review." },
   { phase: "Phase 4", title: "Scale & seasons", body: "Grow capacity and add seasonal services such as Qurbani." },
@@ -94,21 +93,20 @@ export default function InvestorsPage() {
             <figure>
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <Image
-                  src={photos.cattle.src}
-                  alt={photos.cattle.alt}
+                  src={farmPhotos.herdCurious.src}
+                  alt={farmPhotos.herdCurious.alt}
                   fill
                   priority
                   sizes="(min-width: 1024px) 45vw, 100vw"
-                  className="object-cover object-[50%_68%]"
+                  className="object-cover object-[50%_30%]"
                 />
               </div>
             </figure>
           </div>
-          <dl className="mt-14 grid grid-cols-1 border-y border-forest-950 sm:grid-cols-2 lg:grid-cols-4">
+          <dl className="mt-14 grid grid-cols-1 border-y border-forest-950 sm:grid-cols-3">
             {[
               ["Company", "Herd & Field · a Tangama Farm company"],
                 ["Stage", "Pre-launch · building the feed base"],
-              ["Land", `2 farms · ${farm.totalAcres} acres · +${farm.expansion.acres} planned`],
               ["Offer", "None open — expressions of interest only"],
             ].map(([k, v]) => (
               <div key={k} className="border-border py-5 sm:border-l sm:px-8 sm:first:border-l-0 sm:first:pl-0 [&:not(:first-child)]:border-t sm:[&:not(:first-child)]:border-t-0">
@@ -183,11 +181,11 @@ export default function InvestorsPage() {
               <div className="mt-16 grid overflow-hidden rounded-xl border border-border bg-paper lg:grid-cols-2">
                 <div className="relative min-h-[260px]">
                   <Image
-                    src={farmPhotos.herdGrazing.src}
-                    alt={farmPhotos.herdGrazing.alt}
+                    src={farmPhotos.cowResting.src}
+                    alt={farmPhotos.cowResting.alt}
                     fill
                     sizes="(min-width: 1024px) 40vw, 100vw"
-                    className="object-cover object-[30%_55%]"
+                    className="object-cover object-[40%_45%]"
                   />
                 </div>
                 <div className="p-7 sm:p-10">

@@ -1,5 +1,4 @@
 import { cropName } from "@/components/admin/fodder-ui";
-import { farm } from "@/content/site";
 import { formatDate, formatKg } from "@/lib/format";
 import { getFarmProgress } from "@/lib/public-stats";
 
@@ -13,18 +12,12 @@ export async function LiveProgress({ tone = "light" }: { tone?: "light" | "dark"
   const rule = dark ? "border-cream-50/15" : "border-ink/15";
   const label = dark ? "eyebrow !text-[0.75rem] !text-cream-50/60" : "eyebrow !text-[0.75rem]";
 
-  const figures: [string, string][] = p
-    ? [
+  if (!p) return null;
+  const figures: [string, string][] = [
         [`${p.crops.length}`, "Fodder crops in the ground"],
         [formatKg(Math.round(p.harvestKgTotal)), "Fodder harvested to date"],
         [`${p.workLogged30d}`, "Field records, last 30 days"],
         [`${p.animalsOnFarm}`, "Animals on the farm"],
-      ]
-    : [
-        [`${farm.farms.length} · ${farm.totalAcres}`, "Farms · acres"],
-        [`${farm.fodder.length}`, "Fodder crops"],
-        [`${farm.fodder.length}`, "Feed crops"],
-        ["0", "Animals — not yet launched"],
       ];
 
   return (
@@ -40,7 +33,7 @@ export async function LiveProgress({ tone = "light" }: { tone?: "light" | "dark"
           </div>
         ))}
       </dl>
-      {p && (
+      {(
         <p className={`mt-5 text-[0.8125rem] ${dark ? "text-cream-50/55" : "text-ink-muted"}`}>
           Live from our Farm Ops records
           {p.lastRecordedOn && <> · last entry {formatDate(p.lastRecordedOn)}</>}

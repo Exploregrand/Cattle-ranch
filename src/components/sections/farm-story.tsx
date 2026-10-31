@@ -89,3 +89,27 @@ export function FarmCatCard() {
     </section>
   );
 }
+
+/** Farm page: life around the farm, in our own photographs. */
+export function FarmGallery() {
+  const shots = [
+    { ...farmPhotos.herdCurious, span: "md:col-span-2 md:row-span-2", pos: "50% 35%" },
+    { ...farmPhotos.cowResting, span: "", pos: "40% 45%" },
+    { ...farmPhotos.napierStand, span: "", pos: "50% 50%" },
+    { ...farmPhotos.herdGrazing, span: "", pos: "30% 55%" },
+    { ...farmPhotos.cowPortrait, span: "", pos: "50% 30%" },
+  ];
+  return (
+    <section className={`${wrap} section-y`}>
+      <p className="eyebrow">Around the farm</p>
+      <h2 className="t-h1 mt-4 max-w-[18ch]">Life on the land in Isinya.</h2>
+      <div className="mt-12 grid auto-rows-[220px] grid-cols-2 gap-3 md:auto-rows-[260px] md:grid-cols-4 lg:gap-4">
+        {shots.map((p) => (
+          <figure key={p.src} className={`relative overflow-hidden rounded-xl ${p.span}`}>
+            <Image src={p.src} alt={p.alt} fill sizes="(min-width: 768px) 33vw, 50vw" className="object-cover" style={{ objectPosition: p.pos }} />
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}

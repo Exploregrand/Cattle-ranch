@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-import { CareDay, Closing, HowItWorks, PageIntro, Questions, RecordSection } from "@/components/sections";
+import { CareDay, Closing, HowItWorks, PageIntro, RecordSection } from "@/components/sections";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { photos } from "@/content/photos";
+import { farmPhotos } from "@/content/farm-story";
 
 export const metadata: Metadata = {
   title: "How it works",
@@ -20,14 +20,16 @@ export default function HowItWorksPage() {
           eyebrow="How it works"
           title="Clear steps. Every record kept."
           lead="From registering your interest to collecting your animal: what happens at each step, what your agreement will cover, how your animal is cared for and what you'll see."
-          photo={photos.sheep}
+          photo={{ ...farmPhotos.tending, position: "50% 60%" }}
         />
         <div className="h-[clamp(3rem,2rem+3vw,5rem)]" />
         <HowItWorks />
         <CareDay />
         <RecordSection />
-        <Questions />
-        <Closing />
+        <Closing
+          title="Ready when you are."
+          body="Register now. When programmes open, we'll walk you through each step before you commit to anything."
+        />
       </main>
       <SiteFooter />
     </>

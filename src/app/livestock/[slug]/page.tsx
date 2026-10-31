@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check, ChevronRight } from "lucide-react";
 
-import { Closing, wrap } from "@/components/sections";
+import { wrap } from "@/components/sections";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { Button } from "@/components/ui/button";
@@ -162,7 +162,6 @@ export default async function SpeciesPage({ params }: PageProps<"/livestock/[slu
       <SiteHeader />
       <main className="bg-cream-50 text-ink">
         <SpeciesContent params={params} />
-        <Closing />
       </main>
       <SiteFooter />
     </>

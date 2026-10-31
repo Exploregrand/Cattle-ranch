@@ -12,7 +12,7 @@ const links = [
   { href: "/sign-in", label: "Owner sign in" },
   { href: "/farm", label: "The farm" },
   { href: "/demo", label: "App preview" },
-  { href: "/how-it-works#questions", label: "Questions" },
+  { href: "/#questions", label: "Questions" },
   { href: "/investors", label: "Investors" },
   { href: "/privacy", label: "Privacy" },
 ];

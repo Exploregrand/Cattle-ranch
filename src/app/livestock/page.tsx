@@ -22,7 +22,10 @@ export default function LivestockPage() {
           photo={{ ...farmPhotos.herdCurious, position: "50% 35%" }}
         />
         <AnimalsSection />
-        <Closing />
+        <Closing
+          title="Tell us which animal you want."
+          body="Register for sheep, goats or cattle and we'll contact you first when they become available."
+        />
       </main>
       <SiteFooter />
     </>
