@@ -1,5 +1,5 @@
 import { AnimalsSection, CareDay, Closing, FarmLive, Hero, HowItWorks, Pathways, Questions, RecordSection } from "@/components/sections";
-import { FarmCatCard, OrganicPractices } from "@/components/sections/farm-story";
+import { FarmCatCard, MeetTheTeam, OrganicPractices } from "@/components/sections/farm-story";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 
@@ -22,6 +22,7 @@ export function HomePage() {
         <RecordSection />
         <FarmLive />
         <Questions />
+        <MeetTheTeam />
         <FarmCatCard />
         <Closing />
       </main>

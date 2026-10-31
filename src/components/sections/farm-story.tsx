@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { wrap } from "@/components/sections";
 import { farmPhotos, organicPractices, plantingStory } from "@/content/farm-story";
+import { team } from "@/content/team";
 
 export function OrganicPractices() {
   return (
@@ -65,13 +66,13 @@ export function PlantingStory() {
 /** The farm's most dedicated worker. */
 export function FarmCatCard() {
   return (
-    <section className={`${wrap} section-y`}>
+    <section className={`${wrap} pb-[clamp(4.5rem,3rem+5vw,7.5rem)]`}>
       <article className="grid overflow-hidden rounded-xl border border-border bg-white md:grid-cols-[0.8fr_1.2fr]">
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[440px]">
           <Image src={farmPhotos.cat.src} alt={farmPhotos.cat.alt} fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-[50%_35%]" />
         </div>
         <div className="flex flex-col justify-center p-7 sm:p-12">
-          <p className="eyebrow">Meet the team</p>
+          <p className="eyebrow">Also on the team</p>
           <h2 className="t-h1 mt-4">Head of Pest Control.</h2>
           <dl className="mt-8 grid grid-cols-[5.5rem_1fr] gap-x-6 gap-y-4 border-t border-ink/15 pt-6 text-[0.9375rem]">
             <dt className="text-ink-muted">Role</dt>
@@ -110,6 +111,55 @@ export function FarmGallery() {
           </figure>
         ))}
       </div>
+    </section>
+  );
+}
+
+/** The people behind Herd & Field. Named members come from content/team.ts; the field team is always shown. */
+export function MeetTheTeam() {
+  return (
+    <section className={`${wrap} section-y`}>
+      <div className="grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-end">
+        <div>
+          <p className="eyebrow">Meet the team</p>
+          <h2 className="t-h1 mt-4 max-w-[18ch]">The people who look after your animals.</h2>
+        </div>
+        <p className="t-body max-w-sm text-ink-soft md:justify-self-end">
+          Our team lives and works on the farm in Isinya. The same people who grow the feed will care for every animal.
+        </p>
+      </div>
+
+      {team.length > 0 && (
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {team.map((m) => (
+            <li key={m.name} className="overflow-hidden rounded-xl border border-border bg-white">
+              <div className="relative aspect-[4/5] bg-cream-200">
+                {m.photo ? (
+                  <Image src={m.photo} alt={`${m.name}, ${m.role}`} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                ) : (
+                  <span className="t-display flex h-full items-center justify-center text-ink-muted">
+                    {m.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                  </span>
+                )}
+              </div>
+              <div className="p-5">
+                <p className="t-h3">{m.name}</p>
+                <p className="eyebrow mt-1">{m.role}</p>
+                <p className="t-body mt-3 text-ink-soft">{m.bio}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className="mt-12 grid gap-4 md:grid-cols-2 lg:gap-5">
+        {[farmPhotos.prepWorker, farmPhotos.tending].map((p) => (
+          <figure key={p.src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+            <Image src={p.src} alt={p.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_40%]" />
+          </figure>
+        ))}
+      </div>
+      <p className="mt-4 text-[0.875rem] text-ink-muted">Our field team at work: preparing beds and tending young fodder rows.</p>
     </section>
   );
 }
