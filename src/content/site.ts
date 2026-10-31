@@ -6,7 +6,10 @@
 export const farm = {
   name: "Tangama Farm",
   location: "Isinya, Kajiado County",
-  acres: 2.17,
+  /** Acres under cultivation today. */
+  acres: 4,
+  /** Planned expansion — a plan, not yet land under cultivation. */
+  expansion: { acres: 5, timing: "early 2027" },
   beds: 120,
   sections: [
     { id: "A", beds: 40 },

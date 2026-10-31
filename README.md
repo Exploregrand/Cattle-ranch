@@ -4,8 +4,8 @@ Livestock ownership and management platform from Tangama Farm in Isinya, Kajiado
 Customers will be able to own professionally managed sheep, goats and cattle and follow each
 animal's weights, health, feeding, photos and itemised costs from their phone.
 
-**Current stage:** pre-launch. The farm is developing fodder (Sugargraze, Super Napier, alfalfa,
-desmodium) across 120 beds in Sections A–C. No livestock, purchases, investments or payments are
+**Current stage:** pre-launch. The farm has 4 acres under cultivation (a further 5 acres planned for early
+2027), developing fodder (Sugargraze, Super Napier, alfalfa, desmodium) across 120 beds in Sections A–C. No livestock, purchases, investments or payments are
 offered. The product is built so that nothing implies otherwise.
 
 ## What's here

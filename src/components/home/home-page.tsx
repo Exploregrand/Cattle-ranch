@@ -1,11 +1,16 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 import { BrandMark } from "@/components/brand/wordmark";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { Button } from "@/components/ui/button";
+import { FaqList } from "@/components/home/faq-list";
+import { LiveProgress } from "@/components/home/live-progress";
+import { agreementCovers, buyerFaqs, howItWorks, pathways } from "@/content/buyer";
+import { contact, hasContact } from "@/content/contact";
 import { photos } from "@/content/photos";
 import { farm } from "@/content/site";
 
@@ -31,7 +36,7 @@ const record = [
 ];
 
 const farmFigures = [
-  [`${farm.acres}`, "Acres in Isinya"],
+  [`${farm.acres}`, "Acres under cultivation"],
   [`${farm.beds}`, "Fodder beds"],
   [`${farm.fodder.length}`, "Feed crops"],
 ];
@@ -70,7 +75,7 @@ export function HomePage() {
                 <Link href="/early-access">Register interest</Link>
               </Button>
               <Button asChild variant="outline-light" size="lg">
-                <a href="#animals">See the animals</a>
+                <a href="#how">How it works</a>
               </Button>
             </div>
             <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-cream-50/20 pt-6">
@@ -82,6 +87,74 @@ export function HomePage() {
               ))}
             </dl>
           </div>
+        </div>
+      </section>
+
+      {/* Three ways in */}
+      <section className={`${wrap} section-y`}>
+        <p className="eyebrow">Three ways to work with Tangama</p>
+        <h2 className="t-h1 mt-4 max-w-[18ch]">Find the right place to start.</h2>
+        <div className="mt-12 grid gap-4 md:grid-cols-3 lg:gap-5">
+          {pathways.map((p) => {
+            const photo = photos[p.photo];
+            return (
+              <Link key={p.id} href={p.href} className="group flex flex-col overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-ink/40">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image
+                    src={photo.src}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    style={{ objectPosition: photo.position }}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 className="t-h2">{p.title}</h3>
+                  <p className="t-body mt-3 flex-1 text-ink-soft">{p.body}</p>
+                  <span className="label-caps mt-6 inline-flex items-center gap-2 text-[0.8125rem] text-ink">
+                    {p.cta} <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* How it works + what the agreement covers */}
+      <section id="how" className="scroll-mt-20 border-y border-border bg-white">
+        <div className={`${wrap} section-y`}>
+          <p className="eyebrow">How it works</p>
+          <h2 className="t-h1 mt-4 max-w-[20ch]">Simple steps. Everything in writing.</h2>
+          <ol className="mt-12 grid border-t border-ink/15 sm:grid-cols-2 lg:grid-cols-4">
+            {howItWorks.map((step, i) => (
+              <li key={step.title} className="border-b border-ink/10 py-7 sm:pr-8 lg:border-b-0 lg:border-r lg:px-7 lg:first:pl-0 lg:last:border-r-0">
+                <span className="t-figure text-[1.75rem] text-ink-muted">{i + 1}</span>
+                <p className="t-h3 mt-5">{step.title}</p>
+                <p className="t-body mt-2 text-ink-soft">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-14 grid gap-10 rounded-xl bg-cream-50 p-7 sm:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+            <div>
+              <h3 className="t-h2">Before you pay anything, your agreement will set out:</h3>
+              <p className="t-body mt-4 text-ink-soft">
+                No surprises later. If it isn&apos;t written down and signed, it doesn&apos;t apply.
+              </p>
+            </div>
+            <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
+              {agreementCovers.map((item) => (
+                <li key={item} className="flex gap-3 text-[0.9375rem] leading-relaxed text-ink">
+                  <Check className="mt-1 size-4 shrink-0 text-ink-muted" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="mt-6 text-[0.8125rem] text-ink-muted">
+            Programmes open only after commercial and legal review. Tangama never promises returns.
+          </p>
         </div>
       </section>
 
@@ -221,71 +294,41 @@ export function HomePage() {
         </article>
       </section>
 
-      {/* Feed first */}
+      {/* The farm, live */}
       <section id="farm" className="scroll-mt-20 border-y border-border bg-white">
-        <div className={`${wrap} section-y grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-20`}>
-          <div>
-            <p className="eyebrow">Where we are today</p>
-            <h2 className="t-h1 mt-4">Feed first. Then the herd.</h2>
-            <p className="t-lead mt-6 max-w-lg text-ink-soft">
-              Before any animal arrives, we&apos;re growing the feed that will raise it: Sugargraze, Super Napier, alfalfa and
-              desmodium on our farm in Isinya.
+        <div className={`${wrap} section-y`}>
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+            <div>
+              <p className="eyebrow">The farm, live</p>
+              <h2 className="t-h1 mt-4">Feed first. Then the herd.</h2>
+            </div>
+            <p className="t-lead text-ink-soft">
+              We&apos;re growing the feed that will raise every animal — Sugargraze, Super Napier, alfalfa and desmodium on {farm.acres}
+              acres in Isinya, with {farm.expansion.acres} more planned for {farm.expansion.timing}. These figures come straight from our
+              farm records.
             </p>
           </div>
-          <dl className="grid grid-cols-3 border-t border-ink/15">
-            {farmFigures.map(([v, k]) => (
-              <div key={k} className="border-r border-ink/10 pt-6 pr-4 last:border-r-0 [&:not(:first-child)]:pl-5">
-                <dd className="t-figure text-[2.75rem] sm:text-[3.75rem]">{v}</dd>
-                <dt className="eyebrow mt-3 !text-[0.75rem]">{k}</dt>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-12">
+            <Suspense fallback={<div className="h-32 border-t border-ink/15" />}>
+              <LiveProgress />
+            </Suspense>
+          </div>
+          <Link href="/farm" className="label-caps mt-8 inline-flex items-center gap-2 text-[0.8125rem] text-ink underline-offset-4 hover:underline">
+            More about the farm <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
-      {/* Qurbani */}
-      <section id="qurbani" className={`${wrap} section-y scroll-mt-20`}>
-        <div className="grid overflow-hidden rounded-xl border border-border bg-white lg:grid-cols-2">
-          <div className="relative min-h-[300px] lg:min-h-[480px]">
-            <Image
-              src={photos.goat.src}
-              alt={photos.goat.alt}
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-              style={{ objectPosition: photos.goat.position }}
-            />
-          </div>
-          <div className="flex flex-col justify-center px-7 py-12 sm:px-14">
-            <p className="eyebrow">Seasonal · planned</p>
-            <h2 className="t-h1 mt-4 max-w-[13ch]">Qurbani, from a farm you know.</h2>
-            <p className="t-body mt-5 max-w-md text-ink-soft">
-              Healthy, well-fed goats and sheep reserved ahead of Eid al-Adha, prepared and delivered by our team.
-            </p>
-            <Button asChild size="lg" className="mt-8 self-start">
-              <Link href="/early-access?interest=qurbani">Notify me for Qurbani</Link>
-            </Button>
-          </div>
+      {/* Questions */}
+      <section id="questions" className={`${wrap} section-y scroll-mt-20 grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20`}>
+        <div>
+          <p className="eyebrow">Questions buyers ask</p>
+          <h2 className="t-h1 mt-4">Straight answers.</h2>
+          <p className="t-body mt-5 max-w-sm text-ink-soft">
+            The things we&apos;d want to know before trusting a farm with our money.
+          </p>
         </div>
-      </section>
-
-      {/* Investors */}
-      <section className={`${wrap} pb-[clamp(4.5rem,3rem+5vw,7.5rem)]`}>
-        <div className="grid gap-8 border-t border-ink pt-10 lg:grid-cols-[1.3fr_1fr] lg:items-end">
-          <div>
-            <p className="eyebrow">For Kenyan investors and chamas</p>
-            <h2 className="t-h1 mt-4">Build Tangama with us.</h2>
-            <p className="t-body mt-5 max-w-lg text-ink-soft">
-              Our investor brief sets out the opportunity, the model, exactly where we are today, and how capital will be
-              governed.
-            </p>
-          </div>
-          <Button asChild size="lg" variant="outline" className="self-start lg:justify-self-end">
-            <Link href="/investors">
-              Read the investor brief <ArrowRight />
-            </Link>
-          </Button>
-        </div>
+        <FaqList items={buyerFaqs} />
       </section>
 
       {/* Closing */}
@@ -301,6 +344,32 @@ export function HomePage() {
           <Button asChild size="lg" className="mt-9">
             <Link href="/early-access">Register interest</Link>
           </Button>
+          {hasContact && (
+            <p className="mt-8 text-[0.9375rem] text-ink-soft">
+              Prefer to talk?{" "}
+              {contact.phone && (
+                <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="font-medium text-ink underline underline-offset-4">
+                  {contact.phone}
+                </a>
+              )}
+              {contact.whatsapp && (
+                <>
+                  {contact.phone && " · "}
+                  <a href={`https://wa.me/${contact.whatsapp}`} className="font-medium text-ink underline underline-offset-4">
+                    WhatsApp us
+                  </a>
+                </>
+              )}
+              {contact.email && (
+                <>
+                  {" · "}
+                  <a href={`mailto:${contact.email}`} className="font-medium text-ink underline underline-offset-4">
+                    {contact.email}
+                  </a>
+                </>
+              )}
+            </p>
+          )}
         </div>
       </section>
       <SiteFooter />

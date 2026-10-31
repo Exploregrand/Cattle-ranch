@@ -4,13 +4,14 @@ import { Wordmark } from "@/components/brand/wordmark";
 import { farm } from "@/content/site";
 
 const links = [
-  { href: "/#animals", label: "Animals" },
+  { href: "/#how", label: "How it works" },
   { href: "/early-access", label: "Register interest" },
-  { href: "/#care", label: "Care" },
+  { href: "/qurbani", label: "Qurbani" },
   { href: "/sign-in", label: "Owner sign in" },
-  { href: "/#farm", label: "The farm" },
-  { href: "/investors", label: "Investors" },
+  { href: "/farm", label: "The farm" },
   { href: "/demo", label: "App preview" },
+  { href: "/#questions", label: "Questions" },
+  { href: "/investors", label: "Investors" },
 ];
 
 export function SiteFooter() {

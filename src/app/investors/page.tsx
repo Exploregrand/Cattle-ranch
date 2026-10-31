@@ -26,7 +26,8 @@ const chapters = [
 ];
 
 const today = [
-  { status: "In place", title: "Farm in Isinya, Kajiado County", body: `${farm.acres} acres dedicated to fodder and future livestock.` },
+  { status: "In place", title: "Farm in Isinya, Kajiado County", body: `${farm.acres} acres under cultivation for fodder and future livestock.` },
+  { status: "Planned", title: `Expansion by ${farm.expansion.acres} acres`, body: `A further ${farm.expansion.acres} acres planned for ${farm.expansion.timing}, more than doubling the land under cultivation.` },
   { status: "In place", title: "120 fodder beds laid out", body: "Three sections of 40 beds, managed and recorded bed by bed." },
   { status: "In progress", title: "Four fodder crops being established", body: "Sugargraze, Super Napier, alfalfa and desmodium — our own feed base." },
   { status: "In place", title: "Operating platform built", body: "Fodder records, animal registers, health, weights, costs and owner dashboards." },
@@ -35,7 +36,7 @@ const today = [
 ];
 
 const roadmap = [
-  { phase: "Phase 1", title: "Feed", body: "Establish fodder across all 120 beds and build the operating system.", now: true },
+  { phase: "Phase 1", title: "Feed", body: "Fodder on 4 acres today, expanding by 5 more in early 2027, with the operating system in place.", now: true },
   { phase: "Phase 2", title: "Farm herd", body: "Bring in a first farm-owned herd and run the full record cycle on it." },
   { phase: "Phase 3", title: "Managed ownership", body: "Open ownership programmes to Kenyan customers, after legal review." },
   { phase: "Phase 4", title: "Scale & seasons", body: "Grow capacity and add seasonal services such as Qurbani." },
@@ -105,7 +106,7 @@ export default function InvestorsPage() {
           <dl className="mt-14 grid grid-cols-1 border-y border-forest-950 sm:grid-cols-3">
             {[
               ["Stage", "Pre-launch · building the feed base"],
-              ["Farm", `${farm.acres} acres · ${farm.beds} fodder beds · Isinya`],
+              ["Farm", `${farm.acres} acres cultivated · +${farm.expansion.acres} planned · Isinya`],
               ["Offer", "None open — expressions of interest only"],
             ].map(([k, v]) => (
               <div key={k} className="border-border py-5 sm:border-l sm:px-8 sm:first:border-l-0 sm:first:pl-0 [&:not(:first-child)]:border-t sm:[&:not(:first-child)]:border-t-0">
