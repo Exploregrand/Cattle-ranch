@@ -14,7 +14,7 @@ export default function EarlyAccessPage() {
     <AuthFrame
       wide
       title="Register for early access"
-      body="Livestock programmes have not launched yet. Tell us what interests you and we'll contact you when they open — no payment, no commitment."
+      body="Livestock programmes have not launched yet. Tell us what interests you and we'll contact you when they open. No payment, no commitment."
     >
       <Suspense>
         <EarlyAccessForm />

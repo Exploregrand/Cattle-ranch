@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Banknote, LayoutGrid, Sprout, Tag, Users } from "lucide-react";
+import { Banknote, LayoutGrid, Megaphone, Sprout, Tag, Users } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -11,6 +11,7 @@ const items = [
   { href: "/admin", label: "Overview", icon: LayoutGrid, adminOnly: false },
   { href: "/admin/fodder", label: "Fodder", icon: Sprout, adminOnly: false },
   { href: "/admin/livestock", label: "Livestock", icon: Tag, adminOnly: false },
+  { href: "/admin/updates", label: "Updates", icon: Megaphone, adminOnly: false },
   { href: "/admin/customers", label: "Customers", icon: Users, adminOnly: true },
   { href: "/admin/finance", label: "Finance", icon: Banknote, adminOnly: true },
 ];

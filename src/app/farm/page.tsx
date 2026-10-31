@@ -12,7 +12,7 @@ import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The farm",
-  description: "Herd & Field farms 4.67 acres in Isinya, Kajiado County, with 5 more acres from January 2027 — organic practices, our own fodder and room for the herd.",
+  description: "Herd & Field farms 4.67 acres in Isinya, Kajiado County, with 5 more acres from January 2027. Organic practices, our own fodder and room for the herd.",
 };
 
 const wrap = "mx-auto w-full max-w-7xl px-6 sm:px-8";
@@ -21,7 +21,7 @@ export default function FarmPage() {
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-ink">
+      <main id="main" className="bg-cream-50 text-ink">
         <section className={`${wrap} grid items-end gap-10 pt-12 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16`}>
           <div>
             <p className="eyebrow">Our farms · Kajiado County</p>

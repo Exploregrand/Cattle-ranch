@@ -9,7 +9,7 @@ export default function AdminError({ reset }: { error: Error & { digest?: string
       <p className="label-caps text-clay">Farm Ops</p>
       <h1 className="t-h2 mt-4 text-forest-950">We couldn&apos;t load the farm records</h1>
       <p className="mt-3 leading-relaxed text-ink-soft">
-        The database may be unreachable right now. Your records are safe — try again in a moment.
+        The database may be unreachable right now. Your records are safe. Try again in a moment.
       </p>
       <Button onClick={reset} className="mt-8">
         Try again

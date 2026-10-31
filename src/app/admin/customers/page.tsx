@@ -28,7 +28,7 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
   const sp = await searchParams;
   const status = typeof sp.status === "string" && ["new", "contacted", "closed"].includes(sp.status) ? sp.status : undefined;
   const [leads, counts, customers, investors] = await Promise.all([listRegistrations(status), registrationCounts(), listCustomers(), listInvestorInterest()]);
-  const label = (list: readonly { value: string; label: string }[], v: string | null) => list.find((o) => o.value === v)?.label ?? "—";
+  const label = (list: readonly { value: string; label: string }[], v: string | null) => list.find((o) => o.value === v)?.label ?? "None";
 
   return (
     <>

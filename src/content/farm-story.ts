@@ -21,7 +21,7 @@ export const farmPhotos = {
 export const organicPractices = [
   {
     title: "Manure back into the soil",
-    body: "Livestock manure is aged and composted, then worked into every bed before planting — feeding the soil instead of buying it in.",
+    body: "Livestock manure is aged and composted, then worked into every bed before planting, feeding the soil instead of buying it in.",
     photo: "manure" as const,
   },
   {

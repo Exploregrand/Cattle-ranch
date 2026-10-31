@@ -7,14 +7,14 @@ import { farmPhotos } from "@/content/farm-story";
 
 export const metadata: Metadata = {
   title: "Livestock",
-  description: "Sheep, goats and cattle Herd & Field is preparing to raise in Kajiado — breeds, feeding, care and how to own them.",
+  description: "Sheep, goats and cattle Herd & Field is preparing to raise in Kajiado: breeds, feeding, care and how to own them.",
 };
 
 export default function LivestockPage() {
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-ink">
+      <main id="main" className="bg-cream-50 text-ink">
         <PageIntro
           eyebrow="Livestock"
           title="The animals we'll raise."

@@ -148,7 +148,7 @@ export function AnimalProfile({
                       <td className="py-2 text-ink-soft">{formatDate(w.date)}</td>
                       <td className="py-2 text-right font-medium text-forest-950 tabular">{formatKg(w.kg)}</td>
                       <td className="py-2 text-right text-ink-muted tabular">
-                        {i === 0 ? "—" : formatSignedKg(w.kg - weights[i - 1].kg)}
+                        {i === 0 ? "None" : formatSignedKg(w.kg - weights[i - 1].kg)}
                       </td>
                     </tr>
                   ))}
@@ -277,7 +277,7 @@ export function AnimalProfile({
                   ["Owner", animal.ownership.holder],
                   ["Since", formatDate(animal.ownership.since)],
                   ["Programme", animal.programme],
-                  ["Agreement", animal.ownership.agreement ?? "—"],
+                  ["Agreement", animal.ownership.agreement ?? "None"],
                 ] as const
               ).map(([label, value]) => (
                 <div key={label} className="flex justify-between gap-4 px-5 py-3.5 sm:px-6">

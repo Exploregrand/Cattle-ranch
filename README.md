@@ -23,7 +23,8 @@ offered. The product is built so that nothing implies otherwise.
 | `/admin/fodder` | Live map of the 300 beds, bulk planting and activity by bed range, per-bed history, stock ledger |
 | `/admin/livestock` | Register animals (auto IDs `TGM-SH-0001`), weights, health, feeding, costs, sale/death/transfer, ownership |
 | `/admin/customers` | Early-access leads, investor interest (call, WhatsApp, follow-up status) and customer accounts — admin only |
-| `/admin/finance` | KES ledger, period totals, realised per-animal margins — admin only |
+| `/admin/finance` | KES ledger, period totals, realised per-animal margins (admin only) |
+| `/admin/updates` | Drafts a monthly farm update from the last 30 days of records; copy for WhatsApp or publish to customers' dashboards |
 
 Farm Ops is fully separate from the customer platform: its own layout, navigation and role checks.
 Workflows are connected: harvests can flow into fodder stock, feeding deducts stock per animal,
@@ -44,6 +45,7 @@ npm run dev        # http://localhost:3000
 npm run lint
 npx tsc --noEmit
 npm run build
+npm test           # unit tests (phone numbers, KES, forms, bed ranges)
 ```
 
 Farm Ops needs `DATABASE_URL` (Postgres with all migrations applied). In development without
@@ -77,7 +79,7 @@ connected" preview, and early-access registrations are written to `.data/` local
 
 ## Brand
 
-A mature, established livestock company — not tech, not playful. Branding-iron mark
+A mature, established livestock company — not tech, not playful. The seal mark: a double ring holding zebu horns over the land
 (`src/components/brand/wordmark.tsx`), Newsreader headlines and Instrument Sans text and labels. Restrained palette:
 ivory and white paper, charcoal ink, hairline rules, and one dark acacia-bark accent for primary actions
 (tokens in `src/app/globals.css`). Photography carries the colour; the only other colours are the fodder
@@ -94,6 +96,12 @@ Use the shared system rather than one-off sizes (all in `src/app/globals.css`):
 Photography lives in `public/images` and is registered in `src/content/photos.ts`. These are breed and
 category images; they are never presented as specific Tangama animals or available stock. Real animals
 only show their own photos (`coverPhoto`). The app is installable (web manifest + icons).
+
+## Lead alerts
+
+Set `RESEND_API_KEY` and `LEAD_ALERT_EMAIL` (see `.env.example`) to get an email for every early-access
+and investor registration, with a WhatsApp link to reply. Without them, nothing is sent and registrations
+still save normally.
 
 ## Payments
 

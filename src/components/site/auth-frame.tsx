@@ -18,13 +18,13 @@ export function AuthFrame({
   return (
     <>
       <SiteHeader />
-      <main className="flex-1 bg-cream-50">
+      <main id="main" className="flex-1 bg-cream-50">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-10 sm:py-16 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <div className="relative hidden min-h-[600px] overflow-hidden rounded-xl bg-forest-900 lg:block">
             <Image src={farmPhotos.cowPortrait.src} alt={farmPhotos.cowPortrait.alt} fill sizes="45vw" className="object-cover" style={{ objectPosition: "50% 30%" }} />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1e1a16]/85 via-transparent to-transparent" />
             <p className="t-h2 absolute bottom-10 left-10 right-10 text-cream-50">
-              Every animal, written down — from the day it arrives.
+              Every animal, written down from the day it arrives.
             </p>
           </div>
           <div className={wide ? "w-full" : "w-full max-w-md lg:py-10"}>

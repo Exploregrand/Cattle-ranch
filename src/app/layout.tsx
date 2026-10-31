@@ -26,13 +26,18 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://herdandfield.co.ke";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  openGraph: { type: "website", locale: "en_KE", siteName: "Herd & Field" },
+  twitter: { card: "summary_large_image" },
   title: {
-    default: "Herd & Field — Isinya, Kajiado",
+    default: "Herd & Field · Isinya, Kajiado",
     template: "%s · Herd & Field",
   },
   description:
-    "Own sheep, goats and cattle raised on our own fodder in Isinya, Kajiado County — with every weigh-in, treatment and cost recorded for you. Register for early access.",
+    "Own sheep, goats and cattle raised on our own fodder in Isinya, Kajiado County, with every weigh-in, treatment and cost recorded for you. Register for early access.",
 };
 
 export const viewport: Viewport = {
@@ -53,6 +58,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Suspense fallback={null}>
           <ScrollToTop />
         </Suspense>
+        <a
+          href="#main"
+          className="sr-only z-[200] rounded-md bg-forest-900 px-4 py-3 text-sm font-medium text-cream-50 focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to content
+        </a>
+        <script
+          type="application/ld+json"
+          // Organisation details for search engines. Only confirmed facts.
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Herd & Field",
+              url: SITE_URL,
+              logo: `${SITE_URL}/icon.png`,
+              parentOrganization: { "@type": "Organization", name: "Tangama Farm" },
+              address: { "@type": "PostalAddress", addressLocality: "Isinya", addressRegion: "Kajiado County", addressCountry: "KE" },
+              description: "Livestock ownership and management from our farms in Isinya, Kajiado County, Kenya.",
+            }),
+          }}
+        />
         {children}
       </body>
     </html>

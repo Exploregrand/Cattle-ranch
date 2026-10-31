@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Which animals will you offer?",
-    a: "We plan to offer goats, sheep and cattle. Availability depends on our first season — register for the animal you want and we'll tell you as soon as we know.",
+    a: "We plan to offer goats, sheep and cattle. Availability depends on our first season. Register for the animal you want and we'll tell you as soon as we know.",
   },
   {
     q: "Can I see the animal before Eid?",
@@ -55,13 +55,13 @@ export default function QurbaniPage() {
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-ink">
+      <main id="main" className="bg-cream-50 text-ink">
         <section className={`${wrap} grid items-center gap-10 pt-12 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16`}>
           <div>
             <p className="eyebrow">Seasonal · Eid al-Adha</p>
             <h1 className="t-display mt-5 max-w-[12ch]">Qurbani, from a farm you know.</h1>
             <p className="t-lead mt-6 max-w-xl text-ink-soft">
-              A healthy, well-fed animal, raised and checked on our farm in Isinya — with its record in your hands from the day you
+              A healthy, well-fed animal, raised and checked on our farm in Isinya, with its record in your hands from the day you
               reserve it to the day you collect it.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">

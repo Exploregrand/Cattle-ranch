@@ -83,7 +83,7 @@ export function FarmCatCard() {
             <dt className="text-ink-muted">Pay</dt>
             <dd>Paid in purrs (and the odd saucer of milk)</dd>
           </dl>
-          <p className="t-body mt-6 text-ink-soft">The most purr-sistent member of the farm team — and the only one who never misses a fence check.</p>
+          <p className="t-body mt-6 text-ink-soft">The most purr-sistent member of the farm team, and the only one who never misses a fence check.</p>
         </div>
       </article>
     </section>

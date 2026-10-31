@@ -109,7 +109,7 @@ async function AnimalContent({
               <CostForm animalId={animal.id} />
             </Action>
           )}
-          <Action title="Status — sale, death or transfer">
+          <Action title="Status: sale, death or transfer">
             <StatusForm animalId={animal.id} current={animal.status} isAdmin={isAdmin} />
           </Action>
           {isAdmin && (

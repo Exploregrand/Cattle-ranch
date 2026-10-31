@@ -32,7 +32,7 @@ const record = [
   ["Ear tag", "A permanent ID from the day the animal arrives."],
   ["Weigh-ins", "Weighed regularly, so you can see it grow."],
   ["Health", "Every vaccination and treatment, dated."],
-  ["Costs", "Feed, veterinary and purchase in KES — what was spent, never promises."],
+  ["Costs", "Feed, veterinary and purchase costs in KES. What was spent, never promises."],
 ];
 
 const farmFigures = [
@@ -75,7 +75,7 @@ export function Hero() {
           <p className="eyebrow !text-cream-50/75">Isinya · Kajiado County · Kenya</p>
           <h1 className="t-display mt-5 max-w-[13ch]">Own livestock, raised on our land.</h1>
           <p className="t-lead mt-6 max-w-xl text-cream-50/85">
-            Sheep, goats and cattle fed on fodder we grow ourselves and cared for by our own team — with every weigh-in,
+            Sheep, goats and cattle fed on fodder we grow ourselves and cared for by our own team, with every weigh-in,
             treatment and shilling recorded for you to see.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -320,7 +320,7 @@ export function RecordSection() {
           <tbody className="text-[0.9375rem]">
             {[
               ["22 Jun", "Arrived · dewormed", "28.4 kg"],
-              ["01 Jul", "PPR vaccination", "—"],
+              ["01 Jul", "PPR vaccination", "None"],
               ["17 Aug", "Weigh-in", "37.6 kg"],
               ["12 Oct", "Weigh-in · healthy", "46.8 kg"],
             ].map(([d, e, w]) => (
@@ -355,7 +355,7 @@ async function FarmLiveContent() {
           </div>
           <p className="t-lead text-ink-soft">
             {progress
-              ? "Straight from the field records our team keeps every day — not marketing figures."
+              ? "Straight from the field records our team keeps every day, not marketing figures."
               : "We're growing the feed that will raise every animal. Live figures from our field records will appear here."}
           </p>
         </div>

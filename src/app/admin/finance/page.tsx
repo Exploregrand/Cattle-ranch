@@ -168,7 +168,7 @@ async function FinanceContent({ searchParams }: { searchParams: Promise<Record<s
                       </Link>
                       <span className="text-ink-muted"> · {m.breed}</span>
                     </td>
-                    <td className="py-3 text-ink-soft">{m.soldOn ? formatDate(m.soldOn) : "—"}</td>
+                    <td className="py-3 text-ink-soft">{m.soldOn ? formatDate(m.soldOn) : "None"}</td>
                     <td className="py-3 text-right tabular">{formatKES(m.salesKes)}</td>
                     <td className="py-3 text-right tabular">{formatKES(m.costsKes)}</td>
                     <td className={cn("px-5 py-3 text-right font-medium tabular sm:px-6", m.marginKes < 0 ? "text-destructive" : "text-forest-700")}>

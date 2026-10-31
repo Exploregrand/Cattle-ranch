@@ -38,6 +38,25 @@ export async function setInvestorStatus(_: ActionResult, formData: FormData): Pr
   }
 }
 
+export async function publishUpdate(_: ActionResult, formData: FormData): Promise<ActionResult> {
+  try {
+    const staff = await assertStaff();
+    const input = z
+      .object({
+        title: z.string().trim().min(3, "Add a title.").max(120),
+        body: z.string().trim().min(10, "Write the update.").max(2000),
+      })
+      .parse(fields(formData));
+    const sql = requireSql();
+    await sql`insert into farm_updates (published_on, title, body, published, created_by)
+              values ((now() at time zone 'Africa/Nairobi')::date, ${input.title}, ${input.body}, true, ${staff.id})`;
+    refresh();
+    return done("Published. Customers will see it on their dashboard.");
+  } catch (e) {
+    return fail(e);
+  }
+}
+
 export async function addTransaction(_: ActionResult, formData: FormData): Promise<ActionResult> {
   try {
     const staff = await assertStaff(true);

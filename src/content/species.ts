@@ -33,7 +33,7 @@ export const speciesPages: SpeciesPage[] = [
     photo: "sheep",
     headline: "Sheep, raised on our own fodder.",
     intro:
-      "Hardy hair sheep that do well in Kajiado's dry climate and turn good fodder into steady growth — a natural first animal to own.",
+      "Hardy hair sheep that do well in Kajiado's dry climate and turn good fodder into steady growth. A natural first animal to own.",
     why: [
       { title: "Suited to Kajiado", body: "Hair sheep tolerate heat and dry spells, and thrive on the forage we grow." },
       { title: "A shorter cycle", body: "Sheep reach market weight sooner than cattle, so you see the full record from start to finish." },
@@ -51,7 +51,7 @@ export const speciesPages: SpeciesPage[] = [
       { name: "Crosses", body: "Dorper × Red Maasai crosses combine growth with local hardiness." },
     ],
     feeding:
-      "Grazing and fresh-cut Super Napier and desmodium, with alfalfa for protein and Sugargraze silage through the dry months — all grown on our farms.",
+      "Grazing and fresh-cut Super Napier and desmodium, with alfalfa for protein and Sugargraze silage through the dry months, all grown on our farms.",
     care: [
       "Weighed regularly, with every weigh-in on the animal's record",
       "Routine deworming and vaccinations such as PPR, as advised by our vet",
@@ -88,11 +88,11 @@ export const speciesPages: SpeciesPage[] = [
       },
       {
         name: "Small East African",
-        body: "The indigenous goat of the region — small, hardy and well adapted to local conditions.",
+        body: "The indigenous goat of the region: small, hardy and well adapted to local conditions.",
       },
     ],
     feeding:
-      "Browse and fresh-cut fodder, with desmodium and alfalfa for protein and Sugargraze for energy — grown on our own farms.",
+      "Browse and fresh-cut fodder, with desmodium and alfalfa for protein and Sugargraze for energy, grown on our own farms.",
     care: [
       "Weighed regularly, with every weigh-in recorded",
       "Routine deworming and vaccinations such as PPR and CCPP, as advised by our vet",
@@ -131,7 +131,7 @@ export const speciesPages: SpeciesPage[] = [
       { name: "Crosses", body: "Crosses that combine local hardiness with good growth." },
     ],
     feeding:
-      "Sugargraze and Super Napier for bulk and energy, with desmodium and alfalfa for protein — fed fresh or as silage, from our own farms.",
+      "Sugargraze and Super Napier for bulk and energy, with desmodium and alfalfa for protein, fed fresh or as silage, from our own farms.",
     care: [
       "Weighed regularly, with growth plotted from arrival",
       "Vaccinations such as foot-and-mouth and lumpy skin disease, as advised by our vet",

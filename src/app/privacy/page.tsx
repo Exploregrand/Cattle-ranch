@@ -53,7 +53,7 @@ export default function PrivacyPage() {
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-ink">
+      <main id="main" className="bg-cream-50 text-ink">
         <section className={`${wrap} section-y max-w-4xl`}>
           <p className="eyebrow">Privacy notice</p>
           <h1 className="t-h1 mt-4">How we handle your information.</h1>

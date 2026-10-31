@@ -16,7 +16,9 @@ export function ActionForm({
   reset = true,
   className,
   variant = "default",
+  id,
 }: {
+  id?: string;
   action: (state: ActionResult, formData: FormData) => Promise<ActionResult>;
   children: React.ReactNode;
   submitLabel: string;
@@ -33,7 +35,7 @@ export function ActionForm({
   }, [state, reset]);
 
   return (
-    <form ref={ref} action={formAction} className={cn("space-y-4", className)}>
+    <form ref={ref} id={id} action={formAction} className={cn("space-y-4", className)}>
       {children}
       <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center">
         <Button type="submit" variant={variant} disabled={pending} className="w-full sm:w-auto">

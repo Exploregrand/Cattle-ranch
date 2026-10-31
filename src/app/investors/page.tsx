@@ -29,7 +29,7 @@ const today = [
   { status: "In place", title: `${farm.acres} acres in Isinya`, body: "Land under cultivation for fodder today, with room for the herd." },
   { status: "Planned", title: `${farm.expansion.acres} more acres in ${farm.expansion.timing}`, body: "More than doubling the land under cultivation." },
   { status: "In place", title: "Staff housing, animal housing and amenities", body: "Facilities on the farm for the team who live there and the animals they will care for." },
-    { status: "In progress", title: "Four fodder crops being established", body: "Sugargraze, Super Napier, alfalfa and desmodium — our own feed base." },
+    { status: "In progress", title: "Four fodder crops being established", body: "Sugargraze, Super Napier, alfalfa and desmodium, our own feed base." },
   { status: "In place", title: "Operating platform built", body: "Fodder records, animal registers, health, weights, costs and owner dashboards." },
   { status: "Planned", title: "Livestock pilot", body: "A farm-owned herd to prove care, growth and cost records in practice." },
   { status: "Planned", title: "Legal and regulatory review", body: "Before any external capital or ownership programme opens." },
@@ -47,7 +47,7 @@ const governance = [
   { title: "Written agreements", body: "Every investment or animal ownership documented in a signed agreement with clear terms." },
   { title: "Know-your-investor checks", body: "Identity and source-of-funds checks before accepting any money." },
   { title: "Independent accounts", body: "Annual accounts prepared and reviewed by independent accountants." },
-  { title: "Live records", body: "Animals, feed, health and costs visible on the platform as they happen — not quarterly." },
+  { title: "Live records", body: "Animals, feed, health and costs visible on the platform as they happen, not quarterly." },
   { title: "No promised returns", body: "We report what actually happened. We never forecast or guarantee profits." },
 ];
 
@@ -66,7 +66,7 @@ export default function InvestorsPage() {
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-forest-950">
+      <main id="main" className="bg-cream-50 text-forest-950">
         {/* Hero */}
         <section className="mx-auto max-w-7xl px-6 pt-12 sm:pt-16">
           <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
@@ -78,7 +78,7 @@ export default function InvestorsPage() {
                 managed in the open.
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">
-                Herd & Field, a Tangama Farm company, is building a livestock ownership and management business from its farms in Isinya, Kajiado — with
+                Herd & Field, a Tangama Farm company, is building a livestock ownership and management business from its farms in Isinya, Kajiado, with
                 every animal, feed and cost on record. We are speaking with Kenyan investors and chamas ahead of launch.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -107,7 +107,7 @@ export default function InvestorsPage() {
             {[
               ["Company", "Herd & Field · a Tangama Farm company"],
                 ["Stage", "Pre-launch · building the feed base"],
-              ["Offer", "None open — expressions of interest only"],
+              ["Offer", "None open. Expressions of interest only."],
             ].map(([k, v]) => (
               <div key={k} className="border-border py-5 sm:border-l sm:px-8 sm:first:border-l-0 sm:first:pl-0 [&:not(:first-child)]:border-t sm:[&:not(:first-child)]:border-t-0">
                 <dt className="label-caps text-[0.8rem] text-ink-muted">{k}</dt>
@@ -138,7 +138,7 @@ export default function InvestorsPage() {
                 Livestock is central to Kenya&apos;s economy. Owning it well is still hard.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-                Many Kenyans want to own animals but lack the land, time or expertise to raise them — and informal arrangements
+                Many Kenyans want to own animals but lack the land, time or expertise to raise them, and informal arrangements
                 rarely come with records anyone can check. Herd & Field combines a working fodder farm with a platform that keeps
                 every animal&apos;s history visible to its owner.
               </p>
@@ -168,7 +168,7 @@ export default function InvestorsPage() {
                   ["Feed", "Fodder grown on our own farms controls the largest cost of raising livestock."],
                   ["Animals", "Sheep, goats and cattle suited to Kajiado, cared for by our team."],
                   ["Records", "ID, weigh-ins, health, feeding and every shilling, logged as it happens."],
-                  ["Outcome", "Sale, collection or other documented result — reported, never promised."],
+                  ["Outcome", "Sale, collection or other documented result, reported and never promised."],
                 ].map(([t, b], i) => (
                   <li key={t} className="rounded-xl border border-border bg-paper p-6">
                     <span className="eyebrow">Step {i + 1}</span>
@@ -193,7 +193,7 @@ export default function InvestorsPage() {
                   <p className="t-h2 mt-3">You own the animals. We raise them.</p>
                   <p className="mt-3 leading-relaxed text-ink-soft">
                     Investors buy specific, ear-tagged sheep, goats or cattle. We feed, house and care for them on our farms under a
-                    written agreement, record every weigh-in, treatment and cost, and sell or hand them over at the end — with the
+                    written agreement, record every weigh-in, treatment and cost, and sell or hand them over at the end, with the
                     outcome documented.
                   </p>
                   <p className="mt-4 text-[0.875rem] leading-relaxed text-ink-muted">

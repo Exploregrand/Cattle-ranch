@@ -10,7 +10,7 @@ export function DemoBanner() {
         <p>
           <strong className="font-semibold">Demo mode.</strong>{" "}
           <span className="text-forest-950/80">
-            Sample data only — these are not real animals, customers or records.
+            Sample data only. These are not real animals, customers or records.
           </span>
         </p>
         <Link href="/" className="shrink-0 font-medium underline underline-offset-4">
@@ -44,7 +44,7 @@ export function AppShell({
           </div>
         </header>
       </div>
-      <main className="mx-auto w-full max-w-5xl flex-1 px-5 pt-6 pb-safe-tabbar sm:px-8 sm:pt-10 md:pb-16">
+      <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-5 pt-6 pb-safe-tabbar sm:px-8 sm:pt-10 md:pb-16">
         {children}
       </main>
       <MobileTabBar base={base} />

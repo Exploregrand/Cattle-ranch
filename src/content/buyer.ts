@@ -38,7 +38,7 @@ export const howItWorks = [
 ];
 
 export const agreementCovers = [
-  "The exact animal you own — its ID, breed, age and weight on the day",
+  "The exact animal you own: its ID, breed, age and weight on the day",
   "The purchase price and the monthly care fee, in KES",
   "What feeding, housing and veterinary care is included",
   "What happens if your animal falls ill or dies",
@@ -49,15 +49,15 @@ export const agreementCovers = [
 export const buyerFaqs = [
   {
     q: "Can I buy or reserve an animal today?",
-    a: "Not yet. We are developing our fodder base first so every animal is raised on feed we control. Register your interest and we'll contact you as soon as programmes open — there's no payment and no commitment.",
+    a: "Not yet. We are developing our fodder base first so every animal is raised on feed we control. Register your interest and we'll contact you as soon as programmes open. There's no payment and no commitment.",
   },
   {
     q: "Who is behind Herd & Field?",
-    a: "Herd & Field is a Tangama Farm company: farming 4.67 acres in Isinya, Kajiado County, with 5 more acres from January 2027. Our team lives on the farm, with housing for staff and animals — the same people who grow the feed will care for your animal.",
+    a: "Herd & Field is a Tangama Farm company: farming 4.67 acres in Isinya, Kajiado County, with 5 more acres from January 2027. Our team lives on the farm, with housing for staff and animals. The same people who grow the feed will care for your animal.",
   },
   {
     q: "What happens if my animal falls ill or dies?",
-    a: "Your written agreement will set this out in full — veterinary care, who covers the cost, and how a loss is handled — before you pay anything. Every treatment is recorded and visible to you.",
+    a: "Your written agreement will set this out in full before you pay anything: veterinary care, who covers the cost, and how a loss is handled. Every treatment is recorded and visible to you.",
   },
   {
     q: "How will I know the animal is real, and mine?",
@@ -65,7 +65,7 @@ export const buyerFaqs = [
   },
   {
     q: "Is this an investment?",
-    a: "No. Managed ownership means you own a specific animal and pay us to care for it. We report actual weights, costs and sale prices — we never promise profits or returns.",
+    a: "No. Managed ownership means you own a specific animal and pay us to care for it. We report actual weights, costs and sale prices. We never promise profits or returns.",
   },
   {
     q: "How will payment work?",

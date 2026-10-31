@@ -24,7 +24,7 @@ export async function LiveProgress({ tone = "light" }: { tone?: "light" | "dark"
         [`${farm.acres}`, "Acres in Isinya"],
         [`${farm.fodder.length}`, "Fodder crops"],
         [`+${farm.expansion.acres}`, `Acres from ${farm.expansion.timing}`],
-        ["0", "Animals — opening after launch"],
+        ["0", "Animals (opening after launch)"],
       ];
 
   return (

@@ -35,7 +35,7 @@ export function InvestorForm() {
     return (
       <div role="status">
         <CircleCheck className="size-9 text-grass" aria-hidden="true" />
-        <h3 className="t-h2 mt-5 text-forest-950">Thank you — we&apos;ll be in touch</h3>
+        <h3 className="t-h2 mt-5 text-forest-950">Thank you, we&apos;ll be in touch</h3>
         <p className="mt-3 max-w-md leading-relaxed text-ink-soft">
           A member of the Herd & Field team will contact you personally. Nothing is being offered or sold, and no payment is needed.
         </p>

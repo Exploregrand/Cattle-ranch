@@ -81,7 +81,7 @@ async function LivestockContent({ searchParams }: { searchParams: Promise<Record
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="font-medium text-forest-950 tabular">{a.latestKg !== null ? formatKg(a.latestKg) : "—"}</p>
+                  <p className="font-medium text-forest-950 tabular">{a.latestKg !== null ? formatKg(a.latestKg) : "None"}</p>
                   <p className="text-xs text-ink-muted">{a.latestOn ? formatDate(a.latestOn) : "Not weighed"}</p>
                 </div>
                 <ChevronRight className="size-4 text-ink-muted" aria-hidden="true" />

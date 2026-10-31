@@ -48,7 +48,7 @@ async function BedPageContent({ params }: { params: Promise<{ id: string }> }) {
 
       <dl className="mb-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
         {[
-          { label: "Crop age", value: bed.plantedOn ? `${daysBetween(bed.plantedOn, t)} days` : "—" },
+          { label: "Crop age", value: bed.plantedOn ? `${daysBetween(bed.plantedOn, t)} days` : "None" },
           { label: "Last irrigated", value: bed.lastIrrigation ? formatDaysAgo(bed.lastIrrigation, t) : "Not recorded" },
           { label: "Last harvested", value: bed.lastHarvest ? formatDaysAgo(bed.lastHarvest, t) : "Not recorded" },
           { label: "Yield this planting", value: formatKg(bed.totalYieldKg) },

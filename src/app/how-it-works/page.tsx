@@ -15,7 +15,7 @@ export default function HowItWorksPage() {
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-ink">
+      <main id="main" className="bg-cream-50 text-ink">
         <PageIntro
           eyebrow="How it works"
           title="Clear steps. Every record kept."

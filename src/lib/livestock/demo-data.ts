@@ -46,9 +46,9 @@ const sheep: Animal = {
   ],
   costs: [
     { date: "2026-06-22", category: "purchase", label: "Animal purchase", amountKes: 14500 },
-    { date: "2026-07-31", category: "feed", label: "Feed — July", amountKes: 1150 },
-    { date: "2026-08-31", category: "feed", label: "Feed — August", amountKes: 1240 },
-    { date: "2026-09-30", category: "feed", label: "Feed — September", amountKes: 1310 },
+    { date: "2026-07-31", category: "feed", label: "Feed for July", amountKes: 1150 },
+    { date: "2026-08-31", category: "feed", label: "Feed for August", amountKes: 1240 },
+    { date: "2026-09-30", category: "feed", label: "Feed for September", amountKes: 1310 },
     { date: "2026-07-15", category: "veterinary", label: "Vaccinations and deworming", amountKes: 850 },
   ],
   photos: [
@@ -93,9 +93,9 @@ const goat: Animal = {
   ],
   costs: [
     { date: "2026-07-06", category: "purchase", label: "Animal purchase", amountKes: 11800 },
-    { date: "2026-07-31", category: "feed", label: "Feed — July", amountKes: 720 },
-    { date: "2026-08-31", category: "feed", label: "Feed — August", amountKes: 860 },
-    { date: "2026-09-30", category: "feed", label: "Feed — September", amountKes: 880 },
+    { date: "2026-07-31", category: "feed", label: "Feed for July", amountKes: 720 },
+    { date: "2026-08-31", category: "feed", label: "Feed for August", amountKes: 860 },
+    { date: "2026-09-30", category: "feed", label: "Feed for September", amountKes: 880 },
     { date: "2026-07-21", category: "veterinary", label: "Vaccinations and deworming", amountKes: 700 },
   ],
   photos: [
@@ -139,10 +139,10 @@ const steer: Animal = {
   ],
   costs: [
     { date: "2026-06-15", category: "purchase", label: "Animal purchase", amountKes: 58000 },
-    { date: "2026-06-30", category: "feed", label: "Feed — June", amountKes: 2100 },
-    { date: "2026-07-31", category: "feed", label: "Feed — July", amountKes: 4600 },
-    { date: "2026-08-31", category: "feed", label: "Feed — August", amountKes: 4750 },
-    { date: "2026-09-30", category: "feed", label: "Feed — September", amountKes: 4800 },
+    { date: "2026-06-30", category: "feed", label: "Feed for June", amountKes: 2100 },
+    { date: "2026-07-31", category: "feed", label: "Feed for July", amountKes: 4600 },
+    { date: "2026-08-31", category: "feed", label: "Feed for August", amountKes: 4750 },
+    { date: "2026-09-30", category: "feed", label: "Feed for September", amountKes: 4800 },
     { date: "2026-07-08", category: "veterinary", label: "Vaccinations and parasite control", amountKes: 2400 },
   ],
   photos: [
@@ -185,7 +185,7 @@ export const demoPortfolio: Portfolio = {
   documents: [
     { id: "d1", title: "Managed ownership agreement", kind: "agreement", date: "2026-06-22" },
     { id: "d2", title: "Fattening programme agreement", kind: "agreement", date: "2026-06-15" },
-    { id: "d3", title: "Statement — September 2026", kind: "statement", date: "2026-10-01" },
+    { id: "d3", title: "Statement for September 2026", kind: "statement", date: "2026-10-01" },
   ],
 };
 

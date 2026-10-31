@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <>
       <SiteHeader />
-      <main className="flex flex-1 items-center bg-cream-50">
+      <main id="main" className="flex flex-1 items-center bg-cream-50">
         <div className="mx-auto max-w-xl px-5 py-24 text-center sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-500">Page not found</p>
           <h1 className="t-h2 mt-4 text-forest-950">

@@ -57,7 +57,7 @@ async function SpeciesContent({ params }: { params: Promise<{ slug: string }> })
           <p className="t-lead mt-6 max-w-xl text-ink-soft">{page.intro}</p>
           <p className="mt-6 inline-flex items-center gap-2 text-[0.875rem] text-ink-soft">
             <span className="size-1.5 rounded-full bg-ink-muted" aria-hidden="true" />
-            Not yet available — opening after launch
+            Not yet available. Opening after launch.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
@@ -160,7 +160,7 @@ export default async function SpeciesPage({ params }: PageProps<"/livestock/[slu
   return (
     <>
       <SiteHeader />
-      <main className="bg-cream-50 text-ink">
+      <main id="main" className="bg-cream-50 text-ink">
         <SpeciesContent params={params} />
       </main>
       <SiteFooter />

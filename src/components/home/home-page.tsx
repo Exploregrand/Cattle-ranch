@@ -12,7 +12,7 @@ export function HomePage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-cream-50 text-ink">
       <SiteHeader />
-      <main>
+      <main id="main">
         <Hero />
         <OrganicPractices />
         <Pathways />

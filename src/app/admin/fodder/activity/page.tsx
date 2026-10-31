@@ -47,7 +47,7 @@ async function FodderActivityPageContent() {
                       </Link>
                     </td>
                     <td className="py-3 text-forest-950">{h.kind === "planting" ? `Planted ${cropName(h.crop)}` : activityLabel[h.kind]}</td>
-                    <td className="py-3 text-right tabular">{h.yieldKg !== null ? formatKg(h.yieldKg) : "—"}</td>
+                    <td className="py-3 text-right tabular">{h.yieldKg !== null ? formatKg(h.yieldKg) : "None"}</td>
                     <td className="max-w-64 truncate px-5 py-3 text-ink-muted sm:px-6">{h.notes ?? ""}</td>
                   </tr>
                 ))}

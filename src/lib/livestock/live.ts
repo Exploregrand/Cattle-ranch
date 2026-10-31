@@ -36,7 +36,7 @@ function toAnimal(row: any, holder: string): Animal {
     intakeDate: row.intake_date,
     location: row.location,
     status: row.status,
-    programme: row.livestock_programmes?.name ?? "—",
+    programme: row.livestock_programmes?.name ?? "Not assigned",
     ownership: {
       holder,
       since: ownership?.starts_on ?? row.intake_date,

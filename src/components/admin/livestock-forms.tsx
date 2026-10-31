@@ -128,7 +128,7 @@ export function CostForm({ animalId }: { animalId: string }) {
           <DateInput defaultValue={t} max={t} />
         </Field>
         <Field label="Description">
-          <Input name="label" placeholder="e.g. Feed — October" required maxLength={120} />
+          <Input name="label" placeholder="e.g. Feed for October" required maxLength={120} />
         </Field>
         <Field label="Amount">
           <NumberInput name="amountKes" suffix="KES" required />
@@ -136,7 +136,7 @@ export function CostForm({ animalId }: { animalId: string }) {
       </div>
       <label className="flex items-center gap-3 text-sm text-ink-soft">
         <input type="checkbox" name="internal" className="size-5 accent-forest-800" />
-        Internal only — hide from the customer&apos;s statement
+        Internal only: hide from the customer&apos;s statement
       </label>
     </ActionForm>
   );

@@ -17,8 +17,8 @@ export const routes = [
 
 export const tickets = [
   { value: "under_500k", label: "Under KES 500,000" },
-  { value: "500k_2m", label: "KES 500,000 – 2 million" },
-  { value: "2m_10m", label: "KES 2 – 10 million" },
+  { value: "500k_2m", label: "KES 500,000 to 2 million" },
+  { value: "2m_10m", label: "KES 2 to 10 million" },
   { value: "over_10m", label: "Over KES 10 million" },
   { value: "undisclosed", label: "Prefer not to say" },
 ] as const;

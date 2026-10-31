@@ -1,6 +1,7 @@
 "use server";
 
 import { registrationSchema, saveRegistration } from "@/lib/early-access";
+import { notifyNewLead } from "@/lib/notify";
 
 export type EarlyAccessState = {
   status: "idle" | "success" | "error";
@@ -36,6 +37,15 @@ export async function registerEarlyAccess(
 
   try {
     await saveRegistration(parsed.data);
+    await notifyNewLead(`New early-access registration: ${parsed.data.fullName}`, [
+      `Name: ${parsed.data.fullName}`,
+      `Phone: ${parsed.data.phone}`,
+      parsed.data.email && `Email: ${parsed.data.email}`,
+      parsed.data.location && `Location: ${parsed.data.location}`,
+      `Interested in: ${parsed.data.interests.join(", ")}`,
+      parsed.data.message && `Message: ${parsed.data.message}`,
+      `WhatsApp: https://wa.me/${parsed.data.phone.replace("+", "")}`,
+    ]);
   } catch (error) {
     console.error("Early access registration failed", error);
     return {

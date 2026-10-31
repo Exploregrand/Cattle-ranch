@@ -23,7 +23,7 @@ const bedSelection = z
   .transform(({ section, from, to }) => bedRange(section, from, to));
 
 function rangeLabel(beds: string[]) {
-  return beds.length === 1 ? `bed ${beds[0]}` : `${beds.length} beds (${beds[0]}–${beds[beds.length - 1]})`;
+  return beds.length === 1 ? `bed ${beds[0]}` : `${beds.length} beds (${beds[0]} to ${beds[beds.length - 1]})`;
 }
 
 function selectedBeds(raw: Record<string, unknown>) {

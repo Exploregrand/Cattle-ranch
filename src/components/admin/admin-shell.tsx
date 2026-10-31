@@ -42,7 +42,7 @@ export function AdminShell({ staff, children }: { staff: Staff; children: React.
             requires a staff account.
           </p>
         )}
-        <main className="mx-auto w-full max-w-6xl flex-1 px-5 pb-28 pt-6 sm:pt-8 lg:px-10 lg:pb-16 lg:pt-10">{children}</main>
+        <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-5 pb-28 pt-6 sm:pt-8 lg:px-10 lg:pb-16 lg:pt-10">{children}</main>
       </div>
       <BottomNav isAdmin={isAdmin} />
     </div>
