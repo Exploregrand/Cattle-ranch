@@ -129,36 +129,32 @@ export function MeetTheTeam() {
         </p>
       </div>
 
-      {team.length > 0 && (
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((m) => (
-            <li key={m.name} className="overflow-hidden rounded-xl border border-border bg-white">
-              <div className="relative aspect-[4/5] bg-cream-200">
-                {m.photo ? (
-                  <Image src={m.photo} alt={`${m.name}, ${m.role}`} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
-                ) : (
-                  <span className="t-display flex h-full items-center justify-center text-ink-muted">
-                    {m.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
-                  </span>
-                )}
-              </div>
-              <div className="p-5">
-                <p className="t-h3">{m.name}</p>
-                <p className="eyebrow mt-1">{m.role}</p>
-                <p className="t-body mt-3 text-ink-soft">{m.bio}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className="mt-12 grid gap-4 md:grid-cols-2 lg:gap-5">
-        {[farmPhotos.prepWorker, farmPhotos.tending].map((p) => (
-          <figure key={p.src} className="relative aspect-[4/3] overflow-hidden rounded-xl">
-            <Image src={p.src} alt={p.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_40%]" />
-          </figure>
+      {/* People and field-team photos share one grid, so the row stays full however many people are listed. */}
+      <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
+        {team.map((m) => (
+          <li key={m.name} className="flex flex-col overflow-hidden rounded-xl border border-border bg-white">
+            <div className="relative aspect-[4/5] bg-cream-200">
+              {m.photo ? (
+                <Image src={m.photo} alt={`${m.name}, ${m.role}`} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+              ) : (
+                <span aria-hidden="true" className="t-display flex h-full items-center justify-center text-ink-muted">
+                  {m.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                </span>
+              )}
+            </div>
+            <div className="p-4 sm:p-5">
+              <p className="t-h3">{m.name}</p>
+              <p className="eyebrow mt-1">{m.role}</p>
+              {m.bio && <p className="t-body mt-3 text-ink-soft">{m.bio}</p>}
+            </div>
+          </li>
         ))}
-      </div>
+        {[farmPhotos.prepWorker, farmPhotos.tending].map((p) => (
+          <li key={p.src} className="relative min-h-[240px] overflow-hidden rounded-xl sm:min-h-[320px]">
+            <Image src={p.src} alt={p.alt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover object-[50%_40%]" />
+          </li>
+        ))}
+      </ul>
       <p className="mt-4 text-[0.875rem] text-ink-muted">Our field team at work: preparing beds and tending young fodder rows.</p>
     </section>
   );

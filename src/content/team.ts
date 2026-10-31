@@ -5,10 +5,12 @@
 export interface TeamMember {
   name: string;
   role: string;
-  bio: string;
+  bio?: string;
   photo?: string; // e.g. "/images/team/jane.jpg"
 }
 
 export const team: TeamMember[] = [
+  { name: "Abdurahman", role: "Farm Manager" },
+  { name: "Mohamed", role: "Farm Worker" },
   // { name: "Full name", role: "Founder", bio: "One line about them.", photo: "/images/team/name.jpg" },
 ];
