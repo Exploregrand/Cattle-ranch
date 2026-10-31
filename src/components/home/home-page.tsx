@@ -50,8 +50,8 @@ export function HomePage() {
       <SiteHeader />
 
       {/* Hero */}
-      <section className="px-3 pt-3 sm:px-4 sm:pt-4">
-        <div className="relative isolate flex min-h-[620px] items-end overflow-hidden rounded-xl sm:min-h-[700px] lg:min-h-[calc(100svh-6.5rem)]">
+      <section>
+        <div className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:min-h-[680px] lg:min-h-[calc(100svh-4.5rem)]">
           <Image
             src={photos.cattle.src}
             alt={photos.cattle.alt}
@@ -63,7 +63,7 @@ export function HomePage() {
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1c1b19]/90 via-[#1c1b19]/30 to-transparent" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1c1b19]/65 via-[#1c1b19]/15 to-transparent" />
 
-          <div className="w-full px-6 pb-10 pt-40 text-cream-50 sm:px-12 sm:pb-14 lg:px-16 lg:pb-16">
+          <div className="mx-auto w-full max-w-7xl px-6 pb-12 pt-40 text-cream-50 sm:px-8 sm:pb-16 lg:pb-20">
             <p className="eyebrow !text-cream-50/75">Isinya · Kajiado County · Kenya</p>
             <h1 className="t-display mt-5 max-w-[13ch]">Own livestock, raised on our land.</h1>
             <p className="t-lead mt-6 max-w-xl text-cream-50/85">

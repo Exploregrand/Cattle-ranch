@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -41,52 +42,58 @@ export function MobileMenu() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen(true)}
-        className="inline-flex size-11 items-center justify-center rounded-full text-forest-950 hover:bg-cream-100"
+        className="inline-flex size-11 items-center justify-center rounded-md text-forest-950 hover:bg-cream-100"
       >
         <Menu className="size-5" />
       </button>
 
-      {open && (
-        <div
-          id="mobile-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menu"
-          className="fixed inset-0 z-50 flex flex-col bg-forest-900 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4 text-cream-50 animate-in fade-in duration-200"
-        >
-          <div className="flex h-14 items-center justify-between">
-            <Wordmark tone="light" />
-            <button
-              ref={closeRef}
-              type="button"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-              className="inline-flex size-11 items-center justify-center rounded-full hover:bg-cream-50/10"
-            >
-              <X className="size-5" />
-            </button>
-          </div>
-          <nav aria-label="Mobile" className="mt-10 flex flex-col">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+      {open &&
+        createPortal(
+          <div
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
+            className="fixed inset-0 z-[100] flex flex-col overflow-y-auto bg-[#2b2622] px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4 text-cream-50 animate-in fade-in duration-200"
+          >
+            <div className="flex h-14 items-center justify-between">
+              <Wordmark tone="light" />
+              <button
+                ref={closeRef}
+                type="button"
+                aria-label="Close menu"
                 onClick={() => setOpen(false)}
-                className="t-h2 border-b border-cream-50/10 py-5 text-cream-50"
+                className="inline-flex size-11 items-center justify-center rounded-md hover:bg-cream-50/10"
               >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="mt-auto">
-            <Button asChild size="lg" className="label-caps h-14 w-full bg-cream-50 text-[1.05rem] text-forest-950 hover:bg-white">
-              <Link href="/early-access" onClick={() => setOpen(false)}>
-                Register interest
-              </Link>
-            </Button>
-          </div>
-        </div>
-      )}
+                <X className="size-5" />
+              </button>
+            </div>
+            <nav aria-label="Mobile" className="mt-10 flex flex-col">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="t-h2 border-b border-cream-50/10 py-5 text-cream-50"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="mt-auto">
+              <Button
+                asChild
+                size="lg"
+                className="label-caps h-14 w-full bg-cream-50 text-[1.05rem] text-forest-950 hover:bg-white"
+              >
+                <Link href="/early-access" onClick={() => setOpen(false)}>
+                  Register interest
+                </Link>
+              </Button>
+            </div>
+          </div>,
+          document.body,
+        )}
     </div>
   );
 }
