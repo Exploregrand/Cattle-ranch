@@ -7,6 +7,7 @@ import { InvestorForm } from "@/app/investors/investor-form";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { marketFacts, sources } from "@/content/investors";
+import { farmPhotos } from "@/content/farm-story";
 import { photos } from "@/content/photos";
 import { farm } from "@/content/site";
 
@@ -162,7 +163,7 @@ export default function InvestorsPage() {
 
             <Chapter id="model" n="02" title="The model">
               <h2 className="t-h1 mt-6 max-w-3xl">
-                Grow the feed. Raise the animals. Record everything.
+                Own the animals. We grow the feed, raise them and record everything.
               </h2>
               <ol className="mt-12 grid gap-4 sm:grid-cols-4">
                 {[
@@ -179,30 +180,28 @@ export default function InvestorsPage() {
                 ))}
               </ol>
 
-              <h3 className="label-caps mt-16 text-[0.95rem] text-ink-muted">Two ways to take part — interest only today</h3>
-              <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                {[
-                  {
-                    photo: photos.sheep,
-                    title: "Back the company",
-                    body: "For investors who want to own part of Herd & Field itself and share in building the business. Any raise would be a private, documented process.",
-                  },
-                  {
-                    photo: photos.goat,
-                    title: "Own managed livestock",
-                    body: "For individuals and chamas who want to own specific, identified animals that we feed and care for under a written agreement.",
-                  },
-                ].map((r) => (
-                  <article key={r.title} className="overflow-hidden rounded-xl border border-border bg-paper">
-                    <div className="relative h-56">
-                      <Image src={r.photo.src} alt={r.photo.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" style={{ objectPosition: r.photo.position }} />
-                    </div>
-                    <div className="p-7">
-                      <p className="t-h2">{r.title}</p>
-                      <p className="mt-2 leading-relaxed text-ink-soft">{r.body}</p>
-                    </div>
-                  </article>
-                ))}
+              <div className="mt-16 grid overflow-hidden rounded-xl border border-border bg-paper lg:grid-cols-2">
+                <div className="relative min-h-[260px]">
+                  <Image
+                    src={farmPhotos.herdGrazing.src}
+                    alt={farmPhotos.herdGrazing.alt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover object-[30%_55%]"
+                  />
+                </div>
+                <div className="p-7 sm:p-10">
+                  <p className="eyebrow">How investors take part</p>
+                  <p className="t-h2 mt-3">You own the animals. We raise them.</p>
+                  <p className="mt-3 leading-relaxed text-ink-soft">
+                    Investors buy specific, ear-tagged sheep, goats or cattle. We feed, house and care for them on our farms under a
+                    written agreement, record every weigh-in, treatment and cost, and sell or hand them over at the end — with the
+                    outcome documented.
+                  </p>
+                  <p className="mt-4 text-[0.875rem] leading-relaxed text-ink-muted">
+                    Herd &amp; Field does not sell shares or equity in the company. You own livestock, not part of the business.
+                  </p>
+                </div>
               </div>
             </Chapter>
 
@@ -297,7 +296,7 @@ export default function InvestorsPage() {
                 ))}
               </ol>
               <p className="mt-6 max-w-3xl">
-                This page is for information only. It is not an offer to sell, or a solicitation of an offer to buy, any shares,
+                This page is for information only. It is not an offer to sell, or a solicitation of an offer to buy, any livestock, shares,
                 securities or investment product. No offer will be made except through formal documentation after legal and
                 regulatory review. Livestock values can fall as well as rise; no returns are promised.
               </p>

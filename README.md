@@ -103,6 +103,7 @@ credentials, authorisation and testing.
 ## Investors
 
 The investor brief collects **expressions of interest only**. No shares, securities or investment
-products are offered and no money is taken through the platform. Any raise or ownership programme must
+products are offered and no money is taken through the platform. Investors would own livestock — never
+shares or equity in Herd & Field. Any ownership programme must
 go through Kenyan legal and regulatory review (including Capital Markets Authority rules) and formal
 documentation first. The governance safeguards on the page are proposals to confirm with legal advisers.

@@ -91,7 +91,7 @@ export function InvestorForm() {
 
       {[
         { name: "investorType", label: "What describes you", options: investorTypes },
-        { name: "route", label: "What interests you", options: routes },
+        { name: "route", label: "Animals you'd like to own", options: routes },
       ].map((group) => (
         <fieldset key={group.name}>
           <legend className="label-caps mb-2.5 text-[0.85rem] text-forest-900">{group.label}</legend>
@@ -142,7 +142,7 @@ export function InvestorForm() {
         {[
           {
             name: "acknowledgedNoOffer",
-            text: "I understand this is an expression of interest only. No offer of shares, securities or investment is being made, and no returns are promised.",
+            text: "I understand this is an expression of interest only. No offer is being made, no shares in Herd & Field are available, and no returns are promised.",
           },
           { name: "consent", text: "Herd & Field may contact me by phone, WhatsApp or email about this." },
         ].map((c) => (

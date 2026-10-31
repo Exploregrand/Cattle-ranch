@@ -23,8 +23,8 @@ export const pathways = [
   {
     id: "invest",
     photo: "cattle" as const,
-    title: "Invest in Herd & Field",
-    body: "For Kenyan investors and chamas who want to back the business itself as it grows.",
+    title: "Invest in livestock",
+    body: "For Kenyan investors and chamas who want to own a number of animals, raised and managed for them on our farms.",
     cta: "Read the investor brief",
     href: "/investors",
   },

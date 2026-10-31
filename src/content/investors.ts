@@ -7,10 +7,12 @@ export const investorTypes = [
   { value: "company", label: "Company or fund" },
 ] as const;
 
+/** What the investor wants to own. Herd & Field does not offer shares or equity in the company. */
 export const routes = [
-  { value: "equity", label: "Backing Herd & Field (equity)" },
-  { value: "livestock", label: "Owning managed livestock" },
-  { value: "both", label: "Both" },
+  { value: "sheep", label: "Sheep" },
+  { value: "goats", label: "Goats" },
+  { value: "cattle", label: "Cattle" },
+  { value: "mixed", label: "A mix" },
 ] as const;
 
 export const tickets = [

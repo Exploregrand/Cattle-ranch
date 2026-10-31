@@ -9,7 +9,7 @@ for early 2027. No animals, sales, investments or payments yet._
 | --- | --- | --- | --- |
 | **Managed-ownership buyers** — Nairobi/Kajiado professionals, people with land-less ambitions to own livestock | A real, specific animal, cared for properly, without the hassle | A named farm they can visit, written terms, records they can check, a phone number that answers | `/` → `/early-access` |
 | **Qurbani buyers** — households and community committees, every Eid al-Adha | A healthy animal that meets Qurbani requirements, reserved early, delivered on time | Proof of health and age, a clear price, reliable collection/delivery | `/qurbani` |
-| **Investors & chamas** — Kenyan individuals, chamas, SACCOs, companies | Back a credible, well-run business early | Real progress, honest stage, governance, people they can meet | `/investors` |
+| **Investors & chamas** — Kenyan individuals, chamas, SACCOs, companies | Own a number of animals, professionally raised and recorded | Real progress, honest stage, governance, people they can meet | `/investors` |
 
 Keep the three audiences separate in messaging. Customer pages never use investment language;
 investor pages never imply that buying an animal is an investment.
@@ -79,7 +79,7 @@ WhatsApp list size, and the share of registrations from referrals.
 | Phase | When | What | Status |
 | --- | --- | --- | --- |
 | **A. Interest** | Now | Investor brief, expressions of interest, live progress, leads in Farm Ops | Built |
-| **B. Structure** | After Kenyan legal advice (incl. Capital Markets Authority rules) | Decide the vehicle (private equity raise vs. asset-backed programmes), offer documents, KYC/AML process | Not started — legal first |
+| **B. Structure** | After Kenyan legal advice (incl. Capital Markets Authority rules) | Structure livestock ownership for investors (owned, identified animals under a management agreement — no shares or equity in Herd & Field), agreement documents, KYC/AML process | Not started — legal first |
 | **C. Investor portal** | After B | Signed-in investor area: documents, capital account, quarterly reports generated from Farm Ops and finance records | Design ready to extend from the customer dashboard |
 
 No capital is accepted, and no feature that takes money is built, until Phase B is signed off.
