@@ -342,19 +342,22 @@ export function RecordSection() {
 }
 
 
-/** Home only. Renders nothing until real work has been recorded in Farm Ops. */
+/** Live figures from Farm Ops records; shows the fixed farm facts until records exist. */
 async function FarmLiveContent() {
   const progress = await getFarmProgress();
-  if (!progress) return null;
   return (
     <section id="farm" className="scroll-mt-20 border-y border-border bg-white">
       <div className={`${wrap} section-y`}>
         <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div>
             <p className="eyebrow">Live from the farm</p>
-            <h2 className="t-h1 mt-4">What our records show this month.</h2>
+            <h2 className="t-h1 mt-4">{progress ? "What our records show this month." : "Feed first. Then the herd."}</h2>
           </div>
-          <p className="t-lead text-ink-soft">Straight from the field records our team keeps every day — not marketing figures.</p>
+          <p className="t-lead text-ink-soft">
+            {progress
+              ? "Straight from the field records our team keeps every day — not marketing figures."
+              : "We're growing the feed that will raise every animal. Live figures from our field records will appear here."}
+          </p>
         </div>
         <div className="mt-12">
           <LiveProgress />
@@ -372,38 +375,6 @@ export function FarmLive() {
   );
 }
 
-/** Home only: why buyers can trust us, in one place. */
-export function WhyUs() {
-  const points = [
-    { title: "We grow the feed", body: "Every animal is raised on fodder from our own land, so we control quality and cost.", href: "/farm", cta: "Our farm" },
-    { title: "You see every record", body: "Weigh-ins, treatments and costs logged as they happen, on your phone.", href: "/how-it-works", cta: "How it works" },
-    { title: "Terms before money", body: "A signed agreement sets out price, care and outcome before you pay anything.", href: "/how-it-works", cta: "What it covers" },
-  ];
-  return (
-    <section className={`${wrap} section-y grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20`}>
-      <div className="relative aspect-[4/5] overflow-hidden rounded-xl">
-        <Image src={farmPhotos.napierStand.src} alt={farmPhotos.napierStand.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" />
-      </div>
-      <div>
-        <p className="eyebrow">Why Herd &amp; Field</p>
-        <h2 className="t-h1 mt-4 max-w-[16ch]">A working farm that writes everything down.</h2>
-        <ul className="mt-10 border-t border-ink/15">
-          {points.map((pt) => (
-            <li key={pt.title} className="grid gap-2 border-b border-ink/10 py-6 sm:grid-cols-[1fr_auto] sm:items-end sm:gap-8">
-              <div>
-                <p className="t-h3">{pt.title}</p>
-                <p className="t-body mt-1.5 text-ink-soft">{pt.body}</p>
-              </div>
-              <Link href={pt.href} className="label-caps inline-flex items-center gap-1.5 text-[0.75rem] text-ink hover:underline">
-                {pt.cta} <ArrowRight className="size-3.5" aria-hidden="true" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
 
 export function Questions() {
   return (

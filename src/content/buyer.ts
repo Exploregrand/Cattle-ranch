@@ -6,7 +6,7 @@
 export const pathways = [
   {
     id: "own",
-    photo: "herdCurious" as const,
+    photo: "sheep" as const,
     title: "Own managed livestock",
     body: "Own a specific, ear-tagged animal. We house, feed and care for it on our farm; you follow every record from your phone.",
     cta: "Register interest",

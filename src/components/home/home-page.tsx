@@ -1,12 +1,12 @@
-import { Closing, FarmLive, Hero, Pathways, Questions, WhyUs } from "@/components/sections";
-import { FarmCatCard } from "@/components/sections/farm-story";
+import { AnimalsSection, CareDay, Closing, FarmLive, Hero, HowItWorks, Pathways, Questions, RecordSection } from "@/components/sections";
+import { FarmCatCard, OrganicPractices } from "@/components/sections/farm-story";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 
 /**
- * Homepage, in the order of a buyer's decision:
- * hook → why trust us → the three ways in → live proof → objections → personality → action.
- * Every section here appears on this page only; detail lives on its own page.
+ * Homepage order follows the buyer's decision path:
+ * hook → trust (organic farm) → offer → animals → process and agreement → daily care → the record
+ * → live proof → objections → personality → action.
  */
 export function HomePage() {
   return (
@@ -14,8 +14,12 @@ export function HomePage() {
       <SiteHeader />
       <main>
         <Hero />
-        <WhyUs />
+        <OrganicPractices />
         <Pathways />
+        <AnimalsSection />
+        <HowItWorks />
+        <CareDay />
+        <RecordSection />
         <FarmLive />
         <Questions />
         <FarmCatCard />
