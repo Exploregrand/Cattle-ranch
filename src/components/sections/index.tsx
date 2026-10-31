@@ -50,19 +50,27 @@ export function Hero() {
     <>
     {/* Hero */}
     <section>
-      <div className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:min-h-[680px] lg:min-h-[calc(100svh-4.5rem)]">
-        <Image
-          src={farmPhotos.herdGrazing.src}
-          alt={farmPhotos.herdGrazing.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="-z-10 object-cover object-[60%_50%] lg:object-[50%_55%]"
-        />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1c1b19]/90 via-[#1c1b19]/30 to-transparent" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1c1b19]/65 via-[#1c1b19]/15 to-transparent" />
+      {/*
+        Phone: the photo gets its own band (cow's head in view) and the copy sits below on a dark ground.
+        Tablet and up: one full-bleed photo with the copy over it.
+      */}
+      <div className="relative isolate flex flex-col overflow-hidden bg-[#1c1b19] lg:min-h-[calc(100svh-4.5rem)] lg:flex-row lg:items-end">
+        <div className="relative h-[52svh] min-h-[340px] w-full sm:h-[60svh] lg:absolute lg:inset-0 lg:-z-10 lg:h-auto">
+          <Image
+            src={farmPhotos.herdGrazing.src}
+            alt={farmPhotos.herdGrazing.alt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[22%_62%] sm:object-[25%_58%] lg:object-[35%_55%]"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#1c1b19] to-transparent lg:hidden" />
+        </div>
+        <div className="absolute inset-0 -z-10 hidden bg-gradient-to-t from-[#1c1b19]/85 via-transparent to-transparent lg:block" />
+        <div className="absolute inset-0 -z-10 hidden bg-gradient-to-l from-[#1c1b19]/85 via-[#1c1b19]/35 to-transparent lg:block" />
 
-        <div className="mx-auto w-full max-w-7xl px-6 pb-12 pt-40 text-cream-50 sm:px-8 sm:pb-16 lg:pb-20">
+        <div className="relative mx-auto -mt-10 w-full max-w-7xl px-6 pb-12 text-cream-50 sm:px-8 sm:pb-16 lg:mt-0 lg:flex lg:justify-end lg:pb-20 lg:pt-40">
+          <div className="lg:max-w-[38rem]">
           <p className="eyebrow !text-cream-50/75">Isinya · Kajiado County · Kenya</p>
           <h1 className="t-display mt-5 max-w-[13ch]">Own livestock, raised on our land.</h1>
           <p className="t-lead mt-6 max-w-xl text-cream-50/85">
@@ -85,6 +93,7 @@ export function Hero() {
               </div>
             ))}
           </dl>
+          </div>
         </div>
       </div>
     </section>

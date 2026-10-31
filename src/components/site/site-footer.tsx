@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Wordmark } from "@/components/brand/wordmark";
+import { BackToTop } from "@/components/site/back-to-top";
 import { farm } from "@/content/site";
 
 const links = [
@@ -19,6 +20,7 @@ const links = [
 export function SiteFooter() {
   return (
     <footer className="bg-forest-950 text-cream-100">
+      <BackToTop />
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
