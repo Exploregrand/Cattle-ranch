@@ -53,7 +53,7 @@ const governance = [
 function Chapter({ id, n, title, children }: { id: string; n: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-28 border-t border-border py-20 sm:py-24">
-      <p className="label-caps text-[0.95rem] text-clay">
+      <p className="eyebrow">
         {n} · {title}
       </p>
       {children}
@@ -70,8 +70,8 @@ export default function InvestorsPage() {
         <section className="mx-auto max-w-7xl px-6 pt-12 sm:pt-16">
           <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
             <div className="pb-2">
-              <p className="label-caps text-[0.95rem] text-clay">Investor brief · Kenya</p>
-              <h1 className="mt-6 font-display text-[3rem] font-medium leading-[1] tracking-[-0.025em] sm:text-[4.4rem] lg:text-[5rem]">
+              <p className="eyebrow">Investor brief · Kenya</p>
+              <h1 className="t-display mt-6 max-w-[16ch]">
                 Kenyan livestock,
                 <br />
                 managed in the open.
@@ -81,16 +81,16 @@ export default function InvestorsPage() {
                 every animal, feed and cost on record. We are speaking with Kenyan investors and chamas ahead of launch.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <a href="#interest" className="label-caps inline-flex h-14 items-center justify-center rounded-full bg-forest-950 px-8 text-[1.05rem] font-bold text-cream-50 hover:bg-clay">
+                <a href="#interest" className="label-caps inline-flex h-14 items-center justify-center rounded-md bg-forest-950 px-8 text-[1.05rem] font-bold text-cream-50 hover:bg-clay">
                   Register investor interest
                 </a>
-                <a href="#opportunity" className="label-caps inline-flex h-14 items-center justify-center gap-2 rounded-full border-2 border-forest-950 px-8 text-[1.05rem] font-bold">
+                <a href="#opportunity" className="label-caps inline-flex h-14 items-center justify-center gap-2 rounded-md border-2 border-forest-950 px-8 text-[1.05rem] font-bold">
                   Read the brief <ArrowDown className="size-4" aria-hidden="true" />
                 </a>
               </div>
             </div>
             <figure>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                 <Image
                   src={photos.cattle.src}
                   alt={photos.cattle.alt}
@@ -133,7 +133,7 @@ export default function InvestorsPage() {
 
           <div className="min-w-0">
             <Chapter id="opportunity" n="01" title="The opportunity">
-              <h2 className="mt-6 max-w-3xl font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem]">
+              <h2 className="t-h1 mt-6 max-w-3xl">
                 Livestock is central to Kenya&apos;s economy. Owning it well is still hard.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
@@ -144,7 +144,7 @@ export default function InvestorsPage() {
               <dl className="mt-12 grid border-y border-forest-950 sm:grid-cols-2">
                 {marketFacts.map((f) => (
                   <div key={f.value} className="py-8 sm:px-8 sm:first:pl-0 sm:[&:not(:first-child)]:border-l sm:[&:not(:first-child)]:border-border">
-                    <dd className="font-display text-[3.4rem] font-medium leading-none tracking-[-0.02em] text-forest-950 sm:text-[4.4rem]">
+                    <dd className="t-h1 text-forest-950">
                       {f.value}
                     </dd>
                     <dt className="mt-4 max-w-xs leading-relaxed text-ink-soft">
@@ -159,7 +159,7 @@ export default function InvestorsPage() {
             </Chapter>
 
             <Chapter id="model" n="02" title="The model">
-              <h2 className="mt-6 max-w-3xl font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem]">
+              <h2 className="t-h1 mt-6 max-w-3xl">
                 Grow the feed. Raise the animals. Record everything.
               </h2>
               <ol className="mt-12 grid gap-4 sm:grid-cols-4">
@@ -169,9 +169,9 @@ export default function InvestorsPage() {
                   ["Records", "ID, weigh-ins, health, feeding and every shilling, logged as it happens."],
                   ["Outcome", "Sale, collection or other documented result — reported, never promised."],
                 ].map(([t, b], i) => (
-                  <li key={t} className="rounded-[1.25rem] border border-border bg-paper p-6">
-                    <span className="label-caps text-[0.85rem] text-clay">Step {i + 1}</span>
-                    <p className="mt-6 font-display text-2xl font-medium">{t}</p>
+                  <li key={t} className="rounded-xl border border-border bg-paper p-6">
+                    <span className="eyebrow">Step {i + 1}</span>
+                    <p className="t-h3 mt-6">{t}</p>
                     <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{b}</p>
                   </li>
                 ))}
@@ -191,12 +191,12 @@ export default function InvestorsPage() {
                     body: "For individuals and chamas who want to own specific, identified animals that we feed and care for under a written agreement.",
                   },
                 ].map((r) => (
-                  <article key={r.title} className="overflow-hidden rounded-[1.5rem] border border-border bg-paper">
+                  <article key={r.title} className="overflow-hidden rounded-xl border border-border bg-paper">
                     <div className="relative h-56">
                       <Image src={r.photo.src} alt={r.photo.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" style={{ objectPosition: r.photo.position }} />
                     </div>
                     <div className="p-7">
-                      <p className="font-display text-[1.8rem] font-medium">{r.title}</p>
+                      <p className="t-h2">{r.title}</p>
                       <p className="mt-2 leading-relaxed text-ink-soft">{r.body}</p>
                     </div>
                   </article>
@@ -205,7 +205,7 @@ export default function InvestorsPage() {
             </Chapter>
 
             <Chapter id="today" n="03" title="Where we are">
-              <h2 className="mt-6 max-w-3xl font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem]">
+              <h2 className="t-h1 mt-6 max-w-3xl">
                 Honest about our stage.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
@@ -220,7 +220,7 @@ export default function InvestorsPage() {
                       {t.status === "In place" && <Check className="mr-1 inline size-3.5" aria-hidden="true" />}
                       {t.status}
                     </span>
-                    <span className="font-display text-xl">{t.title}</span>
+                    <span className="t-h3">{t.title}</span>
                     <span className="text-ink-soft">{t.body}</span>
                   </li>
                 ))}
@@ -228,14 +228,14 @@ export default function InvestorsPage() {
             </Chapter>
 
             <Chapter id="roadmap" n="04" title="Roadmap">
-              <h2 className="mt-6 max-w-3xl font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem]">
+              <h2 className="t-h1 mt-6 max-w-3xl">
                 Feed first. Then the herd.
               </h2>
               <ol className="mt-12 grid gap-4 md:grid-cols-4">
                 {roadmap.map((r) => (
-                  <li key={r.phase} className={`rounded-[1.25rem] p-6 ${r.now ? "bg-forest-900 text-cream-50" : "border border-border bg-paper"}`}>
+                  <li key={r.phase} className={`rounded-xl p-6 ${r.now ? "bg-forest-900 text-cream-50" : "border border-border bg-paper"}`}>
                     <span className="label-caps text-[0.85rem]">{r.now ? `${r.phase} · now` : r.phase}</span>
-                    <p className="mt-8 font-display text-[1.8rem] font-medium leading-none">{r.title}</p>
+                    <p className="t-h2 mt-8">{r.title}</p>
                     <p className={`mt-3 text-[0.95rem] leading-relaxed ${r.now ? "text-cream-100/80" : "text-ink-soft"}`}>{r.body}</p>
                   </li>
                 ))}
@@ -243,7 +243,7 @@ export default function InvestorsPage() {
             </Chapter>
 
             <Chapter id="governance" n="05" title="Governance">
-              <h2 className="mt-6 max-w-3xl font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.025em] sm:text-[3.4rem]">
+              <h2 className="t-h1 mt-6 max-w-3xl">
                 Before we accept a single shilling.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
@@ -251,8 +251,8 @@ export default function InvestorsPage() {
               </p>
               <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {governance.map((g) => (
-                  <li key={g.title} className="rounded-[1.25rem] border border-border bg-paper p-6">
-                    <p className="font-display text-xl font-medium">{g.title}</p>
+                  <li key={g.title} className="rounded-xl border border-border bg-paper p-6">
+                    <p className="t-h3">{g.title}</p>
                     <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">{g.body}</p>
                   </li>
                 ))}
@@ -262,7 +262,7 @@ export default function InvestorsPage() {
             <Chapter id="interest" n="06" title="Register interest">
               <div className="mt-6 grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
                 <div>
-                  <h2 className="font-display text-[2.4rem] font-medium leading-[1.05] tracking-[-0.025em] sm:text-[3.2rem]">
+                  <h2 className="t-h1">
                     Talk to us early.
                   </h2>
                   <p className="mt-6 leading-relaxed text-ink-soft">
@@ -277,7 +277,7 @@ export default function InvestorsPage() {
                     .
                   </p>
                 </div>
-                <div className="rounded-[1.75rem] border border-border bg-paper p-6 sm:p-9">
+                <div className="rounded-xl border border-border bg-paper p-6 sm:p-9">
                   <InvestorForm />
                 </div>
               </div>

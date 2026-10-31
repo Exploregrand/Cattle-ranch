@@ -27,9 +27,9 @@ const costLabel = { purchase: "Purchase", feed: "Feed", veterinary: "Veterinary"
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
   return (
-    <div className="rounded-2xl border border-border bg-white p-4 sm:p-5">
+    <div className="rounded-xl border border-border bg-white p-4 sm:p-5">
       <p className="text-xs text-ink-muted">{label}</p>
-      <p className="mt-1.5 font-display text-2xl font-medium tracking-[-0.01em] text-forest-950 tabular">{value}</p>
+      <p className="t-h3 mt-1.5 text-forest-950 tabular">{value}</p>
       {sub && <p className="mt-0.5 text-xs text-ink-muted">{sub}</p>}
     </div>
   );
@@ -89,7 +89,7 @@ export function AnimalProfile({
           </Link>
         )}
         <div className="flex items-center gap-5 sm:gap-7">
-          <div className="relative size-24 shrink-0 overflow-hidden rounded-[1.75rem] bg-cream-200 sm:size-32">
+          <div className="relative size-24 shrink-0 overflow-hidden rounded-xl bg-cream-200 sm:size-32">
             {animal.coverPhoto ? (
               <Image src={animal.coverPhoto} alt={`${animal.breed} ${speciesLabel[animal.species].toLowerCase()}`} fill sizes="128px" className="object-cover" />
             ) : (
@@ -102,7 +102,7 @@ export function AnimalProfile({
               <Badge variant={animal.status === "active" ? "default" : "soon"}>{statusLabel[animal.status]}</Badge>
               {isDemo && <Badge variant="gold">Sample record</Badge>}
             </div>
-            <h1 className="mt-2 font-display text-[2rem] font-medium leading-tight tracking-[-0.025em] text-forest-950 sm:text-4xl">
+            <h1 className="t-h2 mt-2 text-forest-950">
               {animal.breed} {speciesLabel[animal.species].toLowerCase()}
             </h1>
             <p className="mt-1 text-ink-soft">
@@ -225,7 +225,7 @@ export function AnimalProfile({
         ) : (
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {animal.photos.map((p) => (
-              <figure key={`${p.date}-${p.caption}`} className="overflow-hidden rounded-2xl border border-border bg-white">
+              <figure key={`${p.date}-${p.caption}`} className="overflow-hidden rounded-xl border border-border bg-white">
                 <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 bg-cream-100 text-ink-muted">
                   <ImageIcon className="size-6" aria-hidden="true" />
                   <span className="text-xs">{isDemo ? "Sample photo slot" : "Photo"}</span>

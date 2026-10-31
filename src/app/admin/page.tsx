@@ -43,15 +43,15 @@ async function OverviewContent() {
   return (
     <>
       <p className="text-sm text-ink-muted">{formatDate(t)}</p>
-      <h1 className="mt-1 font-display text-[1.9rem] font-medium leading-tight tracking-[-0.025em] text-forest-950 sm:text-[2.4rem]">
+      <h1 className="t-h2 mt-1 text-forest-950">
         {staff.localDev ? greeting() : `${greeting()}, ${staff.name.split(" ")[0]}`}
       </h1>
 
       <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
         {tiles.map((tile) => (
-          <Link key={tile.label} href={tile.href} className="group rounded-2xl border border-border bg-white p-4 transition-colors hover:border-forest-600/40 sm:p-5">
+          <Link key={tile.label} href={tile.href} className="group rounded-xl border border-border bg-white p-4 transition-colors hover:border-forest-600/40 sm:p-5">
             <p className="text-xs text-ink-muted">{tile.label}</p>
-            <p className="mt-1.5 font-display text-[1.7rem] font-medium leading-none text-forest-950 tabular">{tile.value}</p>
+            <p className="t-h2 mt-1.5 text-forest-950 tabular">{tile.value}</p>
             <p className="mt-1.5 text-xs text-ink-muted">{tile.sub}</p>
           </Link>
         ))}
@@ -69,9 +69,9 @@ async function OverviewContent() {
             <Link
               key={label}
               href={href}
-              className="flex h-20 flex-col justify-between rounded-2xl bg-forest-900 p-4 text-cream-50 transition-colors hover:bg-forest-800"
+              className="flex h-20 flex-col justify-between rounded-xl border border-border bg-white p-4 text-ink transition-colors hover:border-ink/40"
             >
-              <Icon className="size-5 text-gold-400" aria-hidden="true" />
+              <Icon className="size-5 text-ink-muted" aria-hidden="true" />
               <span className="text-sm font-medium">{label}</span>
             </Link>
           ))}
@@ -79,9 +79,9 @@ async function OverviewContent() {
       </section>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.25fr_1fr]">
-        <section className="rounded-2xl border border-border bg-white p-5 sm:p-6">
+        <section className="rounded-xl border border-border bg-white p-5 sm:p-6">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-display text-xl font-medium text-forest-950">Fodder beds</h2>
+            <h2 className="t-h3 text-forest-950">Fodder beds</h2>
             <Link href="/admin/fodder" className="text-sm font-medium text-forest-700 hover:underline">
               Open map
             </Link>
@@ -110,9 +110,9 @@ async function OverviewContent() {
           )}
         </section>
 
-        <section className="rounded-2xl border border-border bg-white p-5 sm:p-6">
+        <section className="rounded-xl border border-border bg-white p-5 sm:p-6">
           <div className="flex items-baseline justify-between">
-            <h2 className="font-display text-xl font-medium text-forest-950">Latest activity</h2>
+            <h2 className="t-h3 text-forest-950">Latest activity</h2>
             <Link href="/admin/fodder/activity" className="inline-flex items-center gap-1 text-sm font-medium text-forest-700 hover:underline">
               All <ArrowRight className="size-3.5" aria-hidden="true" />
             </Link>

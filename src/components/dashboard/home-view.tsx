@@ -40,7 +40,7 @@ export function HomeView({
     <div className="space-y-10">
       <div>
         <p className="text-sm text-ink-muted">{longDate(portfolio.asOf)}</p>
-        <h1 className="mt-1 font-display text-[2rem] font-medium leading-tight tracking-[-0.025em] text-forest-950 sm:text-4xl">
+        <h1 className="t-h2 mt-1 text-forest-950">
           {firstName ? `Habari, ${firstName}` : "Karibu"}
         </h1>
       </div>
@@ -64,21 +64,21 @@ export function HomeView({
         </>
       ) : (
         <>
-          <section aria-label="Summary" className="relative overflow-hidden rounded-[1.5rem] bg-forest-900 p-6 text-cream-50 sm:p-8">
+          <section aria-label="Summary" className="relative overflow-hidden rounded-xl bg-forest-900 p-6 text-cream-50 sm:p-8">
             <div className="relative flex items-start justify-between gap-4">
               <p className="text-sm text-cream-100/70">Animals under management</p>
               {isDemo && <Badge variant="dark">Sample data</Badge>}
             </div>
-            <p className="relative mt-2 font-display text-6xl font-medium tracking-[-0.03em] tabular">{animals.length}</p>
+            <p className="t-h1 relative mt-2 tabular">{animals.length}</p>
             <dl className="relative mt-8 grid grid-cols-2 gap-6 border-t border-cream-50/10 pt-5">
               <div>
                 <dt className="text-xs text-cream-100/60">Weight gained since intake</dt>
-                <dd className="mt-1 font-display text-2xl font-medium tabular">{formatSignedKg(totalGain)}</dd>
+                <dd className="t-h3 mt-1 tabular">{formatSignedKg(totalGain)}</dd>
               </div>
               {lastWeighIn && (
                 <div>
                   <dt className="text-xs text-cream-100/60">Latest weigh-in</dt>
-                  <dd className="mt-1 font-display text-2xl font-medium">{formatDate(lastWeighIn)}</dd>
+                  <dd className="t-h3 mt-1">{formatDate(lastWeighIn)}</dd>
                 </div>
               )}
             </dl>

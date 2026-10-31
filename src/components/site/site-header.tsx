@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Wordmark } from "@/components/brand/wordmark";
 import { MobileMenu } from "@/components/site/mobile-menu";
+import { Button } from "@/components/ui/button";
 
 export const siteNav = [
   { href: "/#animals", label: "Animals" },
@@ -13,26 +14,23 @@ export const siteNav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-cream-50/92 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+    <header className="sticky top-0 z-40 w-full border-b border-border bg-cream-50/95 backdrop-blur">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-6 px-6 sm:px-8">
         <Wordmark />
-        <nav aria-label="Main" className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
           {siteNav.map((item) => (
-            <Link key={item.href} href={item.href} className="label-caps text-[0.95rem] text-ink-muted transition-colors hover:text-forest-950">
+            <Link key={item.href} href={item.href} className="label-caps text-[0.8125rem] text-ink-soft transition-colors hover:text-ink">
               {item.label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <Link href="/sign-in" className="label-caps hidden px-3 text-[0.95rem] text-ink-muted hover:text-forest-950 lg:inline">
+        <div className="flex items-center gap-5">
+          <Link href="/sign-in" className="label-caps hidden text-[0.8125rem] text-ink-soft hover:text-ink lg:inline">
             Sign in
           </Link>
-          <Link
-            href="/early-access"
-            className="label-caps hidden h-11 items-center rounded-full bg-forest-950 px-5 text-[0.95rem] font-bold text-cream-50 hover:bg-clay sm:inline-flex"
-          >
-            Register interest
-          </Link>
+          <Button asChild size="sm" className="hidden sm:inline-flex">
+            <Link href="/early-access">Register interest</Link>
+          </Button>
           <MobileMenu />
         </div>
       </div>

@@ -61,7 +61,7 @@ export function AdminPageHeader({
   return (
     <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h1 className="font-display text-[1.9rem] font-medium leading-tight tracking-[-0.025em] text-forest-950 sm:text-[2.2rem]">
+        <h1 className="t-h2 text-forest-950">
           {title}
         </h1>
         {description && <p className="mt-1.5 text-ink-soft">{description}</p>}
@@ -75,7 +75,7 @@ export function SetupRequired() {
   return (
     <div className="mx-auto max-w-lg px-5 py-24 text-center">
       <Wordmark />
-      <h1 className="mt-8 font-display text-3xl font-medium text-forest-950">Connect the farm database</h1>
+      <h1 className="t-h2 mt-8 text-forest-950">Connect the farm database</h1>
       <p className="mt-3 leading-relaxed text-ink-soft">
         Farm Ops stores fodder, livestock and finance records in Postgres. Set <code className="font-mono text-sm">DATABASE_URL</code>{" "}
         to your Supabase connection string and run the migrations in <code className="font-mono text-sm">supabase/migrations</code>.
@@ -90,10 +90,10 @@ export function AdminSkeleton() {
       <div className="h-9 w-56 rounded-lg bg-cream-200" />
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="h-24 rounded-2xl bg-cream-100" />
+          <div key={i} className="h-24 rounded-xl bg-cream-100" />
         ))}
       </div>
-      <div className="h-72 rounded-2xl bg-cream-100" />
+      <div className="h-72 rounded-xl bg-cream-100" />
     </div>
   );
 }

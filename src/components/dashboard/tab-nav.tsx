@@ -24,14 +24,14 @@ type Tabs = ReturnType<typeof tabsFor>;
 
 function DesktopTabsView({ tabs }: { tabs: Tabs }) {
   return (
-    <nav aria-label="Dashboard" className="hidden items-center gap-1 rounded-full bg-cream-100 p-1 md:flex">
+    <nav aria-label="Dashboard" className="hidden items-center gap-1 rounded-lg bg-cream-100 p-1 md:flex">
       {tabs.map((tab) => (
         <Link
           key={tab.href}
           href={tab.href}
           aria-current={tab.active ? "page" : undefined}
           className={cn(
-            "rounded-full px-4 py-2 text-sm transition-colors",
+            "rounded-md px-4 py-2 text-sm transition-colors",
             tab.active
               ? "bg-white font-medium text-forest-900 shadow-[0_1px_2px_rgba(20,42,29,0.08)]"
               : "text-ink-soft hover:text-forest-900",
@@ -63,7 +63,7 @@ function MobileTabBarView({ tabs }: { tabs: Tabs }) {
             >
               <span
                 className={cn(
-                  "flex h-7 w-12 items-center justify-center rounded-full transition-colors",
+                  "flex h-7 w-12 items-center justify-center rounded-md transition-colors",
                   active && "bg-forest-100",
                 )}
               >

@@ -30,9 +30,9 @@ export function EarlyAccessForm() {
 
   if (state.status === "success") {
     return (
-      <div role="status" className="rounded-2xl border border-border bg-white p-6 sm:p-8">
+      <div role="status" className="rounded-xl border border-border bg-white p-6 sm:p-8">
         <CircleCheck className="size-8 text-forest-600" aria-hidden="true" />
-        <h2 className="mt-4 font-display text-2xl font-medium text-forest-950">Asante — you&apos;re on the list</h2>
+        <h2 className="t-h3 mt-4 text-forest-950">Asante — you&apos;re on the list</h2>
         <p className="mt-2 leading-relaxed text-ink-soft">
           We&apos;ll contact you when the programmes you chose are ready to open. There is nothing
           to pay and no commitment.
@@ -69,7 +69,7 @@ export function EarlyAccessForm() {
               />
               <span
                 className={cn(
-                  "inline-flex h-11 items-center gap-2 rounded-full border border-input bg-white px-4 text-sm text-ink-soft transition-colors",
+                  "inline-flex h-11 items-center gap-2 rounded-md border border-input bg-white px-4 text-sm text-ink-soft transition-colors",
                   "peer-checked:border-forest-800 peer-checked:bg-forest-800 peer-checked:text-cream-50",
                   "peer-focus-visible:ring-4 peer-focus-visible:ring-gold-200",
                   "[&>svg]:hidden peer-checked:[&>svg]:block",

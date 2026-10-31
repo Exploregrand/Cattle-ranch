@@ -30,13 +30,13 @@ async function BedPageContent({ params }: { params: Promise<{ id: string }> }) {
       </Link>
       <div className="mb-8 mt-4 flex flex-wrap items-center gap-4">
         <span
-          className="flex size-16 items-center justify-center rounded-2xl font-mono text-lg font-medium text-white"
+          className="flex size-16 items-center justify-center rounded-xl font-mono text-lg font-medium text-white"
           style={{ background: crop?.color ?? "#d9d0bd" }}
         >
           {bed.id}
         </span>
         <div>
-          <h1 className="font-display text-[1.9rem] font-medium leading-tight tracking-[-0.025em] text-forest-950">
+          <h1 className="t-h2 text-forest-950">
             Bed {bed.id}
           </h1>
           <p className="text-ink-soft">
@@ -53,9 +53,9 @@ async function BedPageContent({ params }: { params: Promise<{ id: string }> }) {
           { label: "Last harvested", value: bed.lastHarvest ? formatDaysAgo(bed.lastHarvest, t) : "Not recorded" },
           { label: "Yield this planting", value: formatKg(bed.totalYieldKg) },
         ].map((s) => (
-          <div key={s.label} className="rounded-2xl border border-border bg-white p-4 sm:p-5">
+          <div key={s.label} className="rounded-xl border border-border bg-white p-4 sm:p-5">
             <dt className="text-xs text-ink-muted">{s.label}</dt>
-            <dd className="mt-1.5 font-display text-xl font-medium text-forest-950 tabular">{s.value}</dd>
+            <dd className="t-h3 mt-1.5 text-forest-950 tabular">{s.value}</dd>
           </div>
         ))}
       </dl>

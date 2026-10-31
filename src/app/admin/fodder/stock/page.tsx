@@ -29,9 +29,9 @@ async function StockPageContent() {
 
       <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr]">
         <div className="space-y-6">
-          <section className="rounded-2xl bg-forest-900 p-6 text-cream-50">
+          <section className="rounded-xl bg-forest-900 p-6 text-cream-50">
             <p className="text-sm text-cream-100/70">Total fodder in stock</p>
-            <p className="mt-1 font-display text-5xl font-medium tracking-[-0.02em] tabular">{formatKg(stock.totalKg)}</p>
+            <p className="t-h1 mt-1 tabular">{formatKg(stock.totalKg)}</p>
             {stock.levels.length > 0 ? (
               <ul className="mt-6 divide-y divide-cream-50/10 border-t border-cream-50/10">
                 {stock.levels.map((l) => (

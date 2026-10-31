@@ -31,13 +31,13 @@ async function FinanceContent({ searchParams }: { searchParams: Promise<Record<s
   return (
     <>
       <AdminPageHeader title="Finance" description="Actual income and costs in KES. No projections.">
-        <nav aria-label="Period" className="inline-flex rounded-full bg-cream-200/70 p-1">
+        <nav aria-label="Period" className="inline-flex rounded-lg bg-cream-200/70 p-1">
           {periods.map((p) => (
             <Link
               key={p.id}
               href={`/admin/finance?period=${p.id}`}
               aria-current={period === p.id ? "page" : undefined}
-              className={cn("rounded-full px-4 py-2 text-sm", period === p.id ? "bg-white font-medium text-forest-900 shadow-sm" : "text-ink-soft")}
+              className={cn("rounded-md px-4 py-2 text-sm", period === p.id ? "bg-white font-medium text-forest-900 shadow-sm" : "text-ink-soft")}
             >
               {p.label}
             </Link>
@@ -46,17 +46,17 @@ async function FinanceContent({ searchParams }: { searchParams: Promise<Record<s
       </AdminPageHeader>
 
       <dl className="mb-8 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-2xl border border-border bg-white p-5">
+        <div className="rounded-xl border border-border bg-white p-5">
           <dt className="text-xs text-ink-muted">Income</dt>
-          <dd className="mt-1.5 font-display text-3xl font-medium text-forest-950 tabular">{formatKES(ledger.income)}</dd>
+          <dd className="t-h2 mt-1.5 text-forest-950 tabular">{formatKES(ledger.income)}</dd>
         </div>
-        <div className="rounded-2xl border border-border bg-white p-5">
+        <div className="rounded-xl border border-border bg-white p-5">
           <dt className="text-xs text-ink-muted">Expenses</dt>
-          <dd className="mt-1.5 font-display text-3xl font-medium text-forest-950 tabular">{formatKES(ledger.expenses)}</dd>
+          <dd className="t-h2 mt-1.5 text-forest-950 tabular">{formatKES(ledger.expenses)}</dd>
         </div>
-        <div className="rounded-2xl bg-forest-900 p-5 text-cream-50">
+        <div className="rounded-xl bg-forest-900 p-5 text-cream-50">
           <dt className="text-xs text-cream-100/70">Net</dt>
-          <dd className="mt-1.5 font-display text-3xl font-medium tabular">
+          <dd className="t-h2 mt-1.5 tabular">
             {ledger.net < 0 ? "−" : ""}
             {formatKES(Math.abs(ledger.net))}
           </dd>

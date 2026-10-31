@@ -35,14 +35,14 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
       <AdminPageHeader title="Customers" description="Early-access interest and customer accounts" />
 
       <div className="mb-8 grid grid-cols-3 gap-3 sm:grid-cols-6">
-        <div className="col-span-3 rounded-2xl bg-forest-900 p-4 text-cream-50 sm:col-span-1 sm:p-5">
+        <div className="col-span-3 rounded-xl bg-forest-900 p-4 text-cream-50 sm:col-span-1 sm:p-5">
           <p className="text-xs text-cream-100/70">Registrations</p>
-          <p className="mt-1.5 font-display text-3xl font-medium tabular">{counts.total}</p>
+          <p className="t-h2 mt-1.5 tabular">{counts.total}</p>
         </div>
         {interestOptions.map((o) => (
-          <div key={o.value} className="rounded-2xl border border-border bg-white p-4 sm:p-5">
+          <div key={o.value} className="rounded-xl border border-border bg-white p-4 sm:p-5">
             <p className="truncate text-xs text-ink-muted">{o.label}</p>
-            <p className="mt-1.5 font-display text-2xl font-medium text-forest-950 tabular">{counts[o.value]}</p>
+            <p className="t-h3 mt-1.5 text-forest-950 tabular">{counts[o.value]}</p>
           </div>
         ))}
       </div>
@@ -58,7 +58,7 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
                 href={s ? `/admin/customers?status=${s}` : "/admin/customers"}
                 aria-current={status === s ? "page" : undefined}
                 className={cn(
-                  "rounded-full px-3 py-1.5 text-sm capitalize",
+                  "rounded-md px-3 py-1.5 text-sm capitalize",
                   status === s ? "bg-forest-900 text-cream-50" : "text-ink-soft hover:bg-cream-100",
                 )}
               >
@@ -93,7 +93,7 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
                     </p>
                     <ul className="mt-2 flex flex-wrap gap-1.5">
                       {lead.interests.map((i) => (
-                        <li key={i} className="rounded-full bg-cream-100 px-2.5 py-1 text-xs text-forest-900">
+                        <li key={i} className="rounded-[3px] bg-cream-100 px-2 py-1 text-xs text-forest-900">
                           {interestLabel[i] ?? i}
                         </li>
                       ))}
@@ -101,14 +101,14 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
                     {lead.message && <p className="mt-2 max-w-2xl text-sm italic text-ink-soft">“{lead.message}”</p>}
                   </div>
                   <div className="flex flex-wrap items-end gap-2">
-                    <a href={`tel:${lead.phone}`} className="inline-flex h-11 items-center gap-2 rounded-full border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
+                    <a href={`tel:${lead.phone}`} className="inline-flex h-11 items-center gap-2 rounded-md border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
                       <Phone className="size-4" aria-hidden="true" /> Call
                     </a>
                     <a
                       href={`https://wa.me/${wa}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex h-11 items-center gap-2 rounded-full border border-input px-4 text-sm text-forest-900 hover:bg-cream-100"
+                      className="inline-flex h-11 items-center gap-2 rounded-md border border-input px-4 text-sm text-forest-900 hover:bg-cream-100"
                     >
                       <MessageCircle className="size-4" aria-hidden="true" /> WhatsApp
                     </a>
@@ -141,17 +141,17 @@ async function CustomersContent({ searchParams }: { searchParams: Promise<Record
                     {inv.email && ` · ${inv.email}`} · {inv.county}
                   </p>
                   <ul className="mt-2 flex flex-wrap gap-1.5 text-xs text-forest-900">
-                    <li className="rounded-full bg-cream-100 px-2.5 py-1">{label(investorTypes, inv.investorType)}</li>
-                    <li className="rounded-full bg-cream-100 px-2.5 py-1">{label(routes, inv.route)}</li>
-                    {inv.ticket && <li className="rounded-full bg-cream-100 px-2.5 py-1">{label(tickets, inv.ticket)}</li>}
+                    <li className="rounded-[3px] bg-cream-100 px-2 py-1">{label(investorTypes, inv.investorType)}</li>
+                    <li className="rounded-[3px] bg-cream-100 px-2 py-1">{label(routes, inv.route)}</li>
+                    {inv.ticket && <li className="rounded-[3px] bg-cream-100 px-2 py-1">{label(tickets, inv.ticket)}</li>}
                   </ul>
                   {inv.message && <p className="mt-2 max-w-2xl text-sm italic text-ink-soft">“{inv.message}”</p>}
                 </div>
                 <div className="flex flex-wrap items-end gap-2">
-                  <a href={`tel:${inv.phone}`} className="inline-flex h-11 items-center gap-2 rounded-full border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
+                  <a href={`tel:${inv.phone}`} className="inline-flex h-11 items-center gap-2 rounded-md border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
                     <Phone className="size-4" aria-hidden="true" /> Call
                   </a>
-                  <a href={`https://wa.me/${inv.phone.replace("+", "")}`} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-full border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
+                  <a href={`https://wa.me/${inv.phone.replace("+", "")}`} target="_blank" rel="noreferrer" className="inline-flex h-11 items-center gap-2 rounded-md border border-input px-4 text-sm text-forest-900 hover:bg-cream-100">
                     <MessageCircle className="size-4" aria-hidden="true" /> WhatsApp
                   </a>
                   <LeadStatusForm id={inv.id} status={inv.status} kind="investor" />

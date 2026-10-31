@@ -10,7 +10,7 @@ const inter = Inter({
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
 const barlow = Barlow_Condensed({

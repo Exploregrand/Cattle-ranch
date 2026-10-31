@@ -73,7 +73,7 @@ export function Panel({
   id?: string;
 }) {
   return (
-    <section id={id} className={cn("rounded-2xl border border-border bg-white", className)}>
+    <section id={id} className={cn("rounded-xl border border-border bg-white", className)}>
       <div className="flex items-start justify-between gap-4 border-b border-border px-5 py-4 sm:px-6">
         <div>
           <h2 className="font-display text-lg font-medium text-forest-950">{title}</h2>

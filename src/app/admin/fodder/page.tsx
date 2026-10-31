@@ -38,9 +38,9 @@ async function FodderPageContent() {
           { label: "Fodder in stock", value: formatKg(stock.totalKg) },
           { label: "Fed to livestock this month", value: formatKg(stock.fedThisMonthKg) },
         ].map((s) => (
-          <div key={s.label} className="rounded-2xl border border-border bg-white p-4 sm:p-5">
+          <div key={s.label} className="rounded-xl border border-border bg-white p-4 sm:p-5">
             <dt className="text-xs text-ink-muted">{s.label}</dt>
-            <dd className="mt-1.5 font-display text-2xl font-medium text-forest-950 tabular">{s.value}</dd>
+            <dd className="t-h3 mt-1.5 text-forest-950 tabular">{s.value}</dd>
           </div>
         ))}
       </dl>

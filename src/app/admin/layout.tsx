@@ -21,7 +21,7 @@ function FrameSkeleton() {
       <div className="hidden w-64 bg-forest-950 lg:block" />
       <div className="flex-1 animate-pulse space-y-4 p-10">
         <div className="h-9 w-64 rounded bg-cream-200" />
-        <div className="h-32 rounded-2xl bg-cream-100" />
+        <div className="h-32 rounded-xl bg-cream-100" />
       </div>
     </div>
   );

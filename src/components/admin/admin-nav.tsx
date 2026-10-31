@@ -59,7 +59,7 @@ function BottomNavView({ links }: { links: ReturnType<typeof visible> }) {
               aria-current={active ? "page" : undefined}
               className={cn("flex h-16 flex-col items-center justify-center gap-1 text-[0.68rem]", active ? "font-semibold text-forest-900" : "text-ink-muted")}
             >
-              <span className={cn("flex h-7 w-11 items-center justify-center rounded-full", active && "bg-forest-100")}>
+              <span className={cn("flex h-7 w-11 items-center justify-center rounded-md", active && "bg-forest-100")}>
                 <Icon className="size-[1.15rem]" aria-hidden="true" />
               </span>
               {label}

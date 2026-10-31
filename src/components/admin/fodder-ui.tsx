@@ -12,14 +12,14 @@ export function FodderTabs({ active }: { active: "beds" | "stock" | "activity" }
     { id: "activity", href: "/admin/fodder/activity", label: "Activity log" },
   ];
   return (
-    <nav aria-label="Fodder" className="mb-8 inline-flex rounded-full bg-cream-200/70 p-1">
+    <nav aria-label="Fodder" className="mb-8 inline-flex rounded-lg bg-cream-200/70 p-1">
       {tabs.map((t) => (
         <Link
           key={t.id}
           href={t.href}
           aria-current={active === t.id ? "page" : undefined}
           className={cn(
-            "rounded-full px-4 py-2 text-sm transition-colors",
+            "rounded-md px-4 py-2 text-sm transition-colors",
             active === t.id ? "bg-white font-medium text-forest-900 shadow-sm" : "text-ink-soft hover:text-forest-900",
           )}
         >
@@ -54,7 +54,7 @@ export function BedMap({ beds }: { beds: BedState[] }) {
         const list = beds.filter((b) => b.section === section);
         const planted = list.filter((b) => b.crop).length;
         return (
-          <div key={section} className="rounded-2xl border border-border bg-white p-4 sm:p-5">
+          <div key={section} className="rounded-xl border border-border bg-white p-4 sm:p-5">
             <div className="mb-4 flex items-baseline justify-between">
               <h3 className="font-display text-lg font-medium text-forest-950">Section {section}</h3>
               <p className="text-xs text-ink-muted tabular">

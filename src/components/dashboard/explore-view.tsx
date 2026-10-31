@@ -19,9 +19,9 @@ export function ExploreView() {
         {programs.map((programme) => {
           const interest = interestFor[programme.id];
           return (
-            <article key={programme.id} className="flex flex-col rounded-2xl border border-border bg-white p-5 sm:p-6">
+            <article key={programme.id} className="flex flex-col rounded-xl border border-border bg-white p-5 sm:p-6">
               <div className="flex items-start justify-between gap-3">
-                <h2 className="font-display text-xl font-medium text-forest-950">{programme.name}</h2>
+                <h2 className="t-h3 text-forest-950">{programme.name}</h2>
                 <Badge variant="soon">Not yet open</Badge>
               </div>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-soft">{programme.summary}</p>

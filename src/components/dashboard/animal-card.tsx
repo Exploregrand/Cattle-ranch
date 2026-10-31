@@ -12,9 +12,9 @@ export function AnimalCard({ animal, base }: { animal: Animal; base: string }) {
   return (
     <Link
       href={`${base}/livestock/${animal.id}`}
-      className="group flex items-center gap-4 rounded-2xl border border-border bg-white p-4 transition-[border-color,box-shadow] hover:border-forest-600/30 hover:shadow-[0_12px_32px_-24px_rgba(20,42,29,0.45)] sm:p-5"
+      className="group flex items-center gap-4 rounded-xl border border-border bg-white p-4 transition-[border-color,box-shadow] hover:border-forest-600/30 hover:shadow-[0_12px_32px_-24px_rgba(20,42,29,0.45)] sm:p-5"
     >
-      <div className="relative size-16 shrink-0 overflow-hidden rounded-2xl bg-cream-200">
+      <div className="relative size-16 shrink-0 overflow-hidden rounded-xl bg-cream-200">
         {animal.coverPhoto ? (
           <Image src={animal.coverPhoto} alt="" fill sizes="64px" className="object-cover" />
         ) : (

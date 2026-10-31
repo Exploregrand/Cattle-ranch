@@ -7,7 +7,7 @@ import { photos } from "@/content/photos";
 
 export function EmptyHerd({ base }: { base: string }) {
   return (
-    <div className="overflow-hidden rounded-[2rem] bg-cream-200">
+    <div className="overflow-hidden rounded-xl bg-cream-200">
       <div className="grid h-44 grid-cols-3 gap-1 sm:h-56">
         {(["sheep", "goat", "cattle"] as const).map((k) => (
           <div key={k} className="relative">
@@ -16,7 +16,7 @@ export function EmptyHerd({ base }: { base: string }) {
         ))}
       </div>
       <div className="px-6 pb-9 pt-8 sm:px-10 sm:pb-11">
-        <h2 className="font-display text-[1.9rem] font-medium leading-tight tracking-[-0.02em] text-forest-950 sm:text-[2.4rem]">
+        <h2 className="t-h2 text-forest-950">
           Your herd starts here
         </h2>
         <p className="mt-3 max-w-xl leading-relaxed text-ink-soft">

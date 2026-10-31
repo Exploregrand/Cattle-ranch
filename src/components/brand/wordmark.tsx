@@ -30,10 +30,10 @@ export function Wordmark({
     <Link href={href} aria-label="Tangama Livestock — home" className={cn("inline-flex items-center gap-2.5", className)}>
       <BrandMark size={compact ? 30 : 36} className={dark ? "text-forest-950" : "text-cream-50"} />
       <span className="leading-none">
-        <span className={cn("block font-display text-[1.35rem] font-semibold tracking-[-0.02em]", dark ? "text-forest-950" : "text-cream-50")}>
+        <span className={cn("block font-display text-[1.375rem] font-medium tracking-[-0.015em]", dark ? "text-forest-950" : "text-cream-50")}>
           Tangama
         </span>
-        <span className={cn("label-caps mt-1 block text-[0.66rem] tracking-[0.32em]", dark ? "text-clay" : "text-gold-400")}>
+        <span className={cn("label-caps mt-1 block text-[0.625rem] tracking-[0.34em]", dark ? "text-ink-muted" : "text-cream-50/60")}>
           Livestock
         </span>
       </span>

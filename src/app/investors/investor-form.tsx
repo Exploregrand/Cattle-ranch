@@ -34,7 +34,7 @@ export function InvestorForm() {
     return (
       <div role="status">
         <CircleCheck className="size-9 text-grass" aria-hidden="true" />
-        <h3 className="mt-5 font-display text-[2rem] font-medium leading-tight text-forest-950">Thank you — we&apos;ll be in touch</h3>
+        <h3 className="t-h2 mt-5 text-forest-950">Thank you — we&apos;ll be in touch</h3>
         <p className="mt-3 max-w-md leading-relaxed text-ink-soft">
           A member of the Tangama team will contact you personally. Nothing is being offered or sold, and no payment is needed.
         </p>
@@ -94,7 +94,7 @@ export function InvestorForm() {
                 <input type="radio" name={group.name} value={o.value} defaultChecked={v[group.name] === o.value} className="peer sr-only" />
                 <span
                   className={cn(
-                    "inline-flex h-11 items-center rounded-full border border-input bg-white px-4 text-sm text-ink-soft transition-colors",
+                    "inline-flex h-11 items-center rounded-md border border-input bg-white px-4 text-sm text-ink-soft transition-colors",
                     "peer-checked:border-forest-950 peer-checked:bg-forest-950 peer-checked:font-medium peer-checked:text-cream-50 peer-focus-visible:ring-2 peer-focus-visible:ring-clay",
                   )}
                 >
@@ -131,7 +131,7 @@ export function InvestorForm() {
         </div>
       </div>
 
-      <div className="space-y-3 rounded-2xl bg-cream-100 p-5">
+      <div className="space-y-3 rounded-xl bg-cream-100 p-5">
         {[
           {
             name: "acknowledgedNoOffer",
@@ -157,7 +157,7 @@ export function InvestorForm() {
       <button
         type="submit"
         disabled={pending}
-        className="label-caps inline-flex h-14 w-full items-center justify-center rounded-full bg-forest-950 px-9 text-[1.05rem] font-bold text-cream-50 transition-colors hover:bg-clay disabled:opacity-60 sm:w-auto"
+        className="label-caps inline-flex h-14 w-full items-center justify-center rounded-md bg-forest-950 px-9 text-[1.05rem] font-bold text-cream-50 transition-colors hover:bg-clay disabled:opacity-60 sm:w-auto"
       >
         {pending ? "Sending…" : "Register investor interest"}
       </button>

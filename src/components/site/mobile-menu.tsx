@@ -34,7 +34,7 @@ export function MobileMenu() {
   }, [open]);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         aria-label="Open menu"
@@ -72,7 +72,7 @@ export function MobileMenu() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="border-b border-cream-50/10 py-5 font-display text-3xl tracking-tight text-cream-50"
+                className="t-h2 border-b border-cream-50/10 py-5 text-cream-50"
               >
                 {link.label}
               </Link>

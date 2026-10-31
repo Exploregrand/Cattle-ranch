@@ -27,7 +27,7 @@
   --ink-soft: #4a4640;
   --ink-muted: #75706a;
 
-  --radius: 1rem;
+  --radius: 0.5rem;
 
   /* shadcn/ui semantic tokens mapped to the brand */
   --background: var(--cream-50);
@@ -112,7 +112,18 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+    font-size: 1rem;
+    line-height: 1.6;
     font-feature-settings: "ss01", "cv11";
+  }
+  /* Fraunces: classic cut only — no soft or "wonky" alternates, optical sizing on. */
+  .font-display,
+  [class*="font-display"] {
+    font-variation-settings:
+      "SOFT" 0,
+      "WONK" 0;
+    font-optical-sizing: auto;
+    font-weight: 400;
   }
   :focus-visible {
     outline: 2px solid var(--gold-500);
@@ -135,8 +146,68 @@
   .label-caps {
     font-family: var(--font-barlow);
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     font-weight: 600;
+  }
+
+  /*
+   * Type scale. Use these instead of one-off sizes so every page shares one rhythm.
+   * Display sizes are fluid between phone and desktop.
+   */
+  .t-display {
+    font-family: var(--font-fraunces);
+    font-size: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+  .t-h1 {
+    font-family: var(--font-fraunces);
+    font-size: clamp(2.25rem, 1.55rem + 2.6vw, 3.75rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .t-h2 {
+    font-family: var(--font-fraunces);
+    font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  .t-h3 {
+    font-family: var(--font-fraunces);
+    font-size: 1.375rem;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .t-lead {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+  .t-body {
+    font-size: 1rem;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+  .t-figure {
+    font-family: var(--font-fraunces);
+    font-variant-numeric: lining-nums tabular-nums;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .eyebrow {
+    font-family: var(--font-barlow);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  /* Consistent vertical rhythm for page sections. */
+  .section-y {
+    padding-block: clamp(4.5rem, 3rem + 5vw, 7.5rem);
   }
   .tabular {
     font-variant-numeric: tabular-nums;
@@ -159,30 +230,3 @@
   }
 }
 
-/* Concept explorations: shared motion */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes drift {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes pulse-soft {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 1;
-  }
-}

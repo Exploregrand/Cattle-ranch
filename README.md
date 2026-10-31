@@ -82,6 +82,14 @@ ivory and white paper, charcoal ink, hairline rules, and one dark acacia-bark ac
 (tokens in `src/app/globals.css`). Photography carries the colour; the only other colours are the fodder
 crop codes on the Farm Ops bed map, which are data.
 
+Use the shared system rather than one-off sizes (all in `src/app/globals.css`):
+
+- **Type scale:** `t-display` (one per page), `t-h1`, `t-h2`, `t-h3`, `t-lead`, `t-body`, `t-figure` for
+  numbers, and `eyebrow` for section labels. Fraunces is set without its soft/wonky alternates.
+- **Spacing:** `section-y` for section padding; page container `max-w-7xl px-6 sm:px-8`.
+- **Shape:** squared buttons, tags and tabs (`rounded-md` / 3px); cards and images `rounded-xl`; hairline
+  borders instead of shadows. Use `Button` and `Badge` from `src/components/ui`.
+
 Photography lives in `public/images` and is registered in `src/content/photos.ts`. These are breed and
 category images; they are never presented as specific Tangama animals or available stock. Real animals
 only show their own photos (`coverPhoto`). The app is installable (web manifest + icons).

@@ -20,7 +20,7 @@ import { formatDate, formatKES, formatKg } from "@/lib/format";
 
 function Action({ title, open, children }: { title: string; open?: boolean; children: React.ReactNode }) {
   return (
-    <details open={open} className="group rounded-2xl border border-border bg-white">
+    <details open={open} className="group rounded-xl border border-border bg-white">
       <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 font-medium text-forest-950 [&::-webkit-details-marker]:hidden">
         {title}
         <ChevronDown className="size-4 text-ink-muted transition-transform group-open:rotate-180" aria-hidden="true" />
@@ -64,8 +64,8 @@ async function AnimalContent({
         <div className="order-2 min-w-0 lg:order-1">
           <AnimalProfile animal={animal} base="/admin" asOf={t} hideBack />
           {(animal.statusHistory.length > 0 || animal.sales.length > 0 || animal.fedKg > 0) && (
-            <section className="mt-10 rounded-2xl border border-border bg-white p-5 sm:p-6">
-              <h2 className="font-display text-xl font-medium text-forest-950">Movements and outcomes</h2>
+            <section className="mt-10 rounded-xl border border-border bg-white p-5 sm:p-6">
+              <h2 className="t-h3 text-forest-950">Movements and outcomes</h2>
               <ul className="mt-4 divide-y divide-border text-sm">
                 {animal.statusHistory.map((s, i) => (
                   <li key={i} className="flex justify-between gap-4 py-2.5">

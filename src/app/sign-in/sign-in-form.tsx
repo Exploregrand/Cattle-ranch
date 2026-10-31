@@ -16,7 +16,7 @@ export function SignInForm() {
 
   if (state.status === "sent") {
     return (
-      <div role="status" className="rounded-2xl bg-forest-100 p-5 text-forest-900">
+      <div role="status" className="rounded-xl bg-forest-100 p-5 text-forest-900">
         <MailCheck className="size-5" aria-hidden="true" />
         <p className="mt-3 font-medium">Check your email</p>
         <p className="mt-1 text-sm leading-relaxed text-forest-900/80">

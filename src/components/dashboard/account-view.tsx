@@ -42,7 +42,7 @@ export function AccountView({
         <Card className="flex items-center gap-4 p-5 sm:p-6">
           <Initials name={customer.fullName} />
           <div className="min-w-0">
-            <p className="truncate font-display text-xl font-medium text-forest-950">{customer.fullName}</p>
+            <p className="t-h3 truncate text-forest-950">{customer.fullName}</p>
             {customer.email && <p className="truncate text-sm text-ink-muted">{customer.email}</p>}
           </div>
         </Card>
@@ -72,7 +72,7 @@ export function AccountsNotConnected() {
     <>
       <PageHeader title="Account" />
       <Card className="p-6 sm:p-8">
-        <h2 className="font-display text-xl font-medium text-forest-950">Customer accounts open at launch</h2>
+        <h2 className="t-h3 text-forest-950">Customer accounts open at launch</h2>
         <p className="mt-2 max-w-lg text-sm leading-relaxed text-ink-soft">
           Sign-in isn&apos;t connected yet. Register for early access and we&apos;ll invite you to
           create an account when livestock programmes open.

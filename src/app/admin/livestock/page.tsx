@@ -44,7 +44,7 @@ async function LivestockContent({ searchParams }: { searchParams: Promise<Record
             href={f.id ? `/admin/livestock?species=${f.id}` : "/admin/livestock"}
             aria-current={species === f.id ? "page" : undefined}
             className={cn(
-              "rounded-full border px-4 py-2 text-sm transition-colors",
+              "rounded-md border px-4 py-2 text-sm transition-colors",
               species === f.id ? "border-forest-900 bg-forest-900 text-cream-50" : "border-border bg-white text-ink-soft hover:border-forest-600",
             )}
           >
@@ -54,8 +54,8 @@ async function LivestockContent({ searchParams }: { searchParams: Promise<Record
       </nav>
 
       {animals.length === 0 ? (
-        <div className="rounded-[1.5rem] border border-dashed border-ink-muted/30 bg-white px-6 py-16 text-center">
-          <p className="font-display text-2xl font-medium text-forest-950">No animals registered yet</p>
+        <div className="rounded-xl border border-dashed border-ink-muted/30 bg-white px-6 py-16 text-center">
+          <p className="t-h3 text-forest-950">No animals registered yet</p>
           <p className="mx-auto mt-2 max-w-md text-ink-soft">
             Register each animal at intake. It gets a unique ID such as TGM-SH-0001, and its weights, health, feeding and costs are
             recorded from day one.
@@ -67,7 +67,7 @@ async function LivestockContent({ searchParams }: { searchParams: Promise<Record
           </Button>
         </div>
       ) : (
-        <ul className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-white">
+        <ul className="divide-y divide-border overflow-hidden rounded-xl border border-border bg-white">
           {animals.map((a) => (
             <li key={a.id}>
               <Link href={`/admin/livestock/${a.id}`} className="flex items-center gap-4 px-5 py-4 transition-colors hover:bg-cream-50">
