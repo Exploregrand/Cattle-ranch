@@ -1,22 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Barlow_Condensed, Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Instrument_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+/** Headings: Newsreader — an editorial serif with optical sizing; calm and established. */
+const serif = Newsreader({
+  variable: "--font-serif",
   subsets: ["latin"],
+  axes: ["opsz"],
+  style: ["normal", "italic"],
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+/** Text, interface and labels: Instrument Sans — warm, precise, less generic than Inter. */
+const sans = Instrument_Sans({
+  variable: "--font-ui",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
-});
-
-const barlow = Barlow_Condensed({
-  variable: "--font-barlow",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  axes: ["wdth"],
 });
 
 const plexMono = IBM_Plex_Mono({
@@ -45,7 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-KE"
-      className={`${inter.variable} ${fraunces.variable} ${plexMono.variable} ${barlow.variable} h-full antialiased`}
+      className={`${serif.variable} ${sans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

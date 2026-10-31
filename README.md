@@ -4,8 +4,9 @@ Livestock ownership and management platform from Tangama Farm in Isinya, Kajiado
 Customers will be able to own professionally managed sheep, goats and cattle and follow each
 animal's weights, health, feeding, photos and itemised costs from their phone.
 
-**Current stage:** pre-launch. The farm has 4 acres under cultivation (a further 5 acres planned for early
-2027), developing fodder (Sugargraze, Super Napier, alfalfa, desmodium) across 120 beds in Sections A–C. No livestock, purchases, investments or payments are
+**Current stage:** pre-launch. Two farms (2.17 and 2.5 acres, based in Isinya) with about 4 acres under
+cultivation and a further 5 acres planned for early 2027, developing fodder (Sugargraze, Super Napier, alfalfa,
+desmodium) across 300 beds in Sections A–C (100 each). No livestock, purchases, investments or payments are
 offered. The product is built so that nothing implies otherwise.
 
 ## What's here
@@ -19,7 +20,7 @@ offered. The product is built so that nothing implies otherwise.
 | `/demo/*` | The same dashboard with clearly labelled sample data, for design review |
 | `/investors` | Investor brief for Kenyan investors and chamas: sourced market facts, model, honest status, roadmap, proposed governance, and an expression-of-interest form (no offer, no payments) |
 | `/admin` | **Farm Ops** (staff only): overview, quick-record actions |
-| `/admin/fodder` | Live map of the 120 beds, bulk planting and activity by bed range, per-bed history, stock ledger |
+| `/admin/fodder` | Live map of the 300 beds, bulk planting and activity by bed range, per-bed history, stock ledger |
 | `/admin/livestock` | Register animals (auto IDs `TGM-SH-0001`), weights, health, feeding, costs, sale/death/transfer, ownership |
 | `/admin/customers` | Early-access leads, investor interest (call, WhatsApp, follow-up status) and customer accounts — admin only |
 | `/admin/finance` | KES ledger, period totals, realised per-animal margins — admin only |
@@ -77,7 +78,7 @@ connected" preview, and early-access registrations are written to `.data/` local
 ## Brand
 
 A mature, established livestock company — not tech, not playful. Branding-iron mark
-(`src/components/brand/wordmark.tsx`), Fraunces headlines and Barlow Condensed labels. Restrained palette:
+(`src/components/brand/wordmark.tsx`), Newsreader headlines and Instrument Sans text and labels. Restrained palette:
 ivory and white paper, charcoal ink, hairline rules, and one dark acacia-bark accent for primary actions
 (tokens in `src/app/globals.css`). Photography carries the colour; the only other colours are the fodder
 crop codes on the Farm Ops bed map, which are data.
@@ -85,7 +86,7 @@ crop codes on the Farm Ops bed map, which are data.
 Use the shared system rather than one-off sizes (all in `src/app/globals.css`):
 
 - **Type scale:** `t-display` (one per page), `t-h1`, `t-h2`, `t-h3`, `t-lead`, `t-body`, `t-figure` for
-  numbers, and `eyebrow` for section labels. Fraunces is set without its soft/wonky alternates.
+  numbers, and `eyebrow` for section labels. Newsreader uses optical sizing.
 - **Spacing:** `section-y` for section padding; page container `max-w-7xl px-6 sm:px-8`.
 - **Shape:** squared buttons, tags and tabs (`rounded-md` / 3px); cards and images `rounded-xl`; hairline
   borders instead of shadows. Use `Button` and `Badge` from `src/components/ui`.

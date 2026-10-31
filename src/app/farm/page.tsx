@@ -13,7 +13,7 @@ import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The farm",
-  description: "Tangama Farm in Isinya, Kajiado County: 4 acres under cultivation, a further 5 acres planned for early 2027, and live progress from our farm records.",
+  description: "Tangama's two farms — 2.17 and 2.5 acres, based in Isinya, Kajiado County — with 300 fodder beds, a further 5 acres planned for early 2027, and live progress from our farm records.",
 };
 
 const wrap = "mx-auto w-full max-w-7xl px-6 sm:px-8";
@@ -25,12 +25,12 @@ export default function FarmPage() {
       <main className="bg-cream-50 text-ink">
         <section className={`${wrap} grid items-end gap-10 pt-12 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16`}>
           <div>
-            <p className="eyebrow">Tangama Farm · {farm.location}</p>
+            <p className="eyebrow">Tangama Farm · Kajiado County</p>
             <h1 className="t-display mt-5 max-w-[12ch]">Where every animal will be raised.</h1>
             <p className="t-lead mt-6 max-w-xl text-ink-soft">
-              {farm.acres} acres under cultivation in Isinya, south of Nairobi in Kajiado County, with a further {farm.expansion.acres} acres
-              planned for {farm.expansion.timing}. We&apos;re building in the right order: feed first, then the herd — and recording
-              all of it.
+              Two farms of {farm.farms.map((f) => f.acres).join(" and ")} acres, based in Isinya, south of Nairobi in Kajiado County —
+              about {farm.acres} acres under cultivation today and a further {farm.expansion.acres} acres planned for{" "}
+              {farm.expansion.timing}. We&apos;re building in the right order: feed first, then the herd — and recording all of it.
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
@@ -68,16 +68,16 @@ export default function FarmPage() {
               <div>
                 <h3 className="t-h2">The bed plan</h3>
                 <p className="t-body mt-4 max-w-sm text-ink-soft">
-                  {farm.beds} beds in three sections of 40. Every bed is planted, watered and harvested on the record, so we know what
+                  {farm.beds} beds in three sections of {farm.sections[0].beds}. Every bed is planted, watered and harvested on the record, so we know what
                   each one produces.
                 </p>
               </div>
               <div className="grid grid-cols-3 gap-4 sm:gap-8">
                 {farm.sections.map((section) => (
                   <div key={section.id}>
-                    <div className="grid grid-cols-5 gap-1" role="img" aria-label={`Section ${section.id}: ${section.beds} beds`}>
+                    <div className="grid grid-cols-10 gap-[3px]" role="img" aria-label={`Section ${section.id}: ${section.beds} beds`}>
                       {Array.from({ length: section.beds }).map((_, i) => (
-                        <span key={i} className="h-3 rounded-[2px] border border-ink/25 sm:h-4" />
+                        <span key={i} className="aspect-square rounded-[1.5px] border border-ink/25" />
                       ))}
                     </div>
                     <p className="eyebrow mt-3 !text-[0.75rem]">
@@ -90,7 +90,30 @@ export default function FarmPage() {
           </div>
         </section>
 
-        <section className={`${wrap} section-y grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end`}>
+        <section className={`${wrap} section-y`}>
+          <p className="eyebrow">On the farms</p>
+          <h2 className="t-h1 mt-4 max-w-[18ch]">Lived in, and ready for animals.</h2>
+          <dl className="mt-12 grid border-t border-ink/15 md:grid-cols-3">
+            {farm.facilities.map((f) => (
+              <div key={f.title} className="border-b border-ink/10 py-7 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0">
+                <dt className="t-h3">{f.title}</dt>
+                <dd className="t-body mt-2 text-ink-soft">{f.body}</dd>
+              </div>
+            ))}
+          </dl>
+          <dl className="mt-12 grid gap-4 sm:grid-cols-2">
+            {farm.farms.map((f) => (
+              <div key={f.name} className="rounded-xl border border-border bg-white p-6">
+                <dt className="eyebrow">{f.location ?? "Second farm"}</dt>
+                <dd className="t-figure mt-3 text-[2.5rem]">
+                  {f.acres} <span className="text-[1.25rem] text-ink-muted">acres</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section className={`${wrap} section-y border-t border-border grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end`}>
           <div>
             <p className="eyebrow">Visiting</p>
             <h2 className="t-h1 mt-4 max-w-[16ch]">See it for yourself.</h2>

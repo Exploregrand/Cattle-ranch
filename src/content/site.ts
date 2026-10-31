@@ -3,18 +3,34 @@
  * livestock describes plans, not live services. Keep it that way until launch.
  */
 
+/** Our land: two farms. Location is only stated where confirmed. */
+const farms = [
+  { name: "Isinya farm", acres: 2.17, location: "Isinya, Kajiado County" as string | null },
+  { name: "Second farm", acres: 2.5, location: null as string | null },
+];
+
 export const farm = {
   name: "Tangama Farm",
   location: "Isinya, Kajiado County",
+  farms,
+  /** Total land across both farms. */
+  totalAcres: Math.round(farms.reduce((sum, f) => sum + f.acres, 0) * 100) / 100,
   /** Acres under cultivation today. */
   acres: 4,
+  /** On-farm facilities, as confirmed by the Tangama team. Add detail when available. */
+  facilities: [
+    { title: "Staff housing", body: "Our team lives on the farm, so animals are looked after day and night." },
+    { title: "Animal housing", body: "Shelter and pens ready for the animals we raise." },
+    { title: "Farm amenities", body: "The amenities needed to run the farm day to day." },
+  ],
   /** Planned expansion — a plan, not yet land under cultivation. */
   expansion: { acres: 5, timing: "early 2027" },
-  beds: 120,
+  beds: 300,
+  /** Bed layout — keep in step with the fodder_beds table. */
   sections: [
-    { id: "A", beds: 40 },
-    { id: "B", beds: 40 },
-    { id: "C", beds: 40 },
+    { id: "A", beds: 100 },
+    { id: "B", beds: 100 },
+    { id: "C", beds: 100 },
   ],
   fodder: [
     {

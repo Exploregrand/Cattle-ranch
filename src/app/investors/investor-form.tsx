@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState } from "react";
+import Link from "next/link";
 import { CircleCheck } from "lucide-react";
 
 import { registerInvestorInterest, type InvestorState } from "@/app/actions/investors";
@@ -47,7 +48,13 @@ export function InvestorForm() {
   const err = (k: string) => ({ "aria-invalid": !!e[k], "aria-describedby": e[k] ? `${k}-error` : undefined });
 
   return (
-    <form action={action} noValidate className="space-y-5">
+    <form action={action} noValidate className="relative space-y-5">
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label>
+          Company website
+          <input type="text" name="company_website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <Label htmlFor="fullName">Full name</Label>
@@ -147,6 +154,13 @@ export function InvestorForm() {
             <Err id={`${c.name}-error`} msg={e[c.name]} />
           </div>
         ))}
+        <p className="pl-8 text-[0.8125rem] text-ink-muted">
+          How we handle your details:{" "}
+          <Link href="/privacy" className="underline underline-offset-4">
+            privacy notice
+          </Link>
+          .
+        </p>
       </div>
 
       {state.status === "error" && state.message && (

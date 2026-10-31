@@ -5,8 +5,8 @@ import { MobileMenu } from "@/components/site/mobile-menu";
 import { Button } from "@/components/ui/button";
 
 export const siteNav = [
-  { href: "/#how", label: "How it works" },
-  { href: "/#animals", label: "Animals" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/livestock", label: "Livestock" },
   { href: "/qurbani", label: "Qurbani" },
   { href: "/farm", label: "The farm" },
   { href: "/investors", label: "Investors" },

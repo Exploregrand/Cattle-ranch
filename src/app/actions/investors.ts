@@ -10,6 +10,8 @@ export type InvestorState = {
 };
 
 export async function registerInvestorInterest(_prev: InvestorState, formData: FormData): Promise<InvestorState> {
+  // Honeypot: real people never see this field, so anything in it is a bot.
+  if (String(formData.get("company_website") ?? "").trim()) return { status: "success" };
   const values = Object.fromEntries(
     ["fullName", "phone", "email", "county", "investorType", "route", "ticket", "message"].map((k) => [k, String(formData.get(k) ?? "")]),
   );

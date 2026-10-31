@@ -68,4 +68,4 @@ export const allCategoryLabels: Record<string, string> = Object.fromEntries(
   [...ledgerCategories.income, ...ledgerCategories.expense, ...animalCostCategories].map((c) => [c.id, c.label]),
 );
 
-export const sections = ["A", "B", "C"] as const;
+export const sections = ["A", "B", "C"] as const; // keep in step with farm.sections (content/site.ts)

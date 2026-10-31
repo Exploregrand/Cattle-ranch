@@ -53,7 +53,13 @@ export function EarlyAccessForm() {
   const text = (key: string) => (typeof v[key] === "string" ? (v[key] as string) : "");
 
   return (
-    <form action={formAction} noValidate className="space-y-6">
+    <form action={formAction} noValidate className="relative space-y-6">
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label>
+          Company website
+          <input type="text" name="company_website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <fieldset className="space-y-3">
         <legend className="text-sm font-medium text-forest-900">I&apos;m interested in</legend>
         <div className="flex flex-wrap gap-2">
@@ -153,7 +159,11 @@ export function EarlyAccessForm() {
           />
           <span>
             Tangama may contact me by phone, SMS or email about the programmes I selected. I
-            understand nothing is being sold or reserved by registering.
+            understand nothing is being sold or reserved by registering. See our{" "}
+            <Link href="/privacy" className="underline underline-offset-4">
+              privacy notice
+            </Link>
+            .
           </span>
         </label>
         <FieldError id="consent-error" message={errors.consent} />

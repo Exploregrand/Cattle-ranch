@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
  * charcoal primary. Pills read as consumer-app; these read as an established company.
  */
 const buttonVariants = cva(
-  "label-caps inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-md text-[0.875rem] font-bold transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "label-caps inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-md text-[0.8125rem] font-semibold transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {

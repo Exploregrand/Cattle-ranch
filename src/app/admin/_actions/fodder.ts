@@ -7,15 +7,18 @@ import { done, fail, fields, optionalText, pastDate, type ActionResult } from "@
 import { assertStaff } from "@/lib/admin/auth";
 import { bedRange } from "@/lib/admin/fodder";
 import { requireSql } from "@/lib/db";
+import { farm } from "@/content/site";
 import { formatKg } from "@/lib/format";
+
+const BEDS_PER_SECTION = Math.max(...farm.sections.map((x) => x.beds));
 
 const cropId = z.enum(["sugargraze", "super_napier", "alfalfa", "desmodium"], "Choose a crop.");
 
 const bedSelection = z
   .object({
-    section: z.enum(["A", "B", "C"], "Choose a section."),
-    from: z.coerce.number().int().min(1).max(40),
-    to: z.coerce.number().int().min(1).max(40),
+    section: z.enum(farm.sections.map((x) => x.id) as [string, ...string[]], "Choose a section."),
+    from: z.coerce.number().int().min(1).max(BEDS_PER_SECTION),
+    to: z.coerce.number().int().min(1).max(BEDS_PER_SECTION),
   })
   .transform(({ section, from, to }) => bedRange(section, from, to));
 
@@ -24,7 +27,7 @@ function rangeLabel(beds: string[]) {
 }
 
 function selectedBeds(raw: Record<string, unknown>) {
-  return raw.bedId ? [z.string().regex(/^[ABC]\d{2}$/).parse(raw.bedId)] : bedSelection.parse(raw);
+  return raw.bedId ? [z.string().regex(/^[A-Z]\d{2,3}$/).parse(raw.bedId)] : bedSelection.parse(raw);
 }
 
 export async function plantBeds(_: ActionResult, formData: FormData): Promise<ActionResult> {

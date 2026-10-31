@@ -13,6 +13,8 @@ export async function registerEarlyAccess(
   _prev: EarlyAccessState,
   formData: FormData,
 ): Promise<EarlyAccessState> {
+  // Honeypot: real people never see this field, so anything in it is a bot.
+  if (String(formData.get("company_website") ?? "").trim()) return { status: "success" };
   const values = {
     fullName: String(formData.get("fullName") ?? ""),
     phone: String(formData.get("phone") ?? ""),

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Field, NumberInput, Select } from "@/components/admin/fields";
+import { farm } from "@/content/site";
 import { cropById, crops, sections } from "@/lib/admin/vocab";
 import type { BedState } from "@/lib/admin/fodder";
 import { cn } from "@/lib/utils";
@@ -61,7 +62,7 @@ export function BedMap({ beds }: { beds: BedState[] }) {
                 {planted}/{list.length} planted
               </p>
             </div>
-            <ul className="grid grid-cols-5 gap-1.5">
+            <ul className="grid grid-cols-10 gap-1">
               {list.map((bed) => {
                 const crop = bed.crop ? cropById[bed.crop] : null;
                 return (
@@ -71,13 +72,13 @@ export function BedMap({ beds }: { beds: BedState[] }) {
                       title={`${bed.id}${crop ? ` · ${crop.label}` : " · unplanted"}`}
                       aria-label={`Bed ${bed.id}, ${crop ? crop.label : "unplanted"}`}
                       className={cn(
-                        "flex h-12 flex-col items-center justify-center rounded-lg text-[0.7rem] leading-tight transition-transform hover:scale-[1.06] focus-visible:scale-[1.06]",
+                        "flex aspect-square flex-col items-center justify-center rounded-[3px] text-[0.6rem] leading-none transition-transform hover:scale-110 focus-visible:scale-110",
                         crop ? "text-white" : "border border-dashed border-ink-muted/35 text-ink-muted hover:border-forest-600",
                       )}
                       style={crop ? { background: crop.color } : undefined}
                     >
                       <span className="font-mono font-medium tabular">{String(bed.position).padStart(2, "0")}</span>
-                      {crop && <span className="font-mono text-[0.6rem] opacity-90">{crop.code}</span>}
+                      {crop && <span className="sr-only">{crop.code}</span>}
                     </Link>
                   </li>
                 );
@@ -91,6 +92,7 @@ export function BedMap({ beds }: { beds: BedState[] }) {
 }
 
 export function BedRangeFields() {
+  const perSection = Math.max(...farm.sections.map((s) => s.beds));
   return (
     <div className="grid grid-cols-3 gap-3">
       <Field label="Section">
@@ -103,10 +105,10 @@ export function BedRangeFields() {
         </Select>
       </Field>
       <Field label="From bed">
-        <NumberInput name="from" min={1} max={40} step={1} defaultValue={1} required />
+        <NumberInput name="from" min={1} max={perSection} step={1} defaultValue={1} required />
       </Field>
       <Field label="To bed">
-        <NumberInput name="to" min={1} max={40} step={1} defaultValue={40} required />
+        <NumberInput name="to" min={1} max={perSection} step={1} defaultValue={perSection} required />
       </Field>
     </div>
   );

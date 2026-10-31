@@ -21,7 +21,7 @@ export async function LiveProgress({ tone = "light" }: { tone?: "light" | "dark"
         [`${p.animalsOnFarm}`, "Animals on the farm"],
       ]
     : [
-        [`${farm.acres}`, "Acres under cultivation"],
+        [`${farm.farms.length} · ${farm.totalAcres}`, "Farms · acres"],
         [`${farm.beds}`, "Fodder beds"],
         [`${farm.fodder.length}`, "Feed crops"],
         ["0", "Animals — not yet launched"],

@@ -53,7 +53,7 @@ export const buyerFaqs = [
   },
   {
     q: "Who is behind Tangama Livestock?",
-    a: "Tangama Farm, a working fodder farm in Isinya, Kajiado County, with 4 acres under cultivation and a further 5 acres planned for early 2027. The same team that grows the feed will care for the animals.",
+    a: "Tangama Farm, two working fodder farms of 2.17 and 2.5 acres, based in Isinya, Kajiado County, with a further 5 acres planned for early 2027. Our team lives on the farm, with housing for staff and animals — the same people who grow the feed will care for your animal.",
   },
   {
     q: "What happens if my animal falls ill or dies?",
