@@ -8,7 +8,7 @@ export const investorTypes = [
 ] as const;
 
 export const routes = [
-  { value: "equity", label: "Backing Tangama (equity)" },
+  { value: "equity", label: "Backing Herd & Field (equity)" },
   { value: "livestock", label: "Owning managed livestock" },
   { value: "both", label: "Both" },
 ] as const;

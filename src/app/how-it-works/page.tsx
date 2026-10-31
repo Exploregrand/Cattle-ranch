@@ -8,7 +8,7 @@ import { photos } from "@/content/photos";
 export const metadata: Metadata = {
   title: "How it works",
   description:
-    "How owning livestock with Tangama will work: register, choose your animal, sign a clear agreement, then follow its weigh-ins, health and costs.",
+    "How owning livestock with Herd & Field will work: register, choose your animal, sign a clear agreement, then follow its weigh-ins, health and costs.",
 };
 
 export default function HowItWorksPage() {

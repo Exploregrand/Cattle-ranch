@@ -23,7 +23,7 @@ export const pathways = [
   {
     id: "invest",
     photo: "cattle" as const,
-    title: "Invest in Tangama",
+    title: "Invest in Herd & Field",
     body: "For Kenyan investors and chamas who want to back the business itself as it grows.",
     cta: "Read the investor brief",
     href: "/investors",
@@ -52,8 +52,8 @@ export const buyerFaqs = [
     a: "Not yet. We are developing our fodder base first so every animal is raised on feed we control. Register your interest and we'll contact you as soon as programmes open — there's no payment and no commitment.",
   },
   {
-    q: "Who is behind Tangama Livestock?",
-    a: "Tangama Farm, two working fodder farms of 2.17 and 2.5 acres, based in Isinya, Kajiado County, with a further 5 acres planned for early 2027. Our team lives on the farm, with housing for staff and animals — the same people who grow the feed will care for your animal.",
+    q: "Who is behind Herd & Field?",
+    a: "Herd & Field is a Tangama Farm company: two working fodder farms of 2.17 and 2.5 acres, based in Isinya, Kajiado County, with a further 5 acres planned for early 2027. Our team lives on the farm, with housing for staff and animals — the same people who grow the feed will care for your animal.",
   },
   {
     q: "What happens if my animal falls ill or dies?",

@@ -158,7 +158,7 @@ export function EarlyAccessForm() {
             aria-describedby={errors.consent ? "consent-error" : undefined}
           />
           <span>
-            Tangama may contact me by phone, SMS or email about the programmes I selected. I
+            Herd & Field may contact me by phone, SMS or email about the programmes I selected. I
             understand nothing is being sold or reserved by registering. See our{" "}
             <Link href="/privacy" className="underline underline-offset-4">
               privacy notice

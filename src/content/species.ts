@@ -2,7 +2,7 @@ import type { PhotoKey } from "@/content/photos";
 
 /**
  * One page per animal. General breed and husbandry facts only — nothing here claims
- * Tangama already has these animals. Health notes describe the kind of care we plan,
+ * Herd & Field already has these animals. Health notes describe the kind of care we plan,
  * always "as advised by our vet".
  */
 export type SpeciesSlug = "sheep" | "goats" | "cattle";

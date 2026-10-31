@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Tangama Livestock",
-    short_name: "Tangama",
+    name: "Herd & Field",
+    short_name: "Herd & Field",
     description: "Own livestock raised on our land in Isinya — every weigh-in, treatment and cost on record.",
     start_url: "/dashboard",
     display: "standalone",

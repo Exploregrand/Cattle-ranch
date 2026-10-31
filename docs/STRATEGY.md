@@ -1,4 +1,4 @@
-# Tangama Livestock — product & marketing strategy
+# Herd & Field — product & marketing strategy
 
 _Last updated: 31 October 2026. Pre-launch: 4 acres under cultivation in Isinya, a further 5 acres planned
 for early 2027. No animals, sales, investments or payments yet._

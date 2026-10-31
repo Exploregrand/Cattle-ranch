@@ -1,6 +1,6 @@
-# Tangama Livestock
+# Herd & Field
 
-Livestock ownership and management platform from Tangama Farm in Isinya, Kajiado County.
+Livestock ownership and management platform — a Tangama Farm company, based in Isinya, Kajiado County.
 Customers will be able to own professionally managed sheep, goats and cattle and follow each
 animal's weights, health, feeding, photos and itemised costs from their phone.
 

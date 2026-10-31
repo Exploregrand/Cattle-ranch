@@ -13,7 +13,7 @@ import { farm } from "@/content/site";
 export const metadata: Metadata = {
   title: "Investors",
   description:
-    "Tangama Livestock is building a transparent livestock ownership and management business in Isinya, Kajiado. Register your interest as a Kenyan investor.",
+    "Herd & Field is building a transparent livestock ownership and management business in Isinya, Kajiado. Register your interest as a Kenyan investor.",
 };
 
 const chapters = [
@@ -78,7 +78,7 @@ export default function InvestorsPage() {
                 managed in the open.
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft">
-                Tangama is building a livestock ownership and management business from its farm in Isinya, Kajiado — with
+                Herd & Field, a Tangama Farm company, is building a livestock ownership and management business from its farms in Isinya, Kajiado — with
                 every animal, feed and cost on record. We are speaking with Kenyan investors and chamas ahead of launch.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -103,9 +103,10 @@ export default function InvestorsPage() {
               </div>
             </figure>
           </div>
-          <dl className="mt-14 grid grid-cols-1 border-y border-forest-950 sm:grid-cols-3">
+          <dl className="mt-14 grid grid-cols-1 border-y border-forest-950 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ["Stage", "Pre-launch · building the feed base"],
+              ["Company", "Herd & Field · a Tangama Farm company"],
+                ["Stage", "Pre-launch · building the feed base"],
               ["Land", `2 farms · ${farm.totalAcres} acres · +${farm.expansion.acres} planned`],
               ["Offer", "None open — expressions of interest only"],
             ].map(([k, v]) => (
@@ -139,7 +140,7 @@ export default function InvestorsPage() {
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
                 Many Kenyans want to own animals but lack the land, time or expertise to raise them — and informal arrangements
-                rarely come with records anyone can check. Tangama combines a working fodder farm with a platform that keeps
+                rarely come with records anyone can check. Herd & Field combines a working fodder farm with a platform that keeps
                 every animal&apos;s history visible to its owner.
               </p>
               <dl className="mt-12 grid border-y border-forest-950 sm:grid-cols-2">
@@ -184,7 +185,7 @@ export default function InvestorsPage() {
                   {
                     photo: photos.sheep,
                     title: "Back the company",
-                    body: "For investors who want to own part of Tangama itself and share in building the business. Any raise would be a private, documented process.",
+                    body: "For investors who want to own part of Herd & Field itself and share in building the business. Any raise would be a private, documented process.",
                   },
                   {
                     photo: photos.goat,

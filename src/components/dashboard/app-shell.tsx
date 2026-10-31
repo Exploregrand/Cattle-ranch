@@ -39,7 +39,7 @@ export function AppShell({
             <Wordmark href={base} />
             <DesktopTabs base={base} />
             <Link href="/" className="hidden text-sm text-ink-soft hover:text-forest-900 lg:inline">
-              Tangama website
+              Herd & Field website
             </Link>
           </div>
         </header>

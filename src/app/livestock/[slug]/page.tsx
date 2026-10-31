@@ -23,7 +23,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/livestock/[slug]">): Promise<Metadata> {
   const page = getSpeciesPage((await params).slug);
   if (!page) return {};
-  return { title: page.name, description: `${page.intro} Breeds, feeding, care and how to own ${page.singular} with Tangama.` };
+  return { title: page.name, description: `${page.intro} Breeds, feeding, care and how to own ${page.singular} with Herd & Field.` };
 }
 
 async function SpeciesContent({ params }: { params: Promise<{ slug: string }> }) {

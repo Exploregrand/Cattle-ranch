@@ -14,7 +14,7 @@ import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The farm",
-  description: "Tangama's two farms — 2.17 and 2.5 acres, based in Isinya, Kajiado County — with a further 5 acres planned for early 2027, and live progress from our farm records.",
+  description: "Herd & Field's two farms — 2.17 and 2.5 acres, based in Isinya, Kajiado County — with a further 5 acres planned for early 2027, and live progress from our farm records.",
 };
 
 const wrap = "mx-auto w-full max-w-7xl px-6 sm:px-8";
@@ -26,7 +26,7 @@ export default function FarmPage() {
       <main className="bg-cream-50 text-ink">
         <section className={`${wrap} grid items-end gap-10 pt-12 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16`}>
           <div>
-            <p className="eyebrow">Tangama Farm · Kajiado County</p>
+            <p className="eyebrow">Our farms · Kajiado County</p>
             <h1 className="t-display mt-5 max-w-[12ch]">Where every animal will be raised.</h1>
             <p className="t-lead mt-6 max-w-xl text-ink-soft">
               Two farms of {farm.farms.map((f) => f.acres).join(" and ")} acres, based in Isinya, south of Nairobi in Kajiado County —

@@ -1,5 +1,5 @@
 /**
- * Public site content. Facts about the farm are Tangama's own; everything about
+ * Public site content. Facts about the farm are Herd & Field's own; everything about
  * livestock describes plans, not live services. Keep it that way until launch.
  */
 
@@ -17,7 +17,7 @@ export const farm = {
   totalAcres: Math.round(farms.reduce((sum, f) => sum + f.acres, 0) * 100) / 100,
   /** Acres under cultivation today. */
   acres: 4,
-  /** On-farm facilities, as confirmed by the Tangama team. Add detail when available. */
+  /** On-farm facilities, as confirmed by the Herd & Field team. Add detail when available. */
   facilities: [
     { title: "Staff housing", body: "Our team lives on the farm, so animals are looked after day and night." },
     { title: "Animal housing", body: "Shelter and pens ready for the animals we raise." },

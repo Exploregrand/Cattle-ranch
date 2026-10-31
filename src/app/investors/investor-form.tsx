@@ -37,7 +37,7 @@ export function InvestorForm() {
         <CircleCheck className="size-9 text-grass" aria-hidden="true" />
         <h3 className="t-h2 mt-5 text-forest-950">Thank you — we&apos;ll be in touch</h3>
         <p className="mt-3 max-w-md leading-relaxed text-ink-soft">
-          A member of the Tangama team will contact you personally. Nothing is being offered or sold, and no payment is needed.
+          A member of the Herd & Field team will contact you personally. Nothing is being offered or sold, and no payment is needed.
         </p>
       </div>
     );
@@ -144,7 +144,7 @@ export function InvestorForm() {
             name: "acknowledgedNoOffer",
             text: "I understand this is an expression of interest only. No offer of shares, securities or investment is being made, and no returns are promised.",
           },
-          { name: "consent", text: "Tangama may contact me by phone, WhatsApp or email about this." },
+          { name: "consent", text: "Herd & Field may contact me by phone, WhatsApp or email about this." },
         ].map((c) => (
           <div key={c.name}>
             <label className="flex items-start gap-3 text-sm leading-relaxed text-ink-soft">

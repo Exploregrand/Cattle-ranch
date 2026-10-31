@@ -1,5 +1,6 @@
-/** Platform brand. Tangama Farm (Isinya) is the operating farm behind it. */
+/** Brand. Herd & Field is a subsidiary of Tangama Farm (Isinya), its parent company and operating farm. */
 export const brand = {
-  name: "Tangama Livestock",
+  name: "Herd & Field",
+  parent: "A Tangama Farm company",
   operator: "Tangama Farm",
 } as const;

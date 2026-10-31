@@ -2,7 +2,7 @@ import type { Animal, Portfolio } from "@/lib/livestock/types";
 
 /**
  * SAMPLE DATA FOR DEMO MODE ONLY.
- * None of these animals, people, documents or figures are real Tangama records.
+ * None of these animals, people, documents or figures are real Herd & Field records.
  * They exist so the dashboard design can be evaluated before livestock launches.
  */
 

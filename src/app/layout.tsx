@@ -25,8 +25,8 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Tangama Livestock — Isinya, Kajiado",
-    template: "%s · Tangama Livestock",
+    default: "Herd & Field — Isinya, Kajiado",
+    template: "%s · Herd & Field",
   },
   description:
     "Own sheep, goats and cattle raised on our own fodder in Isinya, Kajiado County — with every weigh-in, treatment and cost recorded for you. Register for early access.",

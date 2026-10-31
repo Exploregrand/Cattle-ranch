@@ -1,4 +1,4 @@
-/** Tangama's own farm photography (Isinya). All images are of our farms, team and animals. */
+/** Herd & Field's own farm photography (Isinya). All images are of our farms, team and animals. */
 export const farmPhotos = {
   rowsGreen: { src: "/images/farm/rows-green.jpg", alt: "Young fodder rows on drip irrigation, with a line of windbreak trees beyond" },
   rowsTrees: { src: "/images/farm/rows-trees.jpg", alt: "Green fodder rows seen through the trees at the edge of the field" },
@@ -9,6 +9,11 @@ export const farmPhotos = {
   manure: { src: "/images/farm/manure.jpg", alt: "A handful of aged livestock manure ready to go back into the soil" },
   cowPortrait: { src: "/images/farm/cow-portrait.jpg", alt: "A tan zebu cow resting on the farm" },
   cowResting: { src: "/images/farm/cow-resting.jpg", alt: "A tan zebu cow lying beside a heap of compost" },
+  rowsSun: { src: "/images/farm/rows-sun.jpg", alt: "Sunlit fodder rows on drip lines beneath a line of windbreak trees" },
+  napierCut: { src: "/images/farm/napier-cut.jpg", alt: "Freshly cut Napier grass ready to feed" },
+  napierStand: { src: "/images/farm/napier-stand.jpg", alt: "A mature stand of Napier grass beside cut fodder" },
+  herdCurious: { src: "/images/farm/herd-curious.jpg", alt: "A curious tan cow looks into the camera, with the herd grazing behind under a cloudy sky" },
+  herdGrazing: { src: "/images/farm/herd-grazing.jpg", alt: "Red zebu cattle grazing beside the windbreak trees and Napier on our farm" },
   cat: { src: "/images/farm/cat.jpg", alt: "A tabby farm cat standing up against the wire fence" },
 } as const;
 
@@ -27,7 +32,7 @@ export const organicPractices = [
   {
     title: "Trees on the boundary",
     body: "Windbreak trees shelter the crops from wind and sun and give the farm shade and habitat.",
-    photo: "rowsTrees" as const,
+    photo: "rowsSun" as const,
   },
 ];
 
@@ -37,4 +42,5 @@ export const plantingStory = [
   { step: "Plant", title: "Seed into moist, fed soil", photo: "bedsCattle" as const },
   { step: "Tend", title: "Rows checked and cared for by hand", photo: "tending" as const },
   { step: "Grow", title: "Green fodder, weeks later", photo: "rowsGreen" as const },
+  { step: "Harvest", title: "Cut fresh and fed the same day", photo: "napierCut" as const },
 ];

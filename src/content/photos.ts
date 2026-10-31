@@ -1,6 +1,6 @@
 /**
  * Breed and category photography. These illustrate each kind of animal; they are not
- * photographs of specific Tangama animals and must never be presented as available stock.
+ * photographs of specific Herd & Field animals and must never be presented as available stock.
  */
 export type PhotoKey = "cattle" | "goat" | "sheep";
 

@@ -8,7 +8,7 @@ import { contact } from "@/content/contact";
 
 export const metadata: Metadata = {
   title: "Privacy notice",
-  description: "How Tangama Livestock collects, uses and protects your personal information.",
+  description: "How Herd & Field collects, uses and protects your personal information.",
 };
 
 const sections = [
@@ -33,7 +33,7 @@ const sections = [
   {
     title: "Who can see it",
     body: [
-      "Only authorised members of the Tangama team. Our website and database are run by service providers who store data on our behalf under their own security terms. Customer and investor records are protected by access controls so that each person sees only what they are permitted to.",
+      "Only authorised members of the Herd & Field team. Our website and database are run by service providers who store data on our behalf under their own security terms. Customer and investor records are protected by access controls so that each person sees only what they are permitted to.",
     ],
   },
   {
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
           <p className="eyebrow">Privacy notice</p>
           <h1 className="t-h1 mt-4">How we handle your information.</h1>
           <p className="t-lead mt-6 text-ink-soft">
-            Tangama Livestock (Tangama Farm, Isinya, Kajiado County) collects only what we need to contact you and, after launch, to
+            Herd & Field, a Tangama Farm company (Isinya, Kajiado County), collects only what we need to contact you and, after launch, to
             keep your animal&apos;s records.
           </p>
           <div className="mt-12 border-t border-ink/15">

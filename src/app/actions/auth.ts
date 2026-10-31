@@ -28,7 +28,7 @@ export async function requestSignInLink(_prev: SignInState, formData: FormData):
   const { error } = await supabase.auth.signInWithOtp({
     email: email.data,
     options: {
-      // Accounts are created by Tangama when a customer is onboarded, never by self sign-up.
+      // Accounts are created by Herd & Field when a customer is onboarded, never by self sign-up.
       shouldCreateUser: false,
       emailRedirectTo: `${origin}/auth/callback?next=${encodeURIComponent(next)}`,
     },

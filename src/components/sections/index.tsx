@@ -9,6 +9,7 @@ import { FaqList } from "@/components/home/faq-list";
 import { LiveProgress } from "@/components/home/live-progress";
 import { agreementCovers, buyerFaqs, howItWorks, pathways } from "@/content/buyer";
 import { contact, hasContact } from "@/content/contact";
+import { farmPhotos } from "@/content/farm-story";
 import { photos } from "@/content/photos";
 import { farm } from "@/content/site";
 
@@ -51,12 +52,12 @@ export function Hero() {
     <section>
       <div className="relative isolate flex min-h-[calc(100svh-4.5rem)] items-end overflow-hidden sm:min-h-[680px] lg:min-h-[calc(100svh-4.5rem)]">
         <Image
-          src={photos.cattle.src}
-          alt={photos.cattle.alt}
+          src={farmPhotos.herdCurious.src}
+          alt={farmPhotos.herdCurious.alt}
           fill
           priority
           sizes="100vw"
-          className="-z-10 object-cover object-[50%_45%] lg:object-[50%_70%]"
+          className="-z-10 object-cover object-[60%_35%] lg:object-[50%_40%]"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#1c1b19]/90 via-[#1c1b19]/30 to-transparent" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#1c1b19]/65 via-[#1c1b19]/15 to-transparent" />
@@ -97,7 +98,7 @@ export function Pathways() {
     <>
     {/* Three ways in */}
     <section className={`${wrap} section-y`}>
-      <p className="eyebrow">Three ways to work with Tangama</p>
+      <p className="eyebrow">Three ways to work with us</p>
       <h2 className="t-h1 mt-4 max-w-[18ch]">Find the right place to start.</h2>
       <div className="mt-12 grid gap-4 md:grid-cols-3 lg:gap-5">
         {pathways.map((p) => {
@@ -165,7 +166,7 @@ export function HowItWorks() {
           </ul>
         </div>
         <p className="mt-6 text-[0.8125rem] text-ink-muted">
-          Programmes open only after commercial and legal review. Tangama never promises returns.
+          Programmes open only after commercial and legal review. Herd & Field never promises returns.
         </p>
       </div>
     </section>
@@ -234,11 +235,11 @@ export function AnimalsSection() {
 export function CareDay() {
   return (
     <>
-    {/* A day at Tangama */}
+    {/* A day on the farm */}
     <section id="care" className="scroll-mt-20 bg-forest-900 text-cream-50">
       <div className={`${wrap} section-y`}>
         <p className="eyebrow !text-cream-50/60">How every animal will be cared for</p>
-        <h2 className="t-h1 mt-4">A day at Tangama.</h2>
+        <h2 className="t-h1 mt-4">A day on the farm.</h2>
         <ol className="mt-14 grid border-t border-cream-50/15 sm:grid-cols-2 lg:grid-cols-5">
           {day.map((d, i) => (
             <li

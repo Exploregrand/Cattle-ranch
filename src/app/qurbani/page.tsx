@@ -12,7 +12,7 @@ import { photos } from "@/content/photos";
 export const metadata: Metadata = {
   title: "Qurbani",
   description:
-    "Reserve a healthy, well-fed goat, sheep or bull for Qurbani, raised and checked on Tangama Farm in Isinya, Kajiado. Register to hear first when reservations open.",
+    "Reserve a healthy, well-fed goat, sheep or bull for Qurbani, raised and checked on our farms in Isinya, Kajiado. Register to hear first when reservations open.",
 };
 
 const wrap = "mx-auto w-full max-w-7xl px-6 sm:px-8";

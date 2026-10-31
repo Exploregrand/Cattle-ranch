@@ -41,13 +41,13 @@ export function PlantingStory() {
       <div className={`${wrap} section-y`}>
         <p className="eyebrow">This planting season</p>
         <h2 className="t-h1 mt-4 max-w-[18ch]">From bare soil to green rows.</h2>
-        <ol className="mt-12 grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-5">
+        <ol className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5 lg:gap-4">
           {plantingStory.map((s, i) => {
             const photo = farmPhotos[s.photo];
             return (
               <li key={s.step}>
                 <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
-                  <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 25vw, 50vw" className="object-cover" />
+                  <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 1024px) 20vw, 50vw" className="object-cover" />
                 </div>
                 <p className="eyebrow mt-4">
                   {String(i + 1).padStart(2, "0")} · {s.step}

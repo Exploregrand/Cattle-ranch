@@ -24,7 +24,7 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Wordmark tone="light" />
             <p className="mt-5 text-[0.9375rem] leading-relaxed text-cream-100/65">
-              {farm.name}, {farm.location}, Kenya. Livestock raised on our own fodder, with every record kept for its owner.
+              Herd & Field is a Tangama Farm company, based in {farm.location}, Kenya. Livestock raised on our own fodder, with every record kept for its owner.
             </p>
           </div>
           <nav aria-label="Footer" className="grid grid-cols-2 gap-x-14 gap-y-3">
@@ -36,7 +36,7 @@ export function SiteFooter() {
           </nav>
         </div>
         <p className="mt-14 max-w-4xl border-t border-cream-50/10 pt-6 text-[0.8125rem] leading-relaxed text-cream-100/50">
-          Tangama Livestock has not yet launched. No livestock, purchases, investments or payments are offered on this website. Any
+          Herd & Field has not yet launched. No livestock, purchases, investments or payments are offered on this website. Any
           future programme will open only after commercial and legal review, and will never promise guaranteed returns.
         </p>
       </div>

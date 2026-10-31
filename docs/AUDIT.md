@@ -1,4 +1,4 @@
-# Tangama Livestock — product audit
+# Herd & Field — product audit
 
 _1 November 2026. Covers the public website, customer dashboard, investor brief and Farm Ops._
 
