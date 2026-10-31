@@ -8,6 +8,7 @@ import { Closing, wrap } from "@/components/sections";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { Button } from "@/components/ui/button";
+import { farmPhotos } from "@/content/farm-story";
 import { photos } from "@/content/photos";
 import { getSpeciesPage, speciesPages } from "@/content/species";
 
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: PageProps<"/livestock/[slug]"
 async function SpeciesContent({ params }: { params: Promise<{ slug: string }> }) {
   const page = getSpeciesPage((await params).slug);
   if (!page) notFound();
-  const photo = photos[page.photo];
+  const photo = page.farmPhoto ? { ...farmPhotos[page.farmPhoto], position: "50% 30%" } : photos[page.photo];
   const others = speciesPages.filter((s) => s.slug !== page.slug);
 
   return (
@@ -71,7 +72,7 @@ async function SpeciesContent({ params }: { params: Promise<{ slug: string }> })
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
             <Image src={photo.src} alt={photo.alt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" style={{ objectPosition: photo.position }} />
           </div>
-          <figcaption className="mt-3 text-[0.8125rem] text-ink-muted">Breed photograph for illustration.</figcaption>
+          <figcaption className="mt-3 text-[0.8125rem] text-ink-muted">{page.farmPhoto ? "On our farm in Isinya." : "Breed photograph for illustration."}</figcaption>
         </figure>
       </section>
 

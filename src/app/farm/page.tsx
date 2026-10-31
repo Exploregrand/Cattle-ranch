@@ -8,7 +8,8 @@ import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { Button } from "@/components/ui/button";
 import { contact } from "@/content/contact";
-import { photos } from "@/content/photos";
+import { FarmCatCard, OrganicPractices, PlantingStory } from "@/components/sections/farm-story";
+import { farmPhotos } from "@/content/farm-story";
 import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function FarmPage() {
             </p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-            <Image src={photos.cattle.src} alt={photos.cattle.alt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover object-[50%_68%]" />
+            <Image src={farmPhotos.rowsGreen.src} alt={farmPhotos.rowsGreen.alt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover object-[50%_60%]" />
           </div>
         </section>
 
@@ -51,7 +52,10 @@ export default function FarmPage() {
           </div>
         </section>
 
-        <section className="border-y border-border bg-white">
+        <OrganicPractices />
+        <PlantingStory />
+
+        <section className="border-b border-border bg-white">
           <div className={`${wrap} section-y`}>
             <p className="eyebrow">The feed</p>
             <h2 className="t-h1 mt-4 max-w-[18ch]">Four crops, grown for our own animals.</h2>
@@ -89,6 +93,8 @@ export default function FarmPage() {
             ))}
           </dl>
         </section>
+
+        <FarmCatCard />
 
         <section className={`${wrap} section-y border-t border-border grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end`}>
           <div>

@@ -13,6 +13,8 @@ export interface SpeciesPage {
   singular: string;
   swahili: string;
   photo: PhotoKey;
+  /** One of our own farm photos, shown instead of the breed photo when set. */
+  farmPhoto?: "cowPortrait";
   headline: string;
   intro: string;
   why: { title: string; body: string }[];
@@ -108,6 +110,7 @@ export const speciesPages: SpeciesPage[] = [
     singular: "cattle",
     swahili: "Ng'ombe",
     photo: "cattle",
+    farmPhoto: "cowPortrait",
     headline: "Cattle, where good records matter most.",
     intro:
       "Cattle take longer to raise and cost more to feed, so careful feeding and complete records make the biggest difference to the outcome.",

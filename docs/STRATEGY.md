@@ -98,7 +98,7 @@ No capital is accepted, and no feature that takes money is built, until Phase B 
 
 - [ ] Phone/WhatsApp and email for `src/content/contact.ts`
 - [ ] Team names, roles and photos for the farm page
-- [ ] Our own farm and animal photography
+- [x] Our own farm photography (Nov 2026) — more animal photos as the herd arrives
 - [ ] Confirm bed count after expansion (currently 120 beds, Sections A–C)
 - [ ] Agreement template (managed ownership, Qurbani) reviewed by a lawyer
 - [ ] Legal advice on the investment structure before Phase B
