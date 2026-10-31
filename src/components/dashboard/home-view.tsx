@@ -55,7 +55,7 @@ export function HomeView({
             <div>
               <p className="font-medium text-forest-950">At the farm today</p>
               <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                We are developing fodder across {farm.beds} beds in {farm.location} — Sugargraze,
+                We are developing fodder on our farms in {farm.location} — Sugargraze,
                 Super Napier, alfalfa and desmodium — ahead of livestock operations. Farm updates
                 will be posted here.
               </p>

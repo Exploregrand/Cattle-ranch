@@ -13,7 +13,7 @@ import { farm } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The farm",
-  description: "Tangama's two farms — 2.17 and 2.5 acres, based in Isinya, Kajiado County — with 300 fodder beds, a further 5 acres planned for early 2027, and live progress from our farm records.",
+  description: "Tangama's two farms — 2.17 and 2.5 acres, based in Isinya, Kajiado County — with a further 5 acres planned for early 2027, and live progress from our farm records.",
 };
 
 const wrap = "mx-auto w-full max-w-7xl px-6 sm:px-8";
@@ -64,29 +64,6 @@ export default function FarmPage() {
               ))}
             </dl>
 
-            <div className="mt-16 grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-              <div>
-                <h3 className="t-h2">The bed plan</h3>
-                <p className="t-body mt-4 max-w-sm text-ink-soft">
-                  {farm.beds} beds in three sections of {farm.sections[0].beds}. Every bed is planted, watered and harvested on the record, so we know what
-                  each one produces.
-                </p>
-              </div>
-              <div className="grid grid-cols-3 gap-4 sm:gap-8">
-                {farm.sections.map((section) => (
-                  <div key={section.id}>
-                    <div className="grid grid-cols-10 gap-[3px]" role="img" aria-label={`Section ${section.id}: ${section.beds} beds`}>
-                      {Array.from({ length: section.beds }).map((_, i) => (
-                        <span key={i} className="aspect-square rounded-[1.5px] border border-ink/25" />
-                      ))}
-                    </div>
-                    <p className="eyebrow mt-3 !text-[0.75rem]">
-                      Section {section.id} · {section.beds}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 

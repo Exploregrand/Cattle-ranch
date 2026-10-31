@@ -172,7 +172,7 @@ export const demoPortfolio: Portfolio = {
     {
       id: "u2",
       date: "2026-10-05",
-      title: "Sugargraze harvest from Section B",
+      title: "Sugargraze harvest",
       body: "Fresh Sugargraze was cut and ensiled, securing finishing feed for the coming weeks.",
     },
     {

@@ -90,7 +90,7 @@ export const speciesPages: SpeciesPage[] = [
       },
     ],
     feeding:
-      "Browse and fresh-cut fodder, with desmodium and alfalfa for protein and Sugargraze for energy — grown on our own beds.",
+      "Browse and fresh-cut fodder, with desmodium and alfalfa for protein and Sugargraze for energy — grown on our own farms.",
     care: [
       "Weighed regularly, with every weigh-in recorded",
       "Routine deworming and vaccinations such as PPR and CCPP, as advised by our vet",

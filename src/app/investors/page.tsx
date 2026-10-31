@@ -29,8 +29,7 @@ const today = [
   { status: "In place", title: `Two farms, ${farm.totalAcres} acres`, body: `${farm.farms.map((f) => `${f.acres} acres`).join(" and ")}, with about ${farm.acres} acres under cultivation for fodder.` },
   { status: "Planned", title: `Expansion by ${farm.expansion.acres} acres`, body: `A further ${farm.expansion.acres} acres planned for ${farm.expansion.timing}, more than doubling the land under cultivation.` },
   { status: "In place", title: "Staff housing, animal housing and amenities", body: "Facilities on the farm for the team who live there and the animals they will care for." },
-  { status: "In place", title: `${farm.beds} fodder beds laid out`, body: `Three sections of ${farm.sections[0].beds} beds, managed and recorded bed by bed.` },
-  { status: "In progress", title: "Four fodder crops being established", body: "Sugargraze, Super Napier, alfalfa and desmodium — our own feed base." },
+    { status: "In progress", title: "Four fodder crops being established", body: "Sugargraze, Super Napier, alfalfa and desmodium — our own feed base." },
   { status: "In place", title: "Operating platform built", body: "Fodder records, animal registers, health, weights, costs and owner dashboards." },
   { status: "Planned", title: "Livestock pilot", body: "A farm-owned herd to prove care, growth and cost records in practice." },
   { status: "Planned", title: "Legal and regulatory review", body: "Before any external capital or ownership programme opens." },
@@ -166,7 +165,7 @@ export default function InvestorsPage() {
               </h2>
               <ol className="mt-12 grid gap-4 sm:grid-cols-4">
                 {[
-                  ["Feed", "Fodder grown on our own beds controls the largest cost of raising livestock."],
+                  ["Feed", "Fodder grown on our own farms controls the largest cost of raising livestock."],
                   ["Animals", "Sheep, goats and cattle suited to Kajiado, cared for by our team."],
                   ["Records", "ID, weigh-ins, health, feeding and every shilling, logged as it happens."],
                   ["Outcome", "Sale, collection or other documented result — reported, never promised."],

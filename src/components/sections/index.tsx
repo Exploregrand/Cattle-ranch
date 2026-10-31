@@ -14,7 +14,7 @@ import { farm } from "@/content/site";
 
 const day = [
   { time: "Dawn", title: "Water and a once-over", body: "Every animal counted, watered and looked over before the day begins." },
-  { time: "Morning", title: "Fresh-cut fodder", body: "Sugargraze, Napier and legumes cut from our own beds and fed the same day." },
+  { time: "Morning", title: "Fresh-cut fodder", body: "Sugargraze, Napier and legumes cut fresh on our farms and fed the same day." },
   { time: "Midday", title: "Shade and rest", body: "Out of the Kajiado sun, with water on hand." },
   { time: "Afternoon", title: "Health rounds", body: "Eyes, coat, feet and appetite checked; anything unusual goes on the record." },
   { time: "Dusk", title: "Into the boma", body: "Safely penned for the night." },
@@ -36,7 +36,7 @@ const record = [
 const farmFigures = [
   [`${farm.farms.length}`, "Farms"],
   [`${farm.totalAcres}`, "Acres"],
-  [`${farm.beds}`, "Fodder beds"],
+  [`${farm.fodder.length}`, "Fodder crops"],
 ];
 
 

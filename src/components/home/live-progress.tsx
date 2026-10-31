@@ -15,14 +15,14 @@ export async function LiveProgress({ tone = "light" }: { tone?: "light" | "dark"
 
   const figures: [string, string][] = p
     ? [
-        [`${p.bedsPlanted}/${p.bedsTotal}`, "Fodder beds planted"],
+        [`${p.crops.length}`, "Fodder crops in the ground"],
         [formatKg(Math.round(p.harvestKgTotal)), "Fodder harvested to date"],
         [`${p.workLogged30d}`, "Field records, last 30 days"],
         [`${p.animalsOnFarm}`, "Animals on the farm"],
       ]
     : [
         [`${farm.farms.length} · ${farm.totalAcres}`, "Farms · acres"],
-        [`${farm.beds}`, "Fodder beds"],
+        [`${farm.fodder.length}`, "Fodder crops"],
         [`${farm.fodder.length}`, "Feed crops"],
         ["0", "Animals — not yet launched"],
       ];
@@ -44,7 +44,7 @@ export async function LiveProgress({ tone = "light" }: { tone?: "light" | "dark"
         <p className={`mt-5 text-[0.8125rem] ${dark ? "text-cream-50/55" : "text-ink-muted"}`}>
           Live from our Farm Ops records
           {p.lastRecordedOn && <> · last entry {formatDate(p.lastRecordedOn)}</>}
-          {p.crops.length > 0 && <> · {p.crops.map((c) => `${cropName(c.crop)} ${c.beds}`).join(", ")} beds</>}
+          {p.crops.length > 0 && <> · growing {p.crops.map((c) => cropName(c.crop)).join(", ")}</>}
           {p.harvestKg30d > 0 && <> · {formatKg(Math.round(p.harvestKg30d))} harvested in the last 30 days</>}
         </p>
       )}

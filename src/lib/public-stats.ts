@@ -5,9 +5,7 @@ import { cacheLife } from "next/cache";
 import { getSql } from "@/lib/db";
 
 export interface FarmProgress {
-  bedsTotal: number;
-  bedsPlanted: number;
-  crops: { crop: string; beds: number }[];
+  crops: { crop: string }[];
   harvestKgTotal: number;
   harvestKg30d: number;
   workLogged30d: number;
@@ -16,7 +14,7 @@ export interface FarmProgress {
 }
 
 /**
- * Public, aggregate-only figures from Farm Ops records — no customer, finance or lead data.
+ * Public, aggregate-only figures from Farm Ops records — no bed counts, customer, finance or lead data.
  * Cached for an hour. Returns null when no database is connected or nothing has been recorded yet,
  * so pages fall back to the fixed farm facts.
  */
@@ -43,9 +41,7 @@ export async function getFarmProgress(): Promise<FarmProgress | null> {
     // Don't publish an empty record — show the fixed farm facts until real work has been logged.
     if (beds[0].planted === 0 && harvest[0].total === 0) return null;
     return {
-      bedsTotal: beds[0].total,
-      bedsPlanted: beds[0].planted,
-      crops: crops.map((c) => ({ crop: c.crop, beds: c.beds })),
+      crops: crops.map((c) => ({ crop: c.crop })),
       harvestKgTotal: harvest[0].total,
       harvestKg30d: harvest[0].recent,
       workLogged30d: activity[0].recent,
